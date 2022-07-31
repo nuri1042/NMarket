@@ -6,13 +6,14 @@ import Link from "next/link";
 import wrapper from "../store/configureStore";
 import "../styles/styles.css";
 import { useSelector } from "react-redux";
+import { SessionProvider, useSession } from "next-auth/react";
 
 // 전 페이지에서 공통되는 부분 관리
-const App = ({ Component }) => {
-  const { isLoggedIn } = useSelector((state) => state.user);
+const App = ({ Component, session, status }) => {
+  // const { isLoggedIn } = useSelector((state) => state.user);
 
   return (
-    <>
+    <SessionProvider session={session}>
       <Head>
         <meta charSet="utf-8" />
         <title>NMarket</title>
@@ -30,7 +31,11 @@ const App = ({ Component }) => {
               <Link href="/Favor">
                 <a className="btn-favor">찜</a>
               </Link>
-              {isLoggedIn ? (
+              <Link href="/Mypage">
+                <a className="btn-mypage">마이페이지</a>
+              </Link>
+
+              {/* {status === "authenticated" ? (
                 <Link href="/Mypage">
                   <a className="btn-mypage">마이페이지</a>
                 </Link>
@@ -38,7 +43,7 @@ const App = ({ Component }) => {
                 <Link href="/Login">
                   <a className="btn-mypage">로그인페이지</a>
                 </Link>
-              )}
+              )} */}
             </div>
           </div>
         </div>
@@ -58,7 +63,7 @@ const App = ({ Component }) => {
           <p>COPYRIGHT © TENBYTEN ALL RIGHTS RESERVED</p>
         </div>
       </div>
-    </>
+    </SessionProvider>
   );
 };
 

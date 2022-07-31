@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { getSession, signOut, useSession } from "next-auth/react";
 
 const Mypage = () => {
-  const { me } = useSelector((state) => state.user);
+  // const { me } = useSelector((state) => state.user);
+  const { data: session } = useSession();
   return (
     <>
       <div
@@ -43,7 +45,7 @@ const Mypage = () => {
                   className="profile"
                   style={{
                     marginTop: "20px",
-                    paddingTop: "29px",
+                    paddingTop: "19px",
                     backgroundColor: "#fff",
                     textAlign: "center",
                   }}
@@ -55,9 +57,10 @@ const Mypage = () => {
                       fontSize: "14px",
                       fontWeight: "bold",
                       lineHeight: "1.25em",
+                      padding: "10px",
                     }}
                   >
-                    Hello, {me.nickname}
+                    Hello, {session.user.name}
                   </p>
                   <div
                     className="figure"
@@ -67,12 +70,13 @@ const Mypage = () => {
                       className="profile-container"
                       style={{
                         width: "100px",
-                        height: "106px",
+                        height: "120px",
                         margin: "0 auto",
                         borderRadius: "100%",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
+                        flexDirection: "column",
                       }}
                     >
                       <img
@@ -85,6 +89,18 @@ const Mypage = () => {
                           paddingTop: "13px",
                         }}
                       />
+                      <button
+                        style={{
+                          width: "80px",
+                          margin: "18px 0",
+                          border: "none",
+                          padding: "5px",
+                          cursor: "pointer",
+                        }}
+                        onClick={() => signOut()}
+                      >
+                        로그아웃
+                      </button>
                     </div>
                   </div>
                   <ul
@@ -161,3 +177,17 @@ const Mypage = () => {
 };
 
 export default Mypage;
+
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context);
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/Login",
+      },
+    };
+  }
+  return {
+    props: { session },
+  };
+};

@@ -86,12 +86,16 @@ const Cart = () => {
               </p>
             </div>
           </div>
-          {itemList ? (
+          {itemList.length !== 0 ? (
             itemList.map((itemList) => {
               return <CartItem itemList={itemList} key={itemList.id} />;
             })
           ) : (
-            <div>장바구니가 비어있습니다</div>
+            <div
+              style={{ position: "absolute", left: "50%", marginTop: "25px" }}
+            >
+              장바구니가 비어있습니다.
+            </div>
           )}
         </div>
         <div

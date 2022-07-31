@@ -12,6 +12,7 @@
     "antd": "^4.19.5",
     "axios": "^0.26.1",
     "next": "^11.1.4",
+    "next-auth": "^4.10.2",
     "next-images": "^1.8.4",
     "next-redux-wrapper": "^6.0.2",
     "prop-types": "^15.8.1",
