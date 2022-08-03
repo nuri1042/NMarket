@@ -28,22 +28,9 @@ const App = ({ Component, session, status }) => {
               <Link href="/Cart">
                 <a className="btn-cart">장바구니</a>
               </Link>
-              <Link href="/Favor">
-                <a className="btn-favor">찜</a>
-              </Link>
               <Link href="/Mypage">
                 <a className="btn-mypage">마이페이지</a>
               </Link>
-
-              {/* {status === "authenticated" ? (
-                <Link href="/Mypage">
-                  <a className="btn-mypage">마이페이지</a>
-                </Link>
-              ) : (
-                <Link href="/Login">
-                  <a className="btn-mypage">로그인페이지</a>
-                </Link>
-              )} */}
             </div>
           </div>
         </div>

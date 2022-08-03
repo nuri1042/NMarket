@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getSession, signOut, useSession } from "next-auth/react";
+import FavorList from "../components/FavorList";
 
 const Mypage = () => {
   // const { me } = useSelector((state) => state.user);
@@ -37,6 +38,7 @@ const Mypage = () => {
                 padding: "0 70px 0 70px",
               }}
             >
+              {/* 내 프로필 */}
               <div
                 className="myprofileContainer"
                 style={{ float: "left", width: "212px" }}
@@ -168,6 +170,8 @@ const Mypage = () => {
                   </ul>
                 </div>
               </div>
+              {/* 찜 목록 */}
+              <FavorList />
             </div>
           </div>
         </div>
@@ -178,6 +182,7 @@ const Mypage = () => {
 
 export default Mypage;
 
+// 로그인 되어있지 않으면 Login 페이지로 이동
 export const getServerSideProps = async (context) => {
   const session = await getSession(context);
   if (!session) {

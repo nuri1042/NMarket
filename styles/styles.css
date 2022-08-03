@@ -49,18 +49,6 @@
   text-indent: -999px;
   overflow: hidden;
 }
-.btn-favor {
-  width: 48px;
-  height: 48px;
-  background-image: url(/img/icons/heart.png);
-  background-position: 50%;
-  background-size: 28px 28px;
-  text-indent: -999px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  display: block;
-  position: relative;
-}
 .btn-mypage {
   width: 48px;
   height: 48px;

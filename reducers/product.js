@@ -53,6 +53,7 @@ const reducer = (state = initialState, action) => {
                   ? {
                       ...item,
                       quantity: item.quantity + 1,
+                      changedPrice: (item.changedPrice = item.originPrice),
                     } // 수량 1 증가
                   : item // 일치하지 않으면 그대로 둠
             )

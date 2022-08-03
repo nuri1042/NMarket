@@ -3,9 +3,10 @@ import { useRouter } from "next/dist/client/router";
 import axios from "axios";
 import Link from "next/link";
 import { Button, Form } from "antd";
-import { HeartTwoTone, HeartOutlined } from "@ant-design/icons";
+import { HeartFilled, HeartOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { addItem, addFavor, removeFavor } from "../../reducers/product";
+import { useSelector } from "react-redux";
 
 const Products = () => {
   const router = useRouter();
@@ -38,6 +39,7 @@ const Products = () => {
     setLiked((prev) => !prev);
   }, [list[index]]);
 
+  console.log(liked);
   return (
     <>
       <div className="container" style={{ height: "100vh" }}>
@@ -224,36 +226,13 @@ const Products = () => {
                         margin: "0 4px",
                       }}
                     >
-                      {/* {liked ? (
-                        <a
-                          className="btn-favor"
-                          style={{
-                            border: "#000000",
-                            width: "28px",
-                            height: "28px",
-                            margin: "0 auto",
-                            color: "#d50c0c",
-                          }}
-                        ></a>
-                      ) : (
-                        <a
-                          className="btn-favor"
-                          style={{
-                            border: "#000000",
-                            width: "28px",
-                            height: "28px",
-                            margin: "0 auto",
-                            color: "#fff",
-                          }}
-                        ></a>
-                      )} */}
                       {liked ? (
-                        <HeartTwoTone
-                          twoToneColor="#eb2f96"
+                        <HeartFilled
                           onClick={onRemoveFavor}
                           style={{
                             fontSize: "24px",
                             transform: "translate(60%, 60%)",
+                            color: "red",
                           }}
                         />
                       ) : (
