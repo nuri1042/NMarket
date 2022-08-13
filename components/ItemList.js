@@ -8,13 +8,13 @@ const ItemList = ({ product }) => {
     <div>
       <div
         className="item-list"
-        style={{ padding: "83px 0 0 120px", display: "flex" }}
+        style={{ padding: "83px 0 0 0", display: "flex" }}
       >
         <div
           className="inner-cont"
           style={{
             paddingBottom: "40px",
-            width: "1140px",
+            width: "100%",
             margin: "0 auto",
           }}
         >

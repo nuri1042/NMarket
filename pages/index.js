@@ -36,7 +36,7 @@ function Home() {
         <meta charSet="utf-8" />
         <title>NMarket</title>
       </Head>
-      <div id="body" style={{ height: "100vh" }}>
+      <div>
         <div id="banner">{<MainBanner />}</div>
         <SubBanner />
         <ItemList product={product} />

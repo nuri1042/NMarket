@@ -19,6 +19,8 @@
   line-height: 1.6;
   border-bottom: 1px solid #eee;
   height: 100%;
+  max-width: 1900px;
+  margin: 0 auto;
 }
 
 .site-logo {

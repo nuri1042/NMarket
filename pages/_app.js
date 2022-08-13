@@ -35,7 +35,9 @@ const App = ({ Component, session, status }) => {
           </div>
         </div>
       </div>
-      <Component />
+      <div id="body">
+        <Component />
+      </div>
 
       <div className="footer">
         <span className="logo">10X10</span>

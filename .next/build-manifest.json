@@ -14,15 +14,15 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/Mypage": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Mypage.js"
+      "static/chunks/pages/index.js"
     ],
-    "/Products/[index]": [
+    "/Cart": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/Products/[index].js"
+      "static/chunks/pages/Cart.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
