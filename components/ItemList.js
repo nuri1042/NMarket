@@ -7,9 +7,17 @@ const ItemList = ({ product }) => {
   return (
     <div>
       <div
-        className="item-list"
-        style={{ padding: "83px 0 0 0", display: "flex" }}
+        style={{
+          padding: "83px 0 26px 0",
+          width: "860px",
+          margin: "0 auto",
+          fontSize: "18px",
+        }}
       >
+        <h2>오늘은 이 상품 어때요?</h2>
+      </div>
+
+      <div className="item-list" style={{ display: "flex" }}>
         <div
           className="inner-cont"
           style={{
@@ -43,7 +51,11 @@ const ItemList = ({ product }) => {
                       <Link as={`/Products/${index}`} href="/Products/[index]">
                         <a>
                           <div className="thumbnail">
-                            <img src={product.imageUrl} alt="" />
+                            <img
+                              src={product.imageUrl}
+                              alt=""
+                              style={{ width: "260px", height: "260px" }}
+                            />
                           </div>
                           <div className="desc">
                             <p

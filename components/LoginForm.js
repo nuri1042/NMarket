@@ -12,6 +12,7 @@ const LoginForm = () => {
   const { data: session } = useSession();
   const router = useRouter();
 
+  // < Redux 로 로그인 구현한 코드 >
   // const [email, onChangeEmail] = useInput("");
   // const [password, onChangePassword] = useInput("");
   // const dispatch = useDispatch();
@@ -72,6 +73,7 @@ const LoginForm = () => {
               style={{ marginTop: "8px", color: "#999" }}
               // onFinish={onSubmitForm}
             >
+              {/* Redux로 로그인 구현한 코드 */}
               {/* <Form.Item>
                 <Input
                   placeholder="이메일"

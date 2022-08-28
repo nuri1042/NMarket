@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import { SessionProvider, useSession } from "next-auth/react";
 
 // 전 페이지에서 공통되는 부분 관리
-const App = ({ Component, session, status }) => {
+const App = ({ Component, session, status, pageProps }) => {
   // const { isLoggedIn } = useSelector((state) => state.user);
 
   return (
@@ -36,13 +36,13 @@ const App = ({ Component, session, status }) => {
         </div>
       </div>
       <div id="body">
-        <Component />
+        <Component {...pageProps} />
       </div>
 
       <div className="footer">
         <span className="logo">10X10</span>
         <div className="foot-cont-company">
-          <em>(주)텐바이텐</em>
+          <em>(주)NMarket</em>
           <p>
             주소 : 서울시 종로구 대학로 57 홍익대학교 대학로캠퍼스 교육동 14층
           </p>

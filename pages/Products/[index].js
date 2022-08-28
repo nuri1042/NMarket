@@ -17,10 +17,15 @@ const Products = () => {
   const [list, setList] = useState([]);
   const [liked, setLiked] = useState(false);
 
+  // Data Fetch를 Client Side Rendering 으로 구현
+  // 매번 페이지 로딩이 발행할 때마다 client side 에서 fetch 가 이루어짐
+  // CSR은 페이지가 로드된 후 API에 접근함. 따라서 SEO 에는 부적합하고, 로그인같은 세션 구현에 적합함
+  // SSR 과 차이점 : 처음 페이지를 렌더링할 때 데이터 fetch 까지 짧은 로딩시간이 존재한다.
   useEffect(() => {
+    // useEffect Hook 으로 데이터를 fetch 해옴
     if (index) {
       axios.get(API).then((res) => {
-        setList(res.data);
+        setList(res.data); // axios 로 데이터 fetch 된 데이터를 state에 적용시키키고 list state를 가지고 렌더링 함
       });
     }
   }, [index]);

@@ -89,9 +89,40 @@ const product = [
     imageUrl:
       "https://webimage.10x10.co.kr/image/tenten600/450/T004500266.jpg/10x10/resize/260x260/",
   },
+  {
+    id: 9,
+    quantity: 1,
+    name: "[사계절/간절기 이불특가] 나인홈&나라홈 간절기 사계절 침구 특가!",
+    description: "간절기 사계절 침구 특가",
+    originPrice: 11250,
+    changedPrice: 11250,
+    imageUrl:
+      "https://webimage.10x10.co.kr/eventIMG/2022/today/Frontimage20220824123708.JPEG",
+  },
+  {
+    id: 10,
+    quantity: 1,
+    name: "[스티커팩] 단 하루 특가! 베스트 스티커팩 모음!",
+    description: "다꾸, 폰꾸 다 가능해 베스트 스티커팩 특가",
+    originPrice: 5000,
+    changedPrice: 5000,
+    imageUrl:
+      "https://webimage.10x10.co.kr/eventIMG/2022/today/Frontimage20220823164645.JPEG",
+  },
+  {
+    id: 10,
+    quantity: 1,
+    name: "추천)추석 선물 세트 모음",
+    description: "마음까지 든든한 추석 선물 세트 모음",
+    originPrice: 11000,
+    changedPrice: 11000,
+    imageUrl:
+      "https://webimage.10x10.co.kr/eventIMG/2022/today/Frontimage20220823164813.JPEG",
+  },
 ];
 
 export default (req, res) => {
+  // 요청 시에 데이터를 JSON 형태로 res 객체에 담아서 전달하는 방식
   res.statusCode = 200;
   res.json(product);
 };
