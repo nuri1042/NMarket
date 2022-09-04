@@ -40,7 +40,6 @@ const App = ({ Component, session, status, pageProps }) => {
       </div>
 
       <div className="footer">
-        <span className="logo">10X10</span>
         <div className="foot-cont-company">
           <em>(주)NMarket</em>
           <p>
@@ -48,7 +47,7 @@ const App = ({ Component, session, status, pageProps }) => {
           </p>
           <p>통신판매업 신고 : 제 01-1968호</p>
           <p>개인정보보호책임자 : 소비자피해보상보험 SGI 서울보증</p>
-          <p className="tPad">호스팅서비스:(주)텐바이텐</p>
+          <p className="tPad">호스팅서비스:(주) NMarket</p>
           <p>COPYRIGHT © TENBYTEN ALL RIGHTS RESERVED</p>
         </div>
       </div>

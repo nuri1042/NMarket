@@ -9,8 +9,8 @@ import { Content } from "antd/lib/layout/layout";
 import { useRouter } from "next/dist/client/router";
 
 const LoginForm = () => {
-  const { data: session } = useSession();
-  const router = useRouter();
+  // const { data: session } = useSession();
+  const { push } = useRouter();
 
   // < Redux 로 로그인 구현한 코드 >
   // const [email, onChangeEmail] = useInput("");
@@ -24,9 +24,10 @@ const LoginForm = () => {
 
   useEffect(() => {
     if (session) {
-      router.push("/");
+      push("/");
     }
   }, [session]);
+
   return (
     <>
       <div
@@ -125,42 +126,10 @@ const LoginForm = () => {
                     verticalAlign: "middle",
                     cursor: "pointer",
                   }}
-                  onClick={() => signIn()}
+                  onClick={handleSignIn}
                 >
-                  구글로 로그인
+                  로그인
                 </button>
-
-                <div style={{ paddingTop: "57px" }}>
-                  <p
-                    style={{
-                      color: "#d50c0c",
-                      paddingBottom: "15px",
-                      fontSize: "12px",
-                    }}
-                  >
-                    아직 회원이 아니세요?
-                  </p>
-                  <Link href="/signup">
-                    <a>
-                      <Button
-                        style={{
-                          width: "278px",
-                          height: "48px",
-                          border: "1px solid #d50c0c",
-                          background: "#fff",
-                          color: "#d50c0c",
-                          fontSize: "12px",
-                          lineHeight: "13px",
-                          padding: "18px 45px",
-                          fontWeight: "bold",
-                          verticalAlign: "middle",
-                        }}
-                      >
-                        회원가입
-                      </Button>
-                    </a>
-                  </Link>
-                </div>
               </Form.Item>
             </Form>
           </div>
