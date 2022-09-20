@@ -1,12 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { getSession, signOut, useSession } from "next-auth/react";
-import FavorList from "../components/FavorList";
 import { useRouter } from "next/dist/client/router";
+import FavorList from "../components/FavorList";
 
 const Mypage = () => {
-  // const { me } = useSelector((state) => state.user);
-
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
   // useSession 은 Client Side(React) 에서 작동하는 Hook이다.
   // useSession 의 data 는 session/undefined/null 3가지가 있고

@@ -15,13 +15,25 @@ const MainBanner = () => {
     autoplaySpeed: 2000,
     pauseOnHover: true,
 
-    appendDots: (dots) => <ul style={{ bottom: "20px" }}>{dots}</ul>, //slick-dots에 style 적용
+    responsive: [
+      // 반응형 구현 옵션
+      {
+        breakpoint: 768, // 화면 사이즈 768
+        settings: {
+          width: "1200px",
+        },
+      },
+    ],
+
+    appendDots: (dots) => (
+      <ul style={{ bottom: "20px", display: "none" }}>{dots}</ul>
+    ), //slick-dots에 style 적용
   };
   return (
     <>
-      <div>
+      <div style={{ overflow: "hidden" }}>
         <Slick {...settings}>
-          <div>
+          <div style={{ width: "700px" }}>
             <img src="/img/banners/banner1.jpg" alt="first slide" />
           </div>
           <div>

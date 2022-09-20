@@ -17,6 +17,8 @@ const Products = () => {
   const [list, setList] = useState([]);
   const [liked, setLiked] = useState(false);
 
+  const { favorList, cartItem } = useSelector((state) => state.product);
+
   // Data Fetch를 Client Side Rendering 으로 구현
   // 매번 페이지 로딩이 발행할 때마다 client side 에서 fetch 가 이루어짐
   // CSR은 페이지가 로드된 후 API에 접근함. 따라서 SEO 에는 부적합하고, 로그인같은 세션 구현에 적합함
@@ -44,7 +46,8 @@ const Products = () => {
     setLiked((prev) => !prev);
   }, [list[index]]);
 
-  console.log(liked);
+  console.log(favorList);
+
   return (
     <>
       <div className="container" style={{ height: "100vh" }}>
@@ -121,6 +124,7 @@ const Products = () => {
                   style={{
                     padding: "29px 0 0 0",
                     borderBottom: "1px solid #ddd",
+                    width: "440px",
                   }}
                 >
                   <h2 style={{ paddingBottom: "25px" }}>
@@ -128,7 +132,7 @@ const Products = () => {
                       style={{
                         paddingTop: "9px",
                         fontSize: "26px",
-                        lineHeight: "20px",
+                        lineHeight: "130%",
                         color: "#000",
                       }}
                     >
@@ -156,7 +160,14 @@ const Products = () => {
                       </strong>
                     </dd>
                   </dl>
-                  <dl>
+                  <dl
+                    className="saleInfo"
+                    style={{
+                      width: "440px",
+                      fontSize: "16px",
+                      color: "#555",
+                    }}
+                  >
                     <dt
                       style={{
                         float: "left",
@@ -172,7 +183,14 @@ const Products = () => {
                       </div>
                     </dd>
                   </dl>
-                  <dl>
+                  <dl
+                    className="saleInfo"
+                    style={{
+                      width: "440px",
+                      fontSize: "16px",
+                      color: "#555",
+                    }}
+                  >
                     <dt
                       style={{
                         float: "left",
@@ -210,7 +228,6 @@ const Products = () => {
                             border: "1px solid #d50c0c",
                             borderRadius: "6px",
                           }}
-                          htmlType="submit"
                           onClick={onAddCart}
                         >
                           장바구니

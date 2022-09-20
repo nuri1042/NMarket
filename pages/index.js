@@ -4,10 +4,11 @@ import Head from "next/head";
 //import axios from "axios";
 
 export default function Home({ product }) {
+  // < Data Fetch를 Client Side Rendering 으로 구현한 부분 >
+
   // const [product, setProduct] = useState([]);
   // const API = "http://localhost:3000/api/getProductInfo";
 
-  //Data Fetch를 Client Side Rendering 으로 구현한 부분
   // useEffect(() => {
   //   axios.get(API).then((res) => {
   //     setProduct(res.data);
@@ -23,7 +24,8 @@ export default function Home({ product }) {
     </AppLayout>
   );
 }
-//Data Fetch를 Static Side Generation 으로 구현한 부분
+
+// < Data Fetch를 Static Side Generation 으로 구현한 부분 >
 export async function getStaticProps() {
   // getStaticProps - next build 명령어가 실행될 때 getStaticProps 함수도 실행된다.
   // 즉 사이트가 빌드될 때 한번 serverside fetch를 하게 되고, 이때 얻은 데이터를 이용해서 페이지를 렌더링한다.

@@ -2,13 +2,23 @@
   margin: 0;
   padding: 0;
 }
+html {
+  min-width: 1200px;
+}
 #header {
   position: relative;
   height: 86px;
+  min-width: 1200px;
+  max-width: 1900px;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
 }
 #header-inner {
   display: flex;
-
+  min-width: 1200px;
   height: 86px;
   margin: 0;
   align-items: center;
@@ -21,6 +31,7 @@
   height: 100%;
   max-width: 1900px;
   margin: 0 auto;
+  min-width: 1200px;
 }
 
 .site-logo {
@@ -65,10 +76,9 @@
 }
 #banner {
   height: 600px;
+  margin: 0 auto;
 }
-#banner > img {
-  width: 100%;
-}
+
 .footer {
   width: 940px;
   margin: 42px auto;
@@ -108,4 +118,13 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  #banner {
+    width: 1200px;
+  }
+  .slick-track .slick-slider {
+    width: 1200px;
+  }
 }

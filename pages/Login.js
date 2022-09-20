@@ -5,6 +5,8 @@ import LoginForm from "../components/LoginForm";
 import { signIn, useSession, verifyRequest } from "next-auth/react";
 import { Form, Input, Button } from "antd";
 
+// next-auth 로 로그인 구현한 코드
+
 const Login = () => {
   const { data: session } = useSession();
   const { push, asPath } = useRouter();
@@ -16,10 +18,6 @@ const Login = () => {
       push("/");
     }
   }, [session]);
-
-  const handleSignIn = () => {
-    push(`/auth/signin?callbackUrl=${asPath}`);
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -52,7 +50,11 @@ const Login = () => {
     <>
       <div
         className="container"
-        style={{ backgroundColor: "#f5f5f5", height: "700px" }}
+        style={{
+          backgroundColor: "#f5f5f5",
+          height: "700px",
+          marginBottom: "150px",
+        }}
       >
         <div
           className="contentWrap"

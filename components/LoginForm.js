@@ -8,19 +8,18 @@ import { useSession, signIn, signOut, getSession } from "next-auth/react";
 import { Content } from "antd/lib/layout/layout";
 import { useRouter } from "next/dist/client/router";
 
+// < Redux 로 로그인 구현한 코드 >
+
 const LoginForm = () => {
-  // const { data: session } = useSession();
   const { push } = useRouter();
 
-  // < Redux 로 로그인 구현한 코드 >
-  // const [email, onChangeEmail] = useInput("");
-  // const [password, onChangePassword] = useInput("");
-  // const dispatch = useDispatch();
+  const [email, onChangeEmail] = useInput("");
+  const [password, onChangePassword] = useInput("");
+  const dispatch = useDispatch();
 
-  // const onSubmitForm = useCallback(() => {
-  //   console.log(email, password);
-  //   dispatch(loginAction(email, password));
-  // }, [email, password]);
+  const onSubmitForm = useCallback(() => {
+    dispatch(loginAction(email, password));
+  }, [email, password]);
 
   useEffect(() => {
     if (session) {
@@ -72,10 +71,9 @@ const LoginForm = () => {
             </p>
             <Form
               style={{ marginTop: "8px", color: "#999" }}
-              // onFinish={onSubmitForm}
+              onFinish={onSubmitForm}
             >
-              {/* Redux로 로그인 구현한 코드 */}
-              {/* <Form.Item>
+              <Form.Item>
                 <Input
                   placeholder="이메일"
                   name="userEmail"
@@ -108,7 +106,7 @@ const LoginForm = () => {
                     padding: "10px",
                   }}
                 />
-              </Form.Item> */}
+              </Form.Item>
 
               <Form.Item style={{ marginTop: "10px" }}>
                 <button
@@ -126,7 +124,7 @@ const LoginForm = () => {
                     verticalAlign: "middle",
                     cursor: "pointer",
                   }}
-                  onClick={handleSignIn}
+                  onClick={onSubmitForm}
                 >
                   로그인
                 </button>
