@@ -1,94 +1,50 @@
-import { AutoComplete } from "antd";
 import React from "react";
-
 import Link from "next/link";
+import {
+  DescName,
+  InnerCont,
+  Itemlist,
+  ItemlistContainer,
+  Items,
+  ItemsLi,
+  ItemsUl,
+  Price,
+  ThumbImg,
+} from "../styles/ItemListStyle";
 
 const ItemList = ({ product }) => {
   return (
     <div>
-      <div
-        style={{
-          padding: "83px 0 26px 0",
-          width: "860px",
-          margin: "0 auto",
-          fontSize: "18px",
-        }}
-      >
+      <ItemlistContainer>
         <h2>오늘은 이 상품 어때요?</h2>
-      </div>
+      </ItemlistContainer>
 
-      <div className="item-list" style={{ display: "flex" }}>
-        <div
-          className="inner-cont"
-          style={{
-            paddingBottom: "40px",
-            width: "100%",
-            margin: "0 auto",
-          }}
-        >
-          <div
-            className="items"
-            style={{
-              width: "860px",
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "space-between",
-              margin: "0 auto",
-            }}
-          >
+      <Itemlist>
+        <InnerCont>
+          <Items>
             {product &&
               product.map((product, index) => {
                 return (
-                  <ul style={{ margin: "0 -20px" }} key={product.id}>
-                    <li
-                      style={{
-                        width: "260px",
-                        height: "370px",
-                        margin: "0 20px",
-                        listStyle: "none",
-                      }}
-                    >
+                  <ItemsUl key={product.id}>
+                    <ItemsLi>
                       <Link as={`/Products/${index}`} href="/Products/[index]">
                         <a>
                           <div className="thumbnail">
-                            <img
-                              src={product.imageUrl}
-                              alt=""
-                              style={{ width: "260px", height: "260px" }}
-                            />
+                            <ThumbImg src={product.imageUrl} alt="" />
                           </div>
                           <div className="desc">
-                            <p
-                              className="name"
-                              style={{
-                                height: "35px",
-                                padding: "12px 0 8px",
-                                fontSize: "14px",
-                                lineHeight: 1.29,
-                              }}
-                            >
-                              {product.description}
-                            </p>
-                            <div
-                              className="price"
-                              style={{
-                                fontSize: "13px",
-                                fontWeight: "normal",
-                                color: "#333",
-                              }}
-                            >
-                              {product.price}
-                            </div>
+                            <DescName>{product.description}</DescName>
+                            <Price>{product.price}</Price>
                           </div>
                         </a>
                       </Link>
-                    </li>
-                  </ul>
+                    </ItemsLi>
+                  </ItemsUl>
                 );
               })}
-          </div>
-        </div>
-      </div>
+          </Items>
+        </InnerCont>
+      </Itemlist>
     </div>
   );
 };

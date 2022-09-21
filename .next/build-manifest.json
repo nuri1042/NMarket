@@ -19,6 +19,16 @@
       "static/chunks/main.js",
       "static/chunks/pages/index.js"
     ],
+    "/Cart": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Cart.js"
+    ],
+    "/Mypage": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Mypage.js"
+    ],
     "/Products/[index]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

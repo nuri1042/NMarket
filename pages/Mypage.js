@@ -2,6 +2,16 @@ import React from "react";
 import { getSession, signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/dist/client/router";
 import FavorList from "../components/FavorList";
+import {
+  Container,
+  ContainerWrap,
+  Figure,
+  MypageMain,
+  MyprofileContainer,
+  MyprofileInfo,
+  Profile,
+  ProfileContainer,
+} from "../styles/mypageStyle";
 
 const Mypage = () => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
@@ -17,176 +27,57 @@ const Mypage = () => {
   };
   return (
     <>
-      <div
-        className="container"
-        style={{ background: "#f4eade", height: "1196px" }}
-      >
-        <div
-          className="containerWrap"
-          style={{ width: "100%", paddingTop: "40px" }}
-        >
-          <div className="mypage" style={{ width: "1140px", margin: "0 auto" }}>
-            <h2
-              style={{
-                lineHeight: "16px",
-                fontSize: "12px",
-                color: "#555",
-                paddingLeft: "70px",
-              }}
-            >
+      <Container>
+        <ContainerWrap>
+          <MyprofileInfo>
+            <h2>
               <img
                 src="https://fiximage.10x10.co.kr/web2015/my10x10/tit_my10x10.png"
                 alt="MY TENBYTEN"
               />
             </h2>
-            <div
-              className="mypageMain"
-              style={{
-                marginTop: "4px",
-                width: "1140px",
-                padding: "0 70px 0 70px",
-              }}
-            >
+            <MypageMain>
               {/* 내 프로필 */}
               {session ? (
-                <div
-                  className="myprofileContainer"
-                  style={{ float: "left", width: "212px" }}
-                >
-                  <div
-                    className="profile"
-                    style={{
-                      marginTop: "20px",
-                      paddingTop: "19px",
-                      backgroundColor: "#fff",
-                      textAlign: "center",
-                    }}
-                  >
-                    <p
-                      className="hello"
-                      style={{
-                        color: "#000",
-                        fontSize: "14px",
-                        fontWeight: "bold",
-                        lineHeight: "1.25em",
-                        padding: "10px",
-                      }}
-                    >
-                      Hello, {session.user.name}
-                    </p>
-                    <div
-                      className="figure"
-                      style={{ position: "relative", marginTop: "15px" }}
-                    >
-                      <div
-                        className="profile-container"
-                        style={{
-                          width: "100px",
-                          height: "120px",
-                          margin: "0 auto",
-                          borderRadius: "100%",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexDirection: "column",
-                        }}
-                      >
+                <MyprofileContainer>
+                  <Profile>
+                    <p>Hello, {session.user.name}</p>
+                    <Figure>
+                      <ProfileContainer>
                         <img
                           src="	https://fiximage.10x10.co.kr/web2015/common/img_profile_25.png"
                           alt="프로필이미지"
-                          style={{
-                            objeKctFit: "cover",
-                            width: "100%",
-                            height: "100%",
-                            paddingTop: "13px",
-                          }}
                         />
-                        <button
-                          style={{
-                            width: "80px",
-                            margin: "18px 0",
-                            border: "none",
-                            padding: "5px",
-                            cursor: "pointer",
-                          }}
-                          onClick={handleSignOut}
-                        >
-                          로그아웃
-                        </button>
-                      </div>
-                    </div>
-                    <ul
-                      style={{
-                        marginTop: "24px",
-                        borderTop: "1px dotted #ccdbe1",
-                      }}
-                    >
-                      <li
-                        style={{
-                          float: "left",
-                          width: "50%",
-                          borderBottom: "1px solid #f4eade",
-                          padding: "11px 0",
-                          backgroundColor: "#f9f9f9",
-                        }}
-                      >
-                        <strong style={{ display: "block", color: "#000" }}>
-                          8장
-                        </strong>
+                        <button onClick={handleSignOut}>로그아웃</button>
+                      </ProfileContainer>
+                    </Figure>
+                    <ul>
+                      <li>
+                        <strong>8장</strong>
                         쿠폰
                       </li>
-                      <li
-                        style={{
-                          float: "left",
-                          width: "50%",
-                          borderBottom: "1px solid #f4eade",
-                          padding: "11px 0",
-                          backgroundColor: "#f9f9f9",
-                        }}
-                      >
-                        <strong style={{ display: "block", color: "#000" }}>
-                          0P
-                        </strong>
+                      <li>
+                        <strong>0P</strong>
                         마일리지
                       </li>
-                      <li
-                        style={{
-                          float: "left",
-                          width: "50%",
-                          borderBottom: "1px solid #f4eade",
-                          padding: "11px 0",
-                          backgroundColor: "#f9f9f9",
-                        }}
-                      >
-                        <strong style={{ display: "block", color: "#000" }}>
-                          0원
-                        </strong>
+                      <li>
+                        <strong>0원</strong>
                         예치금
                       </li>
-                      <li
-                        style={{
-                          float: "left",
-                          width: "50%",
-                          borderBottom: "1px solid #f4eade",
-                          padding: "11px 0",
-                          backgroundColor: "#f9f9f9",
-                        }}
-                      >
-                        <strong style={{ display: "block", color: "#000" }}>
-                          0원
-                        </strong>
+                      <li>
+                        <strong>0원</strong>
                         기프트카드
                       </li>
                     </ul>
-                  </div>
-                </div>
+                  </Profile>
+                </MyprofileContainer>
               ) : null}
               {/* 찜 목록 */}
               <FavorList />
-            </div>
-          </div>
-        </div>
-      </div>
+            </MypageMain>
+          </MyprofileInfo>
+        </ContainerWrap>
+      </Container>
     </>
   );
 };
