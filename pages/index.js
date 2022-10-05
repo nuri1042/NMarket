@@ -30,9 +30,7 @@ export async function getStaticProps() {
   // getStaticProps - next build 명령어가 실행될 때 getStaticProps 함수도 실행된다.
   // 즉 사이트가 빌드될 때 한번 serverside fetch를 하게 되고, 이때 얻은 데이터를 이용해서 페이지를 렌더링한다.
   // next build 를 다시 하기 전에는 더이상 데이터가 변하지 않고 처음 실행했을 때의 데이터가 계속 유지됨.
-  const product = await fetch("http://localhost:3000/api/getProductInfo").then(
-    (res) => res.json()
-  );
+  const product = await fetch("/api/getProductInfo").then((res) => res.json());
   // product 데이터가 담긴 props를 빌드타임에 Home 컴포넌트에 전달함
   return {
     props: {
