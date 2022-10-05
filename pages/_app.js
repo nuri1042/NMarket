@@ -10,8 +10,6 @@ import { SessionProvider, useSession } from "next-auth/react";
 
 // 전 페이지에서 공통되는 부분 관리
 const App = ({ Component, session, status, pageProps }) => {
-  // const { isLoggedIn } = useSelector((state) => state.user);
-
   return (
     <SessionProvider session={session}>
       <Head>

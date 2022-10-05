@@ -71,10 +71,6 @@ const Products = () => {
     }
   }, [list[index]]);
 
-  // const onRemoveFavor = useCallback(() => {
-  //   dispatch(removeFavor(list[index]));
-  // }, [list[index]]);
-
   return (
     <>
       <Container>
