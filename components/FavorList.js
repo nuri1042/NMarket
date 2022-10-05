@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useSelector } from "react-redux";
+import { removeFavor } from "../reducers/product";
+
 import {
   ArticleWish,
   FavorSection,
@@ -12,9 +14,11 @@ import {
   PdtName,
   PdtList,
 } from "../styles/favorListStyle";
+import { useDispatch } from "react-redux";
 
 const FavorList = () => {
   const { favorList } = useSelector((state) => state.product);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -37,11 +41,18 @@ const FavorList = () => {
                             alt="favor item image"
                           />
                         </a>
-                        <PdtName>
-                          <a>{favorList.name}</a>
-                        </PdtName>
                       </PdtListImg>
                     </Link>
+                    <PdtName>
+                      <a>{favorList.name}</a>
+                      <div style={{ marginLeft: "20px" }}>
+                        <button
+                          onClick={() => dispatch(removeFavor(favorList))}
+                        >
+                          삭제
+                        </button>
+                      </div>
+                    </PdtName>
                   </PdtList>
                 ))
               ) : (

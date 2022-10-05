@@ -1,11 +1,11 @@
 import styled from "styled-components";
-export const Container = styled.div`
-  background: #f4eade;
-  height: 1196px;
-`;
+
 export const ContainerWrap = styled.div`
-  width: 100%;
   padding-top: 40px;
+  background: #f4eade;
+  height: 120vh;
+  min-width: 1200px;
+  padding-bottom: 80px;
 `;
 export const MyprofileInfo = styled.div`
   width: 1140px;

@@ -53,7 +53,7 @@ const reducer = (state = initialState, action) => {
                   ? {
                       ...item,
                       quantity: item.quantity + 1,
-                      changedPrice: (item.changedPrice = item.originPrice),
+                      changedPrice: item.originPrice * (item.quantity + 1),
                     } // 수량 1 증가
                   : item // 일치하지 않으면 그대로 둠
             )
@@ -80,8 +80,7 @@ const reducer = (state = initialState, action) => {
               ? {
                   ...item,
                   quantity: item.quantity + 1, // quantity 값 증가
-                  changedPrice:
-                    item.originPrice + item.originPrice * item.quantity, // 상품 금액 증가
+                  changedPrice: item.originPrice * (item.quantity + 1), // 상품 금액 증가
                 }
               : item // 아니라면 그대로 둠
         ),
@@ -96,7 +95,7 @@ const reducer = (state = initialState, action) => {
             ? {
                 ...item,
                 quantity: item.quantity - 1, // quantity 값 감소
-                changedPrice: item.changedPrice - item.originPrice, // 상품 금액 감소
+                changedPrice: item.originPrice * (item.quantity - 1), // 상품 금액 감소
               }
             : item
         ),
@@ -125,6 +124,7 @@ const reducer = (state = initialState, action) => {
         favorList: state.favorList.filter((item) => item.id != action.item.id),
       };
     }
+
     default:
       return state;
   }

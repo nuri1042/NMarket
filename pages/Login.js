@@ -1,5 +1,5 @@
 import { useRouter } from "next/dist/client/router";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { signIn, useSession } from "next-auth/react";
 import { Form, Input, Button } from "antd";
 import {
@@ -28,7 +28,15 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email) return false;
+    // 로그인 시 이메일 유효성 검사 정규식 표현
+    const regEmail =
+      /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+
+    // 문자열이 정규식을 만족하지 못할 때
+    if (!email || !regEmail.test(email)) {
+      alert("이메일 형식이 올바르지 않습니다.");
+    }
+    // 문자열이 정규식을 만족할 때
     signIn("email", { email, redirect: true });
   };
 
@@ -73,6 +81,7 @@ const Login = () => {
                   로그인
                 </EmailBtn>
               </Form.Item>
+
               {providers.map(({ id, name, bgColor, fontColor }) => (
                 <Form.Item style={{ marginTop: "10px" }}>
                   <SocialLoginBtn

@@ -2,11 +2,23 @@ import React from "react";
 import Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import styled from "styled-components";
 
 const MainBanner = () => {
+  const SliderWrap = styled.div`
+    overflow: hidden;
+    .slick-track {
+      display: flex;
+    }
+  `;
+
+  const SampleArrow = (props) => {
+    const { className, style } = props;
+    return <div className={className} style={{ ...style, display: "none" }} />;
+  };
+
   const settings = {
     dots: true,
-    arrows: true,
     speed: 500,
     infinite: true,
     slidesToShow: 1,
@@ -14,6 +26,8 @@ const MainBanner = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    prevArrow: <SampleArrow />,
+    nextArrow: <SampleArrow />,
 
     responsive: [
       // 반응형 구현 옵션
@@ -25,13 +39,12 @@ const MainBanner = () => {
       },
     ],
 
-    appendDots: (dots) => (
-      <ul style={{ bottom: "20px", display: "none" }}>{dots}</ul>
-    ), //slick-dots에 style 적용
+    appendDots: (dots) => <ul style={{ bottom: "20px" }}>{dots}</ul>, //slick-dots에 style 적용
   };
+
   return (
     <>
-      <div style={{ overflow: "hidden" }}>
+      <SliderWrap>
         <Slick {...settings}>
           <div style={{ width: "700px" }}>
             <img src="/img/banners/banner1.jpg" alt="first slide" />
@@ -55,7 +68,7 @@ const MainBanner = () => {
             <img src="/img/banners/banner7.jpg" alt="seventh slide" />
           </div>
         </Slick>
-      </div>
+      </SliderWrap>
     </>
   );
 };

@@ -60,7 +60,12 @@ const Cart = () => {
             })
           ) : (
             <div
-              style={{ position: "absolute", left: "50%", marginTop: "25px" }}
+              style={{
+                position: "relative",
+                left: "45%",
+                width: "150px",
+                marginTop: "5%",
+              }}
             >
               장바구니가 비어있습니다.
             </div>

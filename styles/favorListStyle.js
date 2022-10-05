@@ -11,7 +11,7 @@ export const ArticleWish = styled.div`
   padding-top: 16px;
   border-top: 2px solid #555;
   background-color: #fff;
-  min-height: 320px;
+  min-height: 339px;
 
   & h3 {
     padding-left: 28px;
@@ -25,59 +25,81 @@ export const PdtListContainer = styled.div`
   overflow: hidden;
   margin-top: 26px;
   padding-left: 13px;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const PdtList = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   cursor: pointer;
+  margin: 0 17px 10px 0;
 `;
 export const PdtListImg = styled.div`
   float: left;
   position: relative;
-  width: 142px;
   background: none;
   text-align: center;
-  
-  & a {
-  padding: 0 18px;
-  width: 106px;
-  height: 106px
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
-  & img {
-    width: 100%;
-    height: auto;
-    vertical-align: top;
+  & a {
+    padding: 0 18px;
+    width: 126px;
+    height: 126px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+
+    & img {
+      height: 100%;
+      vertical-align: top;
     }
   }
 `;
 
 export const PdtName = styled.span`
-  display: block;
-  width: 106px;
-  margin: 0 auto;
-  min-height: 32px;
-  padding-bottom: 5px;
+  display: inline-block;
+  width: 80px;
+  margin-left: 24px;
+  min-height: 26px;
+  margin-bottom: 5px;
   vertical-align: top;
   line-height: 1.2em;
-  word-wrap: break-word;
   overflow: hidden;
-  max-height: 2.4em;
 
   & a {
     color: #777;
     font-weight: normal;
-    width: 106px;
+    width: 80px;
     font-size: 13px;
-    padding: 0 3px;
+    display: -webkit-box;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 26px;
+    margin-bottom: 11px;
+  }
+
+  & div {
+    & button {
+      margin-bottom: 12px;
+      border: none;
+      width: 40px;
+      height: 16px;
+      font-size: 9px;
+      cursor: pointer;
+    }
   }
 `;
 
 export const Nodata = styled.div`
   margin-top: 70px;
   text-align: center;
+  position: relative;
+  left: 32%;
 `;
 
 export const NodataImg = styled.a`

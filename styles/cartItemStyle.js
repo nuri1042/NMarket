@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ItemInfoBox = styled.div`
   display: flex;
-  width: calc(100%-40px);
+  width: 100%;
 `;
 export const ItemInfo = styled.div`
   width: 50.3%;

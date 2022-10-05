@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const Container = styled.div`
-  height: 100vh;
+  height: 120vh;
 `;
 export const ContentWrap = styled.div`
   padding: 30px 0 80px 0;
@@ -27,7 +27,6 @@ export const ProductPhoto = styled.div`
   padding: 5px 5px 50px 5px;
 
   & img {
-    width: 350px;
     height: 350px;
     display: inline;
     vertical-align: top;
@@ -93,7 +92,7 @@ export const BtnArea = styled.div`
   display: table;
 `;
 export const FormSpan = styled.span`
-  display: table-cell;
+  display: inline-flex;
 `;
 export const AddToCartBtn = styled.button`
   width: 190px;
@@ -109,14 +108,15 @@ export const AddToCartBtn = styled.button`
   border-radius: 6px;
 `;
 export const AddToFavorBtn = styled.div`
-  display: inline-block;
-  border: 1px solid #dddddd;
-  background: none;
-  width: 53px;
+  width: 190px;
   height: 53px;
-  position: relative;
-  right: -10px;
-  border-radius: 6px;
+  padding: 18px 0;
+  text-align: center;
+  font-weight: bold;
   vertical-align: middle;
-  margin: 0 4px;
+  cursor: pointer;
+  border: 1px solid #d50c0c;
+  border-radius: 6px;
+  margin-left: 14px;
+  color: #d50c0c;
 `;

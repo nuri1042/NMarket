@@ -33,6 +33,9 @@ export const ItemsLi = styled.li`
 export const ThumbImg = styled.img`
   width: 260px;
   height: 260px;
+  &:hover{
+    scale(1.5);
+  }
 `;
 export const DescName = styled.p`
   heigth: 35px;

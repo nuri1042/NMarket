@@ -2,11 +2,12 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useRouter } from "next/dist/client/router";
 import axios from "axios";
 import Link from "next/link";
-import { Form } from "antd";
-import { HeartFilled, HeartOutlined } from "@ant-design/icons";
+import { Form, Card } from "antd";
+import { HeartFilled, HeartTwoTone, HeartOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { addItem, addFavor, removeFavor } from "../../reducers/product";
 import { useSelector } from "react-redux";
+import { useSession } from "next-auth/react";
 import {
   AddToCartBtn,
   AddToFavorBtn,
@@ -27,6 +28,8 @@ import {
 } from "../../styles/productStyle";
 
 const Products = () => {
+  const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
+
   const router = useRouter();
   const API = "http://localhost:3000/api/getProductInfo";
   const { index } = router.query;
@@ -35,7 +38,7 @@ const Products = () => {
   const [list, setList] = useState([]);
   const [liked, setLiked] = useState(false);
 
-  const { favorList, cartItem } = useSelector((state) => state.product);
+  const { favorList } = useSelector((state) => state.product);
 
   // Data Fetch를 Client Side Rendering 으로 구현
   // 매번 페이지 로딩이 발행할 때마다 client side 에서 fetch 가 이루어짐
@@ -48,23 +51,29 @@ const Products = () => {
         setList(res.data); // axios 로 데이터 fetch 된 데이터를 state에 적용시키키고 list state를 가지고 렌더링 함
       });
     }
-  }, [index]);
+  }, [index, liked]);
 
   const onAddCart = useCallback(() => {
-    dispatch(addItem(list[index]));
+    if (!session) {
+      alert("로그인 후 이용해주세요.");
+      router.push("/Login");
+    } else {
+      dispatch(addItem(list[index]));
+    }
   }, [list[index]]);
 
   const onAddFavor = useCallback(() => {
-    dispatch(addFavor(list[index]));
-    setLiked((prev) => !prev);
+    if (!session) {
+      alert("로그인 후 이용해주세요.");
+      router.push("/Login");
+    } else {
+      dispatch(addFavor(list[index]));
+    }
   }, [list[index]]);
 
-  const onRemoveFavor = useCallback(() => {
-    dispatch(removeFavor(list[index]));
-    setLiked((prev) => !prev);
-  }, [list[index]]);
-
-  console.log(favorList);
+  // const onRemoveFavor = useCallback(() => {
+  //   dispatch(removeFavor(list[index]));
+  // }, [list[index]]);
 
   return (
     <>
@@ -141,26 +150,15 @@ const Products = () => {
                         </AddToCartBtn>
                       </a>
                     </Link>
-                    <AddToFavorBtn>
-                      {liked ? (
-                        <HeartFilled
-                          onClick={onRemoveFavor}
-                          style={{
-                            fontSize: "24px",
-                            transform: "translate(60%, 60%)",
-                            color: "red",
-                          }}
-                        />
-                      ) : (
-                        <HeartOutlined
-                          style={{
-                            fontSize: "24px",
-                            transform: "translate(60%, 60%)",
-                          }}
-                          onClick={onAddFavor}
-                        />
-                      )}
-                    </AddToFavorBtn>
+                    {/* <AddToFavorBtn> */}
+                    <Link href="/Mypage">
+                      <a>
+                        <AddToFavorBtn onClick={onAddFavor}>
+                          찜하기
+                        </AddToFavorBtn>
+                      </a>
+                    </Link>
+                    {/* </AddToFavorBtn> */}
                   </FormSpan>
                 </Form>
               </BtnArea>

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 export const CartWrap = styled.div`
   padding-bottom: 80px;
+  height: 120vh;
+  min-width: 1200px;
 `;
 export const PageTitle = styled.div`
   max-width: 1200px;
