@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AppLayout from "../components/AppLayout";
 import Head from "next/head";
-import apiUrl from "next-api-url";
+import { loadProducts, product } from "../lib/load-products";
 //import axios from "axios";
 
 export default function Home({ product }) {
@@ -52,9 +52,10 @@ export default function Home({ product }) {
 // CSR과 차이점 : 페이지가 렌더되기 전에 getStaticProps 함수를 이용해서 데이터를 먼저 fetch 하게 되고, 데이터가 fetch 되면 렌더딩이 일어난다.
 //              따라서 데이터가 fetch 되기까지의 로딩시간이 존재하지 않는다.
 export async function getServerSideProps() {
-  const product = await fetch("http://localhost:3000/api/getProductInfo").then(
-    (res) => res.json()
-  );
+  // const product = await fetch("http://localhost:3000/api/getProductInfo").then(
+  //   (res) => res.json()
+  // );
+  const product = await loadProducts();
   return {
     props: {
       product,

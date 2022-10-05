@@ -61,7 +61,7 @@ export const PdtListImg = styled.div`
 
 export const PdtName = styled.span`
   display: inline-block;
-  width: 80px;
+  width: 100px;
   margin-left: 24px;
   min-height: 26px;
   margin-bottom: 5px;
@@ -72,7 +72,6 @@ export const PdtName = styled.span`
   & a {
     color: #777;
     font-weight: normal;
-    width: 80px;
     font-size: 13px;
     display: -webkit-box;
     word-wrap: break-word;
