@@ -2,8 +2,11 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/Mypage": "pages/Mypage.js",
+  "/": "pages/index.js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
   "/api/getProductInfo": "pages/api/getProductInfo.js",
-  "/": "pages/index.js"
+  "/Mypage": "pages/Mypage.js",
+  "/Products/[index]": "pages/Products/[index].js",
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/Login": "pages/Login.js"
 }

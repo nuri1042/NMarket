@@ -9,6 +9,9 @@ import clientPromise from "../../../database/connectDB";
 
 import EmailProvider from "next-auth/providers/email";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 export default NextAuth({
   providers: [
     GoogleProvider({
