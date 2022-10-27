@@ -31,7 +31,7 @@ const Products = () => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
 
   const router = useRouter();
-  const API = "http://localhost:3000/api/getProductInfo";
+  const API = "/api/getProductInfo";
   const { index } = router.query;
   const dispatch = useDispatch();
 
