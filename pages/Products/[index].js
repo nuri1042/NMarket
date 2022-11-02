@@ -31,8 +31,8 @@ const Products = () => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
 
   const router = useRouter();
-  const API =
-    "https://nmarket-ra8a-iwvp7g631-nuri1042.vercel.app/api/getProductInfo";
+  const API = "https://nmarket-ten.vercel.app/api/getProductInfo";
+
   const { index } = router.query;
   const dispatch = useDispatch();
 
