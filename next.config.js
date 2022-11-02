@@ -12,7 +12,7 @@ module.exports = {
     return [
       {
         source: "/:path*",
-        destination: `"https://nmarket-ten.vercel.app/:path*`,
+        destination: `https://nmarket-ten.vercel.app/:path*`,
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { key: "Access-Control-Allow-Origin", value: "*" },
