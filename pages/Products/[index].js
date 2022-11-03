@@ -31,7 +31,7 @@ const Products = () => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
 
   const router = useRouter();
-  const APIs = "https://nmarket-ten.vercel.app/api/getProductInfo";
+  const API = "https://nmarket.vercel.app/api/getProductInfo";
 
   const { index } = router.query;
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ const Products = () => {
   useEffect(() => {
     // useEffect Hook 으로 데이터를 fetch 해옴
     if (index) {
-      axios.get(APIs).then((res) => {
+      axios.get(API).then((res) => {
         setList(res.data); // axios 로 데이터 fetch 된 데이터를 state에 적용시키키고 list state를 가지고 렌더링 함
       });
     }
