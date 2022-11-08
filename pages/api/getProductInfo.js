@@ -123,6 +123,7 @@ const product = [
 
 export default (req, res) => {
   // 요청 시에 데이터를 JSON 형태로 res 객체에 담아서 전달하는 방식
-  res.statusCode = 200;
-  res.json(product);
+  // res.statusCode = 200;
+  // res.json(product);
+  res.status(200).json(JSON.stringify(product));
 };
