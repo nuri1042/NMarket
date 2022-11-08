@@ -49,7 +49,7 @@ const Products = () => {
     // useEffect Hook 으로 데이터를 fetch 해옴
     if (index) {
       axios.get(API).then((res) => {
-        setList(res.data); // axios 로 데이터 fetch 된 데이터를 state에 적용시키키고 list state를 가지고 렌더링 함
+        setList(res.data); // axios 로 데이터 fetch 된 데이터를 state에 적용시키고 list state를 가지고 렌더링 함
       });
     }
   }, [index, liked]);
