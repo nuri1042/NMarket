@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Form, Card } from "antd";
 import { HeartFilled, HeartTwoTone, HeartOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
-import { addItem, addFavor, removeFavor } from "../../reducers/product";
+import { addItem, addFavor, removeFavor } from "../../reducers/product.js";
 import { useSelector } from "react-redux";
 import { useSession } from "next-auth/react";
 import {
@@ -25,15 +25,17 @@ import {
   SaleInfo,
   SalePoint,
   ShipInfo,
-} from "../../styles/productStyle";
+} from "../../styles/productStyle.js";
 
-const Products = () => {
+const Products = ({ product }) => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
 
   const router = useRouter();
-  const API = "https://nmarket.vercel.app/api/getProductInfo";
+  const { id } = router.query;
 
-  const { index } = router.query;
+  // const API_URL =
+  //   "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products";
+
   const dispatch = useDispatch();
 
   const [list, setList] = useState([]);
@@ -45,32 +47,38 @@ const Products = () => {
   // 매번 페이지 로딩이 발행할 때마다 client side 에서 fetch 가 이루어짐
   // CSR은 페이지가 로드된 후 API에 접근함. 따라서 SEO 에는 부적합하고, 로그인같은 세션 구현에 적합함
   // SSR 과 차이점 : 처음 페이지를 렌더링할 때 데이터 fetch 까지 짧은 로딩시간이 존재한다.
+  // useEffect(() => {
+  //   // useEffect Hook 으로 데이터를 fetch 해옴
+  //   if (id) {
+  //     axios.get(API_URL).then((res) => {
+  //       setList(res.data); // axios 로 데이터 fetch 된 데이터를 state에 적용시키고 list state를 가지고 렌더링 함
+  //     });
+  //   }
+  // }, [id]);
+
   useEffect(() => {
-    // useEffect Hook 으로 데이터를 fetch 해옴
-    if (index) {
-      axios.get(API).then((res) => {
-        setList(res.data); // axios 로 데이터 fetch 된 데이터를 state에 적용시키고 list state를 가지고 렌더링 함
-      });
+    if (id) {
+      setList(product);
     }
-  }, [index, liked]);
+  }, [id]);
 
   const onAddCart = useCallback(() => {
     if (!session) {
       alert("로그인 후 이용해주세요.");
       router.push("/Login");
     } else {
-      dispatch(addItem(list[index]));
+      dispatch(addItem(list[id]));
     }
-  }, [list[index]]);
+  }, [list[id]]);
 
   const onAddFavor = useCallback(() => {
     if (!session) {
       alert("로그인 후 이용해주세요.");
       router.push("/Login");
     } else {
-      dispatch(addFavor(list[index]));
+      dispatch(addFavor(list[id]));
     }
-  }, [list[index]]);
+  }, [list[id]]);
 
   return (
     <>
@@ -79,7 +87,7 @@ const Products = () => {
           <ProductInfoWrap>
             <ProductPhotoWrap>
               <ProductPhoto>
-                <img src={list[index]?.imageUrl} alt="product photo" />
+                <img src={list[id]?.imageUrl} alt="product photo" />
               </ProductPhoto>
             </ProductPhotoWrap>
             <ProductDetailWrap>
@@ -92,7 +100,7 @@ const Products = () => {
                 </Bnr>
                 <ProductBasic>
                   <h2>
-                    <p>{list[index]?.name}</p>
+                    <p>{list[id]?.name}</p>
                   </h2>
                 </ProductBasic>
                 <div className="detailInfo">
@@ -104,7 +112,7 @@ const Products = () => {
                     <dt>판매가</dt>
                     <dd>
                       <strong>
-                        {new String(list[index]?.originPrice).replace(
+                        {new String(list[id]?.originPrice).replace(
                           /\B(?=(\d{3})+(?!\d))/g,
                           ","
                         )}
@@ -166,5 +174,26 @@ const Products = () => {
     </>
   );
 };
+
+export async function getStaticPaths() {
+  const res = await fetch(
+    "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products"
+  );
+  const product = await res.json();
+
+  const paths = product.map((product) => ({
+    params: { id: product.id.toString() },
+  }));
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const res = await fetch(
+    `https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products/${params.id}`
+  );
+  const product = await res.json();
+
+  return { props: { product } };
+}
 
 export default Products;

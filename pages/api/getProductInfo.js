@@ -110,7 +110,7 @@ const product = [
       "https://webimage.10x10.co.kr/eventIMG/2022/today/Frontimage20220823164645.JPEG",
   },
   {
-    id: 10,
+    id: 11,
     quantity: 1,
     name: "추천)추석 선물 세트 모음",
     description: "마음까지 든든한 추석 선물 세트 모음",

@@ -27,7 +27,10 @@ const ItemList = ({ product }) => {
                 return (
                   <ItemsUl key={product.id}>
                     <ItemsLi>
-                      <Link as={`/Products/${index}`} href="/Products/[index]">
+                      <Link
+                        as={`/products/${product.id}`}
+                        href="/products/[product.id]"
+                      >
                         <a>
                           <div className="thumbnail">
                             <ThumbImg src={product.imageUrl} alt="" />
