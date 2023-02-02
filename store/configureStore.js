@@ -1,0 +1,26 @@
+import { createWrapper } from "next-redux-wrapper";
+import { applyMiddleware, compose, createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import reducer from "../reducers/index";
+
+// Redux-Persist
+import { persistStore } from "redux-persist";
+
+const configureStore = () => {
+  const middlewares = [];
+  const enhancer =
+    process.env.NODE_ENV === "production"
+      ? compose(applyMiddleware(...middlewares))
+      : composeWithDevTools(applyMiddleware(...middlewares));
+
+  const store = createStore(reducer, enhancer); // persistConfing 가 추가된 reducre로 store 생성
+  store.persistor = persistStore(store); // 새로고침해도 지속될 persist store 생성
+
+  return store;
+};
+
+const wrapper = createWrapper(configureStore, {
+  debug: process.env.NODE_ENV === "development",
+});
+
+export default wrapper;

@@ -1,0 +1,14 @@
+// SSR에 필요한 babel-plugin-styled-components 플러그인 추가
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ]
+  ]
+}
