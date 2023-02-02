@@ -3,7 +3,6 @@ import { useRouter } from "next/dist/client/router";
 import axios from "axios";
 import Link from "next/link";
 import { Form, Card } from "antd";
-import { HeartFilled, HeartTwoTone, HeartOutlined } from "@ant-design/icons";
 import { useDispatch } from "react-redux";
 import { addItem, addFavor, removeFavor } from "../../reducers/product.js";
 import { useSelector } from "react-redux";
