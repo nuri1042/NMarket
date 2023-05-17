@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useRouter } from "next/dist/client/router";
-import axios from "axios";
-import Link from "next/link";
-import { Form, Card } from "antd";
-import { useDispatch } from "react-redux";
-import { addItem, addFavor, removeFavor } from "../../reducers/product.js";
-import { useSelector } from "react-redux";
-import { useSession } from "next-auth/react";
+import React, { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/dist/client/router';
+import axios from 'axios';
+import Link from 'next/link';
+import { Form } from 'antd';
+import { useDispatch } from 'react-redux';
+import { addItem, addFavor } from '../../reducers/product.js';
+import { useSession } from 'next-auth/react';
 import {
   AddToCartBtn,
   AddToFavorBtn,
@@ -24,7 +23,7 @@ import {
   SaleInfo,
   SalePoint,
   ShipInfo,
-} from "../../styles/productStyle.js";
+} from '../../styles/productStyle.js';
 
 const Products = ({ product }) => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
@@ -38,13 +37,11 @@ const Products = ({ product }) => {
   const dispatch = useDispatch();
 
   const [list, setList] = useState([]);
-  const [liked, setLiked] = useState(false);
-
-  const { favorList } = useSelector((state) => state.product);
 
   // Data Fetch를 Client Side Rendering 으로 구현
   // 매번 페이지 로딩이 발행할 때마다 client side 에서 fetch 가 이루어짐
   // CSR은 페이지가 로드된 후 API에 접근함. 따라서 SEO 에는 부적합하고, 로그인같은 세션 구현에 적합함
+
   // SSR 과 차이점 : 처음 페이지를 렌더링할 때 데이터 fetch 까지 짧은 로딩시간이 존재한다.
   // useEffect(() => {
   //   // useEffect Hook 으로 데이터를 fetch 해옴
@@ -63,21 +60,21 @@ const Products = ({ product }) => {
 
   const onAddCart = useCallback(() => {
     if (!session) {
-      alert("로그인 후 이용해주세요.");
-      router.push("/Login");
+      alert('로그인 후 이용해주세요.');
+      router.push('/Login');
     } else {
       dispatch(addItem(list[id]));
     }
-  }, [list[id]]);
+  }, [list[id], session]);
 
   const onAddFavor = useCallback(() => {
     if (!session) {
-      alert("로그인 후 이용해주세요.");
-      router.push("/Login");
+      alert('로그인 후 이용해주세요.');
+      router.push('/Login');
     } else {
       dispatch(addFavor(list[id]));
     }
-  }, [list[id]]);
+  }, [list[id], session]);
 
   return (
     <>
@@ -86,42 +83,34 @@ const Products = ({ product }) => {
           <ProductInfoWrap>
             <ProductPhotoWrap>
               <ProductPhoto>
-                <img src={list[id]?.imageUrl} alt="product photo" />
+                <img src={list[id]?.imageUrl} alt='product photo' />
               </ProductPhoto>
             </ProductPhotoWrap>
             <ProductDetailWrap>
               <ProductInfo>
                 <Bnr>
-                  <img
-                    src="http://imgstatic.10x10.co.kr/main/202204/715/itemprdbanner_84780_20220411180738.jpg"
-                    alt="정기세일"
-                  />
+                  <img src='http://imgstatic.10x10.co.kr/main/202204/715/itemprdbanner_84780_20220411180738.jpg' alt='정기세일' />
                 </Bnr>
                 <ProductBasic>
                   <h2>
                     <p>{list[id]?.name}</p>
                   </h2>
                 </ProductBasic>
-                <div className="detailInfo">
+                <div className='detailInfo'>
                   <SaleInfo
                     style={{
-                      paddingTop: "26px",
+                      paddingTop: '26px',
                     }}
                   >
                     <dt>판매가</dt>
                     <dd>
-                      <strong>
-                        {new String(list[id]?.originPrice).replace(
-                          /\B(?=(\d{3})+(?!\d))/g,
-                          ","
-                        )}
-                      </strong>
+                      <strong>{new String(list[id]?.originPrice).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong>
                     </dd>
                   </SaleInfo>
                   <SaleInfo>
                     <dt
                       style={{
-                        paddingTop: "16px",
+                        paddingTop: '16px',
                       }}
                     >
                       마일리지
@@ -133,7 +122,7 @@ const Products = ({ product }) => {
                   <SaleInfo>
                     <dt
                       style={{
-                        paddingTop: "16px",
+                        paddingTop: '16px',
                       }}
                     >
                       배송정보
@@ -147,22 +136,16 @@ const Products = ({ product }) => {
               <BtnArea>
                 <Form>
                   <FormSpan>
-                    <Link href="/Cart">
+                    <Link href='/Cart'>
                       <a>
-                        <AddToCartBtn onClick={onAddCart}>
-                          장바구니
-                        </AddToCartBtn>
+                        <AddToCartBtn onClick={onAddCart}>장바구니</AddToCartBtn>
                       </a>
                     </Link>
-                    {/* <AddToFavorBtn> */}
-                    <Link href="/Mypage">
+                    <Link href='/Mypage'>
                       <a>
-                        <AddToFavorBtn onClick={onAddFavor}>
-                          찜하기
-                        </AddToFavorBtn>
+                        <AddToFavorBtn onClick={onAddFavor}>찜하기</AddToFavorBtn>
                       </a>
                     </Link>
-                    {/* </AddToFavorBtn> */}
                   </FormSpan>
                 </Form>
               </BtnArea>
@@ -175,9 +158,7 @@ const Products = ({ product }) => {
 };
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products"
-  );
+  const res = await fetch('https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products');
   const product = await res.json();
 
   const paths = product.map((product) => ({
@@ -187,9 +168,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(
-    `https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products/${params.id}`
-  );
+  const res = await fetch(`https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products/${params.id}`);
   const product = await res.json();
 
   return { props: { product } };
