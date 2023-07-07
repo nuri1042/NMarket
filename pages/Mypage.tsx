@@ -1,8 +1,16 @@
-import React, { useEffect } from 'react';
-import { getSession, signOut, useSession } from 'next-auth/react';
-import { useRouter } from 'next/dist/client/router';
-import FavorList from '../components/FavorList';
-import { Container, ContainerWrap, Figure, MypageMain, MyprofileContainer, MyprofileInfo, Profile, ProfileContainer } from '../styles/mypageStyle';
+import React, { useEffect } from "react";
+import { getSession, signOut, useSession } from "next-auth/react";
+import { useRouter } from "next/dist/client/router";
+import FavorList from "../components/FavorList";
+import {
+  ContainerWrap,
+  Figure,
+  MypageMain,
+  MyprofileContainer,
+  MyprofileInfo,
+  Profile,
+  ProfileContainer,
+} from "../styles/mypageStyle";
 
 const Mypage = () => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
@@ -14,21 +22,24 @@ const Mypage = () => {
 
   useEffect(() => {
     if (!session) {
-      push('/Login');
+      push("/Login");
     }
   }, [session]);
 
   const handleSignOut = async () => {
-    const data = await signOut({ redirect: false, callbackUrl: '/' });
+    const data = await signOut({ redirect: false, callbackUrl: "/" });
     localStorage.clear(); // 로그아웃 시 redux 데이터 초기화
     push(data.url);
   };
   return (
-    <div className='container'>
+    <div className="container">
       <ContainerWrap>
         <MyprofileInfo>
           <h2>
-            <img src='https://fiximage.10x10.co.kr/web2015/my10x10/tit_my10x10.png' alt='MY TENBYTEN' />
+            <img
+              src="https://fiximage.10x10.co.kr/web2015/my10x10/tit_my10x10.png"
+              alt="MY TENBYTEN"
+            />
           </h2>
           <MypageMain>
             {/* 내 프로필 */}
@@ -38,7 +49,10 @@ const Mypage = () => {
                   <p>Hello, {session.user.name}</p>
                   <Figure>
                     <ProfileContainer>
-                      <img src='	https://fiximage.10x10.co.kr/web2015/common/img_profile_25.png' alt='프로필이미지' />
+                      <img
+                        src="	https://fiximage.10x10.co.kr/web2015/common/img_profile_25.png"
+                        alt="프로필이미지"
+                      />
                       <button onClick={handleSignOut}>로그아웃</button>
                     </ProfileContainer>
                   </Figure>

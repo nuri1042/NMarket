@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CartItem from "../components/CartItem";
+import { ProductState } from "../interfaces/productData.interfaces";
+import { RootState } from "../redux/reducers";
 import {
   CartHeader,
   CartProductBox,
@@ -17,7 +19,9 @@ import {
 } from "../styles/cartStyle";
 
 const Cart = () => {
-  const { itemList, totalPrice } = useSelector((state) => state.product);
+  const { itemList, totalPrice } = useSelector<RootState, ProductState>(
+    (state) => state.product
+  );
 
   return (
     <div className="container">

@@ -111,6 +111,8 @@
     "**/*.ts",
     "**/*.tsx",
     "redux/reducers/product.tsx",
+    "components/CartItem.js",
+    "pages/Login.js",
     "redux/reducers/user.js"
   ],
   "exclude": ["node_modules"]
