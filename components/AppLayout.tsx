@@ -2,12 +2,13 @@ import React, { ReactElement } from "react";
 
 import MainBanner from "./MainBanner";
 import ItemList from "./ItemList";
-import { FC } from "react";
 
-interface Props {
+export interface Props {
   product: ReactElement;
+  children?: React.ReactNode;
 }
-const AppLayout: FC<Props> = ({ product }) => {
+
+const AppLayout = ({ product }: Props) => {
   return (
     <>
       <div id="body">

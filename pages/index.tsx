@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import AppLayout from "../components/AppLayout";
+import AppLayout, { Props } from "../components/AppLayout";
 import Head from "next/head";
 import product from "./api/getProductInfo";
 import axios from "axios";
 
-export default function Home({ product }) {
+export default function Home({ product }: Props) {
   // < Data Fetch를 Client Side Rendering 으로 구현한 부분 >
 
   // const [product, setProduct] = useState([]);
@@ -61,7 +61,7 @@ export default function Home({ product }) {
 //   };
 // }
 
-// Static Generation
+// Static Generation 이용해서 Mock API로부터 데이터 받아오기
 export async function getStaticProps() {
   const res = await fetch(
     "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products"
