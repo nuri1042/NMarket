@@ -31,12 +31,11 @@ const Products = ({ product }) => {
   const router = useRouter();
   const { id } = router.query;
 
-  // const API_URL =
-  //   "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products";
-
   const dispatch = useDispatch();
 
   const [list, setList] = useState([]);
+
+  // const API_URL = 'https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products';
 
   // Data Fetch를 Client Side Rendering 으로 구현
   // 매번 페이지 로딩이 발행할 때마다 client side 에서 fetch 가 이루어짐

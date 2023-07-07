@@ -1,8 +1,7 @@
 import React, { useCallback } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useSelector } from "react-redux";
-import { removeFavor } from "../reducers/product";
+import { removeFavor } from "../redux/actions/product";
 
 import {
   ArticleWish,
@@ -15,9 +14,13 @@ import {
   PdtList,
 } from "../styles/favorListStyle";
 import { useDispatch } from "react-redux";
+import { RootState } from "../redux/reducers";
+import { ProductState } from "../interfaces/productData.interfaces";
 
 const FavorList = () => {
-  const { favorList } = useSelector((state) => state.product);
+  const { favorList } = useSelector<RootState, ProductState>( // useSelector<RootState, returned value we expect>
+    (state) => state.product
+  );
   const dispatch = useDispatch();
 
   return (

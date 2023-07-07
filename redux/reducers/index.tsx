@@ -14,6 +14,8 @@ const persistConfig = {
   storage: storage, // localStorage 에 저장
 };
 
+// root reducer 생성
+// next-redux-wrapper의 HYDRATE 액션 정의
 const rootReducer = combineReducers({
   index: (state = {}, action) => {
     switch (action.type) {
@@ -29,3 +31,4 @@ const rootReducer = combineReducers({
 });
 
 export default persistReducer(persistConfig, rootReducer); // persistConfig 가 추가된 reducer 반환
+export type RootState = ReturnType<typeof rootReducer>; // rootReducer 를 미리 정의하고 ReturnType을 추출해서 State 타입을 얻음 ( 추후에 이 타 입을 컨테이너 컴포넌트에서 사용 )

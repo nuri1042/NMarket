@@ -1,10 +1,13 @@
-import React from "react";
-import Link from "next/link";
+import React, { ReactElement } from "react";
 
 import MainBanner from "./MainBanner";
 import ItemList from "./ItemList";
+import { FC } from "react";
 
-function AppLayout({ product }) {
+interface Props {
+  product: ReactElement;
+}
+const AppLayout: FC<Props> = ({ product }) => {
   return (
     <>
       <div id="body">
@@ -15,6 +18,6 @@ function AppLayout({ product }) {
       </div>
     </>
   );
-}
+};
 
 export default AppLayout;

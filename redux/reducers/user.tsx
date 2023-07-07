@@ -1,29 +1,19 @@
+import { UserState } from "../../interfaces/userData.interfaces";
+import { Actions, LOG_IN, SIGN_UP } from "../actions/user";
+
 const dummyUser = {
   id: 1,
   nickname: "kimnuri",
 };
 
-export const initialState = {
+export const initialState: UserState = {
   isLoggedIn: false,
   me: null,
   loginData: {},
   signUpData: {},
 };
 
-export const LOG_IN = "LOG_IN";
-export const SIGN_UP = "SIGN_UP";
-
-export const loginAction = (data) => ({
-  type: LOG_IN,
-  data,
-});
-
-export const signupAction = (data) => ({
-  type: SIGN_UP,
-  data,
-});
-
-const reducer = (state = initialState, action) => {
+const reducer = (state = initialState, action: Actions) => {
   switch (action.type) {
     case LOG_IN: {
       return {
