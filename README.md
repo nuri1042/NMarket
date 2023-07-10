@@ -4,7 +4,7 @@
 
 
 ## 🛠 개발 환경
-- Programming Languages : Javvscript, Typescript
+- Programming Languages : Javascript, Typescript
 - Frontend Development : Next.js
 
 - 상태관리 : React-Redux, Redux, axios
