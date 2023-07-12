@@ -111,6 +111,8 @@
     "**/*.ts",
     "**/*.tsx",
     "redux/reducers/product.tsx",
+    "redux/reducers/user.js",
+    "components/LoginForm.js",
     "components/CartItem.js",
     "pages/Login.js",
     "redux/reducers/user.js"

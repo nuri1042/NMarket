@@ -1,6 +1,10 @@
+export interface UserData {
+  id: number;
+  nickname: string;
+}
 export interface UserState {
   isLoggedIn: boolean;
-  me: null;
+  me: UserData[];
   loginData: {};
   signUpData: {};
 }

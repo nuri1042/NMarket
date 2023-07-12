@@ -8,7 +8,7 @@ const dummyUser = {
 
 export const initialState: UserState = {
   isLoggedIn: false,
-  me: null,
+  me: [],
   loginData: {},
   signUpData: {},
 };

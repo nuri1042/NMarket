@@ -1,4 +1,4 @@
-import { UserState } from "../../interfaces/userData.interfaces";
+import { UserData, UserState } from "../../interfaces/userData.interfaces";
 
 export const LOG_IN = "LOG_IN";
 export const SIGN_UP = "SIGN_UP";
@@ -19,4 +19,8 @@ export interface SignupAction {
   };
 }
 
+export const loginAction = (data: UserData): LoginAction => ({
+  type: LOG_IN,
+  data,
+});
 export type Actions = LoginAction | SignupAction;

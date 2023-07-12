@@ -1,12 +1,8 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
 import MainBanner from "./MainBanner";
 import ItemList from "./ItemList";
-
-export interface Props {
-  product: ReactElement;
-  children?: React.ReactNode;
-}
+import { Props } from "../pages";
 
 const AppLayout = ({ product }: Props) => {
   return (

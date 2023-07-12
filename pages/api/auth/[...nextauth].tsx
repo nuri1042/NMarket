@@ -1,4 +1,3 @@
-import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
@@ -15,16 +14,16 @@ dotenv.config();
 export default NextAuth({
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: process.env.GOOGLE_CLIENT_ID || " ", // 해당 값이 null이면 빈 문자열 전달
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || " ",
     }),
     GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+      clientId: process.env.GITHUB_ID || " ",
+      clientSecret: process.env.GITHUB_SECRET || " ",
     }),
     KakaoProvider({
-      clientId: process.env.KAKAO_CLIENT_ID,
-      clientSecret: process.env.KAKAO_CLIENT_SECRET,
+      clientId: process.env.KAKAO_CLIENT_ID || " ",
+      clientSecret: process.env.KAKAO_CLIENT_SECRET || " ",
     }),
     EmailProvider({
       server: {

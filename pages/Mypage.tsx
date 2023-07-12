@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getSession, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/dist/client/router";
 import FavorList from "../components/FavorList";
 import {
