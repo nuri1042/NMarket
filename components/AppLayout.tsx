@@ -2,9 +2,9 @@ import React from "react";
 
 import MainBanner from "./MainBanner";
 import ItemList from "./ItemList";
-import { Props } from "../pages";
+import { IProductProps } from "../interfaces/productProps";
 
-const AppLayout = ({ product }: Props) => {
+const AppLayout = ({ product }: { product: IProductProps[] }) => {
   return (
     <>
       <div id="body">

@@ -4,11 +4,11 @@ import Head from "next/head";
 import { IProductProps } from "../interfaces/productProps";
 
 export interface Props {
-  product: ReactElement;
+  // product: ReactElement;
   children?: React.ReactNode;
 }
 
-export default function Home({ product }: Props) {
+export default function Home({ product }: { product: IProductProps[] }) {
   // < Data Fetch를 Client Side Rendering 으로 구현한 부분 >
 
   // const [product, setProduct] = useState([]);
@@ -21,12 +21,13 @@ export default function Home({ product }: Props) {
   // }, []);
 
   return (
-    <AppLayout product={product}>
+    <>
+      <AppLayout product={product} />
       <Head>
         <meta charSet="utf-8" />
         <title>NMarket</title>
       </Head>
-    </AppLayout>
+    </>
   );
 }
 
@@ -71,7 +72,7 @@ export async function getStaticProps() {
   const res = await fetch(
     "https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products"
   );
-  const product: IProductProps = await res.json();
+  const product: IProductProps[] = await res.json();
   return {
     props: {
       product,

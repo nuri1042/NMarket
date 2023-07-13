@@ -15,6 +15,7 @@
     "@next-auth/firebase-adapter": "^0.1.2-pr.183-76202b42.8",
     "@next-auth/mongodb-adapter": "^1.0.4",
     "@reduxjs/toolkit": "^1.9.5",
+    "@types/react-slick": "^0.23.10",
     "@types/styled-components": "^5.1.26",
     "antd": "^4.19.5",
     "axios": "^0.26.1",

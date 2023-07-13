@@ -1,5 +1,5 @@
 import React from "react";
-import Slick from "react-slick";
+import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
@@ -12,12 +12,12 @@ const MainBanner = () => {
     }
   `;
 
-  const SampleArrow = (props) => {
+  const SampleArrow = (props: any) => {
     const { className, style } = props;
     return <div className={className} style={{ ...style, display: "none" }} />;
   };
 
-  const settings = {
+  const settings: Settings = {
     dots: true,
     speed: 500,
     infinite: true,
@@ -29,23 +29,25 @@ const MainBanner = () => {
     prevArrow: <SampleArrow />,
     nextArrow: <SampleArrow />,
 
-    responsive: [
-      // 반응형 구현 옵션
-      {
-        breakpoint: 768, // 화면 사이즈 768
-        settings: {
-          width: "1200px",
-        },
-      },
-    ],
+    // responsive: [
+    //   // 반응형 옵션 구현
+    //   {
+    //     breakpoint: 768, // 화면 사이즈 768
+    //     settings: {
+    //       width: "1200px",
+    //     },
+    //   },
+    // ],
 
-    appendDots: (dots) => <ul style={{ bottom: "20px" }}>{dots}</ul>, //slick-dots에 style 적용
+    appendDots: (dots: React.ReactNode) => (
+      <ul style={{ bottom: "20px" }}>{dots}</ul>
+    ), //slick-dots에 style 적용
   };
 
   return (
     <>
       <SliderWrap>
-        <Slick {...settings}>
+        <Slider {...settings}>
           <div style={{ width: "700px" }}>
             <img src="/img/banners/banner1.jpg" alt="first slide" />
           </div>
@@ -67,7 +69,7 @@ const MainBanner = () => {
           <div>
             <img src="/img/banners/banner7.jpg" alt="seventh slide" />
           </div>
-        </Slick>
+        </Slider>
       </SliderWrap>
     </>
   );

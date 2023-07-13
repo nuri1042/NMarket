@@ -11,8 +11,9 @@ import {
   Price,
   ThumbImg,
 } from "../styles/ItemListStyle";
+import { IProductProps } from "../interfaces/productProps";
 
-const ItemList = ({ product }) => {
+const ItemList = ({ product }: { product: IProductProps[] }) => {
   return (
     <div>
       <ItemlistContainer>
@@ -37,7 +38,6 @@ const ItemList = ({ product }) => {
                           </div>
                           <div className="desc">
                             <DescName>{product.description}</DescName>
-                            <Price>{product.price}</Price>
                           </div>
                         </a>
                       </Link>
