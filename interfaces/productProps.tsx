@@ -1,3 +1,5 @@
+// api로부터 받아오는 product 객체 interface
+
 export interface IProductProps {
   id: number;
   quantity: number;

@@ -24,6 +24,7 @@ export const Items = styled.div`
 export const ItemsUl = styled.ul`
   margin: 0 -20px;
 `;
+
 export const ItemsLi = styled.li`
   width: 260px;
   height: 370px;
@@ -35,6 +36,11 @@ export const ThumbImg = styled.img`
   height: 260px;
   &:hover{
     scale(1.5);
+  }
+
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3 ease-in-out;
   }
 `;
 export const DescName = styled.p`

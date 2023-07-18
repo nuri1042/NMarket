@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { increaseQty, decreaseQty, removeItem } from "../redux/actions/product";
@@ -14,8 +14,9 @@ import {
   BtnItemBuyBox,
   ItemPrice,
 } from "../styles/cartItemStyle";
+import { IProductProps } from "../interfaces/productProps";
 
-const CartItem = ({ itemList }) => {
+const CartItem = ({ itemList }: { itemList: IProductProps }) => {
   const dispatch = useDispatch();
 
   const onIncrease = useCallback(() => {
@@ -31,9 +32,10 @@ const CartItem = ({ itemList }) => {
   }, [itemList]);
 
   // form 필드에 value 를 사용하면서 onChange 핸들러를 설정하지 않으면 warning or error 발생 가능
-  const onChangeQty = (e) => {
-    const updateQty = e.target.value;
-  };
+  // const onChangeQty = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const updateQty = e.target.value;
+  // };
+
   return (
     <>
       <ul className="cart-seller-list">
@@ -43,8 +45,8 @@ const CartItem = ({ itemList }) => {
               <ItemInfo>
                 <ProductThumb>
                   <Link
-                    as={`/Products/${itemList.id}`}
-                    href="/Products/[index]"
+                    as={`/products/${itemList.id}`}
+                    href="/products/[index]"
                   >
                     <a>
                       <div>
@@ -60,8 +62,8 @@ const CartItem = ({ itemList }) => {
                 <ProductInfo>
                   <p className="name" style={{ lineHeight: 1.4 }}>
                     <Link
-                      as={`/Products/${itemList.id}`}
-                      href="/Products/[index]"
+                      as={`/products/${itemList.id}`}
+                      href="/products/[index]"
                     >
                       <a style={{ fontSize: "15px", fontWeight: 700 }}>
                         {itemList.name}
@@ -103,7 +105,7 @@ const CartItem = ({ itemList }) => {
                       maxLength={4}
                       pattern="[0-9]*"
                       value={itemList.quantity}
-                      onChange={(event) => this.onChangeQty(event)}
+                      // onChange={(event: React.FormEvent<HTMLInputElement>) => this.onChangeQty(event)}
                       style={{
                         width: "32px",
                         height: "30px",
