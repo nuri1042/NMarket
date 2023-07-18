@@ -6,9 +6,29 @@ import user from "./user";
 
 // Redux-Persist 추가
 import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage"; // localstorgae 에 저장
+import { WebStorage } from "redux-persist/lib/types";
+import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+// import storage from "redux-persist/lib/storage"; // localstorgae 에 저장
 
-// 새로운 persist 선안
+function createPersistStorage(): WebStorage {
+  return {
+    getItem() {
+      return Promise.resolve(null);
+    },
+    setItem() {
+      return Promise.resolve();
+    },
+    removeItem() {
+      return Promise.resolve();
+    },
+  };
+}
+
+const storage =
+  typeof window !== "undefined"
+    ? createWebStorage("local")
+    : createPersistStorage();
+// // 새로운 persist 선안
 const persistConfig = {
   key: "root", // reducer의 어느 지점에서부터 데이터를 저장할 것인지
   storage: storage, // localStorage 에 저장

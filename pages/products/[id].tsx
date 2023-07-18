@@ -42,7 +42,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
 
   const router = useRouter();
-  const { id } = router.query; // router.query는 ParsedUrlQuery object이다.
+  const id = parseInt(router.query.id as string, 10); // router.query는 ParsedUrlQuery object이다.
 
   const dispatch = useDispatch();
 

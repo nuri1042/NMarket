@@ -1,4 +1,4 @@
-import { Context, createWrapper } from "next-redux-wrapper";
+import { createWrapper } from "next-redux-wrapper";
 import { applyMiddleware, compose, createStore, Middleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import reducer from "../reducers/index";
