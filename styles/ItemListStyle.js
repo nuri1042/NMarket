@@ -27,9 +27,15 @@ export const ItemsUl = styled.ul`
 
 export const ItemsLi = styled.li`
   width: 260px;
-  height: 370px;
-  margin: 0 auto;
+  height: 300px;
+  margin-bottom: 50px;
   list-style: none;
+
+  &:hover {
+    box-shadow: 0 7px 7px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3 ease-in-out;
+    border-radius: 7px;
+  }
 `;
 export const ThumbImg = styled.img`
   width: 260px;
@@ -38,14 +44,14 @@ export const ThumbImg = styled.img`
     scale(1.5);
   }
 
-  &:hover {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    transition: box-shadow 0.3 ease-in-out;
-  }
+  // &:hover {
+  //   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  //   transition: box-shadow 0.3 ease-in-out;
+  // }
 `;
 export const DescName = styled.p`
   heigth: 35px;
-  padding: 12px 0 8px;
+  padding: 12px 0 8px 8px;
   font-size: 14px;
   line-height: 1.29;
 `;

@@ -24,13 +24,13 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
         <InnerCont>
           <Items>
             {product &&
-              product.map((product, index) => {
+              product.map((product) => {
                 return (
                   <ItemsUl key={product.id}>
                     <ItemsLi>
                       <Link
                         as={`/products/${product.id}`}
-                        href="/products/[product.id]"
+                        href="/products/[id]"
                       >
                         <a>
                           <div className="thumbnail">
