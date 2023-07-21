@@ -3,14 +3,19 @@ import Slider, { Settings } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
+import Image from "next/image";
 
 const MainBanner = () => {
   const SliderWrap = styled.div`
     overflow: hidden;
     .slick-track {
       display: flex;
+     }
     }
   `;
+  const BannerStyle = {
+    layout: "response",
+  };
 
   const SampleArrow = (props: any) => {
     const { className, style } = props;
@@ -48,26 +53,68 @@ const MainBanner = () => {
     <>
       <SliderWrap>
         <Slider {...settings}>
-          <div style={{ width: "700px" }}>
-            <img src="/img/banners/banner1.jpg" alt="first slide" />
+          <div>
+            <Image
+              src="/img/banners/banner1.jpg"
+              alt="first slide"
+              width={"1920px%"}
+              height={"600px"}
+              layout={"responsive"}
+            />
           </div>
           <div>
-            <img src="/img/banners/banner2.gif" alt="second slide" />
+            <Image
+              src="/img/banners/banner2.png"
+              alt="second slide"
+              width={"1920px%"}
+              height={"600px"}
+              layout={"responsive"}
+            />
           </div>
           <div>
-            <img src="/img/banners/banner3.jpg" alt="third slide" />
+            <Image
+              src="/img/banners/banner3.jpg"
+              alt="third slide"
+              width={"1920px%"}
+              height={"600px"}
+              layout={"responsive"}
+            />
           </div>
           <div>
-            <img src="/img/banners/banner4.jpg" alt="fourth slide" />
+            <Image
+              src="/img/banners/banner4.jpg"
+              alt="fourth slide"
+              width={"1920px%"}
+              height={"600px"}
+              layout={"responsive"}
+            />
           </div>
           <div>
-            <img src="/img/banners/banner5.gif" alt="fifth slide" />
+            <Image
+              src="/img/banners/banner5.png"
+              alt="fifth slide"
+              width={"1920px%"}
+              height={"600px"}
+              layout={"responsive"}
+            />
           </div>
           <div>
-            <img src="/img/banners/banner6.gif" alt="sixth slide" />
+            <Image
+              src="/img/banners/banner6.png"
+              alt="sixth slide"
+              width={"1920px%"}
+              height={"600px"}
+              layout={"responsive"}
+            />
           </div>
           <div>
-            <img src="/img/banners/banner7.jpg" alt="seventh slide" />
+            <Image
+              src="/img/banners/banner7.jpg"
+              alt="seventh slide"
+              width={"1920px"}
+              height={"600px"}
+              layout={"responsive"}
+            />
           </div>
         </Slider>
       </SliderWrap>
