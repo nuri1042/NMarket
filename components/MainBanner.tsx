@@ -57,7 +57,7 @@ const MainBanner = () => {
             <Image
               src="/img/banners/banner1.jpg"
               alt="first slide"
-              width={"1920px%"}
+              width={"1920px"}
               height={"600px"}
               layout={"responsive"}
             />
@@ -66,7 +66,7 @@ const MainBanner = () => {
             <Image
               src="/img/banners/banner2.png"
               alt="second slide"
-              width={"1920px%"}
+              width={"1920px"}
               height={"600px"}
               layout={"responsive"}
             />
@@ -75,7 +75,7 @@ const MainBanner = () => {
             <Image
               src="/img/banners/banner3.jpg"
               alt="third slide"
-              width={"1920px%"}
+              width={"1920px"}
               height={"600px"}
               layout={"responsive"}
             />
@@ -84,7 +84,7 @@ const MainBanner = () => {
             <Image
               src="/img/banners/banner4.jpg"
               alt="fourth slide"
-              width={"1920px%"}
+              width={"1920px"}
               height={"600px"}
               layout={"responsive"}
             />
@@ -93,7 +93,7 @@ const MainBanner = () => {
             <Image
               src="/img/banners/banner5.png"
               alt="fifth slide"
-              width={"1920px%"}
+              width={"1920px"}
               height={"600px"}
               layout={"responsive"}
             />
@@ -102,7 +102,7 @@ const MainBanner = () => {
             <Image
               src="/img/banners/banner6.png"
               alt="sixth slide"
-              width={"1920px%"}
+              width={"1920px"}
               height={"600px"}
               layout={"responsive"}
             />
