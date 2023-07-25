@@ -8,7 +8,6 @@ import user from "./user";
 import { persistReducer, PURGE } from "redux-persist";
 import { WebStorage } from "redux-persist/lib/types";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
-import storage from "redux-persist/lib/storage"; // localstorgae 에 저장
 
 function createPersistStorage(): WebStorage {
   return {
@@ -28,11 +27,11 @@ const defStorage =
   typeof window !== "undefined"
     ? createWebStorage("local")
     : createPersistStorage();
+
 // 새로운 persist 선언
 const persistConfig = {
   key: "root", // reducer의 어느 지점에서부터 데이터를 저장할 것인지
-  // storage: defStorage, // localStorage 에 저장
-  storage,
+  storage: defStorage, // localStorage 에 저장
   whitelist: ["product"],
 };
 
