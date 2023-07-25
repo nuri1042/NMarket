@@ -2,6 +2,8 @@ import React, { ReactElement } from "react";
 import AppLayout from "../components/AppLayout";
 import Head from "next/head";
 import { IProductProps } from "../interfaces/productProps";
+import { getSession } from "next-auth/react";
+import { Session } from "next-auth";
 
 export interface Props {
   children?: React.ReactNode;
@@ -73,6 +75,7 @@ export async function getStaticProps() {
     "https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products"
   );
   const product: IProductProps[] = await res.json();
+
   return {
     props: {
       product,

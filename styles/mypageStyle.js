@@ -13,9 +13,9 @@ export const MyprofileInfo = styled.div`
 
   & h2 {
     line-height: 16px;
-    font-size: 12px;
-    color: #555;
-    padding-left: 70px;
+    font-size: 24px;
+    color: #000;
+    padding-left: 130px;
   }
 `;
 export const MypageMain = styled.div`

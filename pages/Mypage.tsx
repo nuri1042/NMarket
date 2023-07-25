@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/dist/client/router";
 import FavorList from "../components/FavorList";
@@ -11,6 +11,8 @@ import {
   Profile,
   ProfileContainer,
 } from "../styles/mypageStyle";
+import { useDispatch } from "react-redux";
+import { reset, RESET } from "../redux/actions/product";
 
 const Mypage = () => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
@@ -20,6 +22,8 @@ const Mypage = () => {
 
   const { push } = useRouter();
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     if (!session) {
       push("/Login");
@@ -28,19 +32,20 @@ const Mypage = () => {
 
   const handleSignOut = async () => {
     const data = await signOut({ redirect: false, callbackUrl: "/" });
-    localStorage.clear(); // 로그아웃 시 redux 데이터 초기화
+    // localStorage.clear(); // 로그아웃 시 redux 데이터 초기화
+    dispatch(reset());
     push(data.url);
   };
+  // const handleSignOut = () => {
+  //   signOut();
+  //   window.localStorage.clear(); // 로그아웃 시 redux 데이터 초기화
+  //   push("/");
+  // };
   return (
     <div className="container">
       <ContainerWrap>
         <MyprofileInfo>
-          <h2>
-            <img
-              src="https://fiximage.10x10.co.kr/web2015/my10x10/tit_my10x10.png"
-              alt="MY TENBYTEN"
-            />
-          </h2>
+          <h2>MY PAGE</h2>
           <MypageMain>
             {/* 내 프로필 */}
             {session ? (

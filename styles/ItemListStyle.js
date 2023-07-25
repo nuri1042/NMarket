@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
 export const ItemlistContainer = styled.div`
-  padding: 83px 0 26px 0;
+  padding: 83px 0 30px 0;
   width: 890px;
   margin: 0 auto;
   font-size: 18px;
+  & h2 {
+    font-weight: 600;
+    text-align: center;
+  }
 `;
 export const Itemlist = styled.div`
   display: flex;

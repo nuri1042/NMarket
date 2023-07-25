@@ -6,6 +6,7 @@ export const INCREASE_QTY = "INCREASE_QTY";
 export const DECREASE_QTY = "DECREASE_QTY";
 export const ADD_FAVOR = "ADD_FAVOR";
 export const REMOVE_FAVOR = "REMOVE_FAVOR";
+export const RESET = "RESET";
 
 // action type 선언
 export interface AddItemAction {
@@ -30,6 +31,10 @@ export interface AddFavorAction {
 }
 export interface RemoveFavorAction {
   type: typeof REMOVE_FAVOR;
+  data: IProductProps;
+}
+export interface ResetAction {
+  type: typeof RESET;
   data: IProductProps;
 }
 
@@ -57,6 +62,9 @@ export const removeFavor = (data: IProductProps): RemoveFavorAction => ({
   type: REMOVE_FAVOR,
   data,
 });
+export const reset = () => ({
+  type: RESET,
+});
 
 export type Actions =
   | AddItemAction
@@ -64,4 +72,5 @@ export type Actions =
   | IncreaseQtyAction
   | DecreaseQtyAction
   | AddFavorAction
-  | RemoveFavorAction;
+  | RemoveFavorAction
+  | ResetAction;

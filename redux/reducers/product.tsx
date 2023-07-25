@@ -1,3 +1,4 @@
+import { PURGE } from "redux-persist";
 import { ProductState } from "../../interfaces/productData.interfaces";
 import {
   Actions,
@@ -7,6 +8,7 @@ import {
   DECREASE_QTY,
   ADD_FAVOR,
   REMOVE_FAVOR,
+  RESET,
 } from "../actions/product";
 
 const initialState: ProductState = {
@@ -103,6 +105,8 @@ const reducer = (state = initialState, action: Actions) => {
         favorList: state.favorList.filter((item) => item.id != action.data.id),
       };
     }
+    case RESET:
+      return initialState; // return the initial value
 
     default:
       return state;

@@ -5,10 +5,10 @@ import product from "./product";
 import user from "./user";
 
 // Redux-Persist 추가
-import { persistReducer } from "redux-persist";
+import { persistReducer, PURGE } from "redux-persist";
 import { WebStorage } from "redux-persist/lib/types";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
-// import storage from "redux-persist/lib/storage"; // localstorgae 에 저장
+import storage from "redux-persist/lib/storage"; // localstorgae 에 저장
 
 function createPersistStorage(): WebStorage {
   return {
@@ -24,14 +24,16 @@ function createPersistStorage(): WebStorage {
   };
 }
 
-const storage =
+const defStorage =
   typeof window !== "undefined"
     ? createWebStorage("local")
     : createPersistStorage();
-// // 새로운 persist 선안
+// 새로운 persist 선언
 const persistConfig = {
   key: "root", // reducer의 어느 지점에서부터 데이터를 저장할 것인지
-  storage: storage, // localStorage 에 저장
+  // storage: defStorage, // localStorage 에 저장
+  storage,
+  whitelist: ["product"],
 };
 
 // root reducer 생성
@@ -42,11 +44,14 @@ const rootReducer = combineReducers({
       case HYDRATE:
         console.log("HYDRATE", action);
         return { ...state, ...action.payload };
+      case PURGE:
+        console.log("PURGING", action);
+        return {}; // return the initial state of this reducer to reset
       default:
         return state;
     }
   },
-  user,
+  user, // user는 사용되지 않음
   product,
 });
 

@@ -17,7 +17,7 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
   return (
     <div>
       <ItemlistContainer>
-        <h2>오늘은 이 상품 어때요?</h2>
+        <h2>JUST DROPPED</h2>
       </ItemlistContainer>
 
       <Itemlist>

@@ -26,6 +26,7 @@ const Login = () => {
     }
   }, [session]);
 
+  console.log(session);
   const handleSubmit = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
     // 로그인 시 이메일 유효성 검사 정규식 표현
