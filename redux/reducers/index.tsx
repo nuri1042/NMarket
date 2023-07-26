@@ -5,7 +5,7 @@ import product from "./product";
 import user from "./user";
 
 // Redux-Persist 추가
-import { persistReducer, PURGE } from "redux-persist";
+import { persistReducer } from "redux-persist";
 import { WebStorage } from "redux-persist/lib/types";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 
@@ -43,9 +43,7 @@ const rootReducer = combineReducers({
       case HYDRATE:
         console.log("HYDRATE", action);
         return { ...state, ...action.payload };
-      case PURGE:
-        console.log("PURGING", action);
-        return {}; // return the initial state of this reducer to reset
+
       default:
         return state;
     }

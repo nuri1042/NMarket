@@ -48,10 +48,6 @@ export const ThumbImg = styled.img`
     scale(1.5);
   }
 
-  // &:hover {
-  //   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-  //   transition: box-shadow 0.3 ease-in-out;
-  // }
 `;
 export const DescName = styled.p`
   heigth: 35px;

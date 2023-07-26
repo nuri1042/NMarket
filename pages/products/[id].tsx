@@ -10,6 +10,7 @@ import { Form } from "antd";
 import { useDispatch } from "react-redux";
 import { addItem, addFavor } from "../../redux/actions/product";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 import {
   AddToCartBtn,
   AddToFavorBtn,
@@ -103,9 +104,12 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
             <ProductDetailWrap>
               <ProductInfo>
                 <Bnr>
-                  <img
+                  <Image
                     src="http://imgstatic.10x10.co.kr/main/202204/715/itemprdbanner_84780_20220411180738.jpg"
                     alt="정기세일"
+                    width={"440px"}
+                    height={"65px"}
+                    priority={true}
                   />
                 </Bnr>
                 <ProductBasic>

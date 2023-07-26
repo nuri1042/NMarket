@@ -13,9 +13,6 @@ const MainBanner = () => {
      }
     }
   `;
-  const BannerStyle = {
-    layout: "response",
-  };
 
   const SampleArrow = (props: any) => {
     const { className, style } = props;

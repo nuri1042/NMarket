@@ -8,9 +8,8 @@ import {
   Items,
   ItemsLi,
   ItemsUl,
-  Price,
-  ThumbImg,
 } from "../styles/ItemListStyle";
+import Image from "next/image";
 import { IProductProps } from "../interfaces/productProps";
 
 const ItemList = ({ product }: { product: IProductProps[] }) => {
@@ -34,7 +33,12 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
                       >
                         <a>
                           <div className="thumbnail">
-                            <ThumbImg src={product.imageUrl} alt="" />
+                            <Image
+                              src={product.imageUrl}
+                              alt=""
+                              width={"260px"}
+                              height={"260px"}
+                            />
                           </div>
                           <div className="desc">
                             <DescName>{product.description}</DescName>

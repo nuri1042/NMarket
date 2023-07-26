@@ -6,8 +6,6 @@ import wrapper from "../redux/store/configureStore";
 import "../styles/styles.css";
 import { getSession, SessionProvider } from "next-auth/react";
 import { AppProps } from "next/dist/shared/lib/router/router";
-import { Context } from "next-redux-wrapper";
-import { AppContext } from "next/app";
 
 // 전 페이지에서 공통되는 레이아웃 관리
 const App = ({ Component, session, pageProps }: AppProps) => {
@@ -22,7 +20,7 @@ const App = ({ Component, session, pageProps }: AppProps) => {
       </Head>
       <div id="header">
         <div id="header-inner">
-          <Link href="/">
+          <Link href="/" prefetch={true}>
             <a className="site-logo"></a>
           </Link>
           <div className="head-service">
