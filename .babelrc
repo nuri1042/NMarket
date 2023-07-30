@@ -1,6 +1,6 @@
 // SSR에 필요한 babel-plugin-styled-components 플러그인 추가
 {
-  "presets": ["next/babel", "@babel/preset-typescript"],
+  "presets": ["next/babel", ["@babel/preset-typescript", { "modules": false }]],
   "plugins": [
     [
       "styled-components",

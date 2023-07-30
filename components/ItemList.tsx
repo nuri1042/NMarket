@@ -1,16 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import {
-  DescName,
-  InnerCont,
-  Itemlist,
-  ItemlistContainer,
-  Items,
-  ItemsLi,
-  ItemsUl,
-} from "../styles/ItemListStyle";
-import Image from "next/image";
-import { IProductProps } from "../interfaces/productProps";
+import Link from 'next/link';
+import { DescName, InnerCont, Itemlist, ItemlistContainer, Items, ItemsLi, ItemsUl } from '../styles/ItemListStyle';
+import Image from 'next/image';
+import { IProductProps } from '../interfaces/productProps';
 
 const ItemList = ({ product }: { product: IProductProps[] }) => {
   return (
@@ -27,20 +18,12 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
                 return (
                   <ItemsUl key={product.id}>
                     <ItemsLi>
-                      <Link
-                        as={`/products/${product.id}`}
-                        href="/products/[id]"
-                      >
+                      <Link as={`/products/${product.id}`} href='/products/[id]'>
                         <a>
-                          <div className="thumbnail">
-                            <Image
-                              src={product.imageUrl}
-                              alt=""
-                              width={"260px"}
-                              height={"260px"}
-                            />
+                          <div className='thumbnail'>
+                            <Image src={product.imageUrl} alt='' width={'260px'} height={'260px'} />
                           </div>
-                          <div className="desc">
+                          <div className='desc'>
                             <DescName>{product.description}</DescName>
                           </div>
                         </a>

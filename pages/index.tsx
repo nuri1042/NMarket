@@ -1,4 +1,3 @@
-import React, { ReactElement } from "react";
 import AppLayout from "../components/AppLayout";
 import Head from "next/head";
 import { IProductProps } from "../interfaces/productProps";
@@ -72,7 +71,7 @@ export default function Home({ product }: { product: IProductProps[] }) {
 // Static Generation 이용해서 Mock API로부터 데이터 받아오기
 export async function getStaticProps() {
   const res = await fetch(
-    "https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products"
+    "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products"
   );
   const product: IProductProps[] = await res.json();
 

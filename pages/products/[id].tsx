@@ -1,9 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useCallback,
-  FunctionComponent,
-} from "react";
+import { useState, useEffect, useCallback, FunctionComponent } from "react";
 import { useRouter } from "next/dist/client/router";
 import Link from "next/link";
 import { Form } from "antd";
@@ -190,7 +185,7 @@ export async function getStaticProps({ params }: IParams) {
   // params 는 `id`를 포함
   // 만약 route가 /posts/1이면 params.id는 1이다
   const res = await fetch(
-    `https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products/${params.id}`
+    `https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products/${params.id}`
   );
   const product: IProductProps[] = await res.json();
 
@@ -199,7 +194,7 @@ export async function getStaticProps({ params }: IParams) {
 
 export async function getStaticPaths() {
   const res = await fetch(
-    "https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products"
+    "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products"
   );
   const product: IProductProps[] = await res.json();
 
