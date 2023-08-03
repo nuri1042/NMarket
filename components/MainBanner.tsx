@@ -9,9 +9,17 @@ const MainBanner = () => {
     overflow: hidden;
     .slick-track {
       display: flex;
-     }
     }
   `;
+  // slick-dots > li > button에 가끔씩 숫자가 노출되는 것 innerHTML=""로 해결
+  const removeText = (item: any) => {
+    item.innerHTML = '';
+  };
+  let dotNums;
+  if (typeof document !== 'undefined') {
+    dotNums = document.querySelectorAll('.slick-dots button');
+    dotNums.forEach(removeText);
+  }
 
   const SampleArrow = (props: any) => {
     const { className, style } = props;

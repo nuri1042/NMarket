@@ -1,11 +1,11 @@
-import { useState, useEffect, useCallback, FunctionComponent } from "react";
-import { useRouter } from "next/dist/client/router";
-import Link from "next/link";
-import { Form } from "antd";
-import { useDispatch } from "react-redux";
-import { addItem, addFavor } from "../../redux/actions/product";
-import { useSession } from "next-auth/react";
-import Image from "next/image";
+import { useState, useEffect, useCallback, FunctionComponent } from 'react';
+import { useRouter } from 'next/dist/client/router';
+import Link from 'next/link';
+import { Form } from 'antd';
+import { useDispatch } from 'react-redux';
+import { addItem, addFavor } from '../../redux/actions/product';
+import { useSession } from 'next-auth/react';
+import Image from 'next/image';
 import {
   AddToCartBtn,
   AddToFavorBtn,
@@ -23,18 +23,16 @@ import {
   SaleInfo,
   SalePoint,
   ShipInfo,
-} from "../../styles/productStyle.js";
-import { IProductProps } from "../../interfaces/productProps";
+} from '../../styles/productStyle.js';
+import { IProductProps } from '../../interfaces/productProps';
 
 export interface IParams {
   params: {
-    id: number;
+    id: string;
   };
 }
 // props 매개변수에 직접적으로 typing해줘도 되지만 generic으로 함수형 컴포넌트의 props type을 지정 가능
-const Products: FunctionComponent<{ product: IProductProps[] }> = ({
-  product,
-}) => {
+const Products: FunctionComponent<{ product: IProductProps[] }> = ({ product }) => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
 
   const router = useRouter();
@@ -43,7 +41,6 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
   const dispatch = useDispatch();
 
   // useState Hook을 사용하기 위해서 초기값을 빈 배열로 하면 ts는 빈 배열을 never type으로 인식함
-  const [list, setList] = useState<IProductProps[]>([]);
 
   // Data Fetch를 Client Side Rendering 으로 구현
   // 매번 페이지 로딩이 발행할 때마다 client side 에서 fetch 가 이루어짐
@@ -62,30 +59,29 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
   //   }
   // }, [id]);
 
-  useEffect(() => {
-    if (id) {
-      setList(product);
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   // if (id) {
+  //   setList(product);
+  //   // }
+  // }, []);
 
   const onAddCart = useCallback(() => {
     if (!session) {
-      alert("로그인 후 이용해주세요.");
-      router.push("/Login");
+      alert('로그인 후 이용해주세요.');
+      router.push('/Login');
     } else {
-      dispatch(addItem(list[id]));
+      dispatch(addItem(product[id]));
     }
-  }, [list[id], session]);
+  }, [product[id], session]);
 
   const onAddFavor = useCallback(() => {
     if (!session) {
-      alert("로그인 후 이용해주세요.");
-      router.push("/Login");
+      alert('로그인 후 이용해주세요.');
+      router.push('/Login');
     } else {
-      dispatch(addFavor(list[id]));
+      dispatch(addFavor(product[id]));
     }
-  }, [list[id], session]);
-
+  }, [product[id], session]);
   return (
     <>
       <Container>
@@ -93,45 +89,34 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
           <ProductInfoWrap>
             <ProductPhotoWrap>
               <ProductPhoto>
-                <img src={list[id]?.imageUrl} alt="product photo" />
+                <img src={product[id]?.imageUrl} alt='product photo' />
               </ProductPhoto>
             </ProductPhotoWrap>
             <ProductDetailWrap>
               <ProductInfo>
                 <Bnr>
-                  <Image
-                    src="http://imgstatic.10x10.co.kr/main/202204/715/itemprdbanner_84780_20220411180738.jpg"
-                    alt="정기세일"
-                    width={"440px"}
-                    height={"65px"}
-                    priority={true}
-                  />
+                  <Image src='http://imgstatic.10x10.co.kr/main/202204/715/itemprdbanner_84780_20220411180738.jpg' alt='정기세일' width={'440px'} height={'65px'} priority={true} />
                 </Bnr>
                 <ProductBasic>
                   <h2>
-                    <p>{list[id]?.name}</p>
+                    <p>{product[id]?.name}</p>
                   </h2>
                 </ProductBasic>
-                <div className="detailInfo">
+                <div className='detailInfo'>
                   <SaleInfo
                     style={{
-                      paddingTop: "26px",
+                      paddingTop: '26px',
                     }}
                   >
                     <dt>판매가</dt>
                     <dd>
-                      <strong>
-                        {new String(list[id]?.originPrice).replace(
-                          /\B(?=(\d{3})+(?!\d))/g,
-                          ","
-                        )}
-                      </strong>
+                      <strong>{new String(product[id]?.originPrice).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong>
                     </dd>
                   </SaleInfo>
                   <SaleInfo>
                     <dt
                       style={{
-                        paddingTop: "16px",
+                        paddingTop: '16px',
                       }}
                     >
                       마일리지
@@ -143,7 +128,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
                   <SaleInfo>
                     <dt
                       style={{
-                        paddingTop: "16px",
+                        paddingTop: '16px',
                       }}
                     >
                       배송정보
@@ -157,18 +142,14 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
               <BtnArea>
                 <Form>
                   <FormSpan>
-                    <Link href="/Cart">
+                    <Link href='/Cart'>
                       <a>
-                        <AddToCartBtn onClick={onAddCart}>
-                          장바구니
-                        </AddToCartBtn>
+                        <AddToCartBtn onClick={onAddCart}>장바구니</AddToCartBtn>
                       </a>
                     </Link>
-                    <Link href="/Mypage">
+                    <Link href='/Mypage'>
                       <a>
-                        <AddToFavorBtn onClick={onAddFavor}>
-                          찜하기
-                        </AddToFavorBtn>
+                        <AddToFavorBtn onClick={onAddFavor}>찜하기</AddToFavorBtn>
                       </a>
                     </Link>
                   </FormSpan>
@@ -182,26 +163,30 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
   );
 };
 export async function getStaticProps({ params }: IParams) {
+  // getStaticPaths로부터 각 path의 params값을 받아 id를 통해 데이터 불러옴
   // params 는 `id`를 포함
-  // 만약 route가 /posts/1이면 params.id는 1이다
-  const res = await fetch(
-    `https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products/${params.id}`
-  );
+  // 만약 route가 /products/1이면 params.id는 1이다
+
+  const id = params.id!;
+  const res = await fetch(`https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products/${id}`);
   const product: IProductProps[] = await res.json();
 
   return { props: { product } };
 }
 
+// data에 따라 pre-rendering할 페이지의 동적 경로를 지정하는 함수
 export async function getStaticPaths() {
-  const res = await fetch(
-    "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products"
-  );
-  const product: IProductProps[] = await res.json();
+  const res = await fetch('https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products');
+  const products: IProductProps[] = await res.json();
 
-  const paths = product.map((product) => ({
+  // pre-render할 path를 얻음
+  const paths = products.map((product) => ({
     params: { id: product.id.toString() },
   }));
-  return { paths, fallback: false };
+
+  // paths들만 build time에 pre-render할 경로
+  // fallback: false - 다른 routes들은 404임을 의미
+  return { paths, fallback: false }; // paths를 getStaticProps로 return
 }
 
 export default Products;

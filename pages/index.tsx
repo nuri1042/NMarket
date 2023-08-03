@@ -1,8 +1,8 @@
-import AppLayout from "../components/AppLayout";
-import Head from "next/head";
-import { IProductProps } from "../interfaces/productProps";
-import { getSession } from "next-auth/react";
-import { Session } from "next-auth";
+import AppLayout from '../components/AppLayout';
+import Head from 'next/head';
+import { IProductProps } from '../interfaces/productProps';
+import { getSession } from 'next-auth/react';
+import { Session } from 'next-auth';
 
 export interface Props {
   children?: React.ReactNode;
@@ -24,7 +24,7 @@ export default function Home({ product }: { product: IProductProps[] }) {
     <>
       <AppLayout product={product} />
       <Head>
-        <meta charSet="utf-8" />
+        <meta charSet='utf-8' />
         <title>NMarket</title>
       </Head>
     </>
@@ -70,9 +70,7 @@ export default function Home({ product }: { product: IProductProps[] }) {
 
 // Static Generation 이용해서 Mock API로부터 데이터 받아오기
 export async function getStaticProps() {
-  const res = await fetch(
-    "https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products"
-  );
+  const res = await fetch('https://dee8c76b-ec25-4f44-b9fb-af069ca25f98.mock.pstmn.io/products');
   const product: IProductProps[] = await res.json();
 
   return {
