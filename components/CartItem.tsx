@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
-import { increaseQty, decreaseQty, removeItem } from '../redux/actions/product';
+import { increaseQty, decreaseQty, removeItem, changeQty } from '../redux/actions/product';
 import { ItemInfo, ItemOptionBox, ProductInfo, ProductThumb, Price, QtyDesc, ItemInfoBox, BtnItemBuyWrap, BtnItemBuyBox, ItemPrice } from '../styles/cartItemStyle';
 import { IProductProps } from '../interfaces/productProps';
+import { Itemlist } from '../styles/ItemListStyle';
 
 const CartItem = ({ itemList }: { itemList: IProductProps }) => {
   const dispatch = useDispatch();
@@ -20,7 +21,17 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
     dispatch(removeItem(itemList));
   }, [itemList]);
 
-  // form 필드에 value 를 사용하면서 onChange 핸들러를 설정하지 않으면 warning or error 발생 가능
+  const onChangeQty = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const changedQty = parseInt(e.target.value);
+      if (changedQty > 0) {
+        dispatch(changeQty(itemList, changedQty));
+      }
+    },
+    [itemList]
+  );
+
+  // // form 필드에 value 를 사용하면서 onChange 핸들러를 설정하지 않으면 warning or error 발생 가능
   // const onChangeQty = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   const updateQty = e.target.value;
   // };
@@ -70,11 +81,12 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
                     </button>
                     <input
                       type='text'
-                      name='itemea'
+                      name='itemQty'
                       maxLength={4}
                       pattern='[0-9]*'
                       value={itemList.quantity}
-                      // onChange={(event: React.FormEvent<HTMLInputElement>) => this.onChangeQty(event)}
+                      // onChange={(event: React.FormEvent<HTMLInputElement>) => this.onChangeQty(event)
+                      onChange={onChangeQty}
                       style={{
                         width: '32px',
                         height: '30px',
