@@ -18,9 +18,9 @@
 
 ## 주요 기능
 - 메인페이지 상품 리스트 출력, 상품 상세 페이지, 마이페이지 찜 목록, 로그인, 로그아웃, 장바구니 추가, 삭제
-- Postman Mock API 이용, CSR Data Fetch
+- Postman Mock API 이용
 - NextAuth 로 소셜 로그인 구현, Sendgrid 이용한 이메일 인증 방식 로그인 구현
-- Static Side Generation 으로 Dynamic routing 구현
+- Static Side Generation 으로 Dynamic routing 구현해 상품의 상세 페이지로 이동
 
 
 ## 프로젝트 페이지
