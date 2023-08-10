@@ -1,24 +1,17 @@
-import { useRouter } from 'next/dist/client/router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { LiteralUnion, signIn, useSession } from 'next-auth/react';
 import { Form } from 'antd';
 import { Container, ContentWrap, EmailBtn, FormInput, FormLabel, LoginFormBox, SocialLoginBtn } from '../styles/loginStyle';
+import { useRouter } from 'next/dist/client/router';
 
 // next-auth 로 로그인 구현한 코드
-
 const Login = () => {
   const { data: session } = useSession();
-  const { push, asPath } = useRouter();
+  const router = useRouter();
+  console.log(`login`, session);
 
   const [email, setEmail] = useState('');
 
-  useEffect(() => {
-    if (session) {
-      push('/');
-    }
-  }, [session]);
-
-  console.log(session);
   const handleSubmit = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
     // 로그인 시 이메일 유효성 검사 정규식 표현
@@ -29,7 +22,12 @@ const Login = () => {
       alert('이메일 형식이 올바르지 않습니다.');
     }
     // 문자열이 정규식을 만족할 때
-    signIn('email', { email, redirect: true });
+    signIn('email', { email, redirect: true, callbackUrl: '/' });
+  };
+
+  const handleOAuthSignIn = (provider: LiteralUnion<string>) => () => {
+    signIn(provider, { redirect: true, callbackUrl: '/' });
+    router.replace('/');
   };
 
   const providers = [
@@ -52,7 +50,7 @@ const Login = () => {
       fontColor: '#ffffff',
     },
   ];
-  const handleOAuthSignIn = (provider: LiteralUnion<string>) => () => signIn(provider);
+
   // index.d.ts에서 signIn의 타입을 보면  signIn<P extends RedirectableProviderType | undefined = undefined>(provider?: LiteralUnion<P extends RedirectableProviderType ? P | BuiltInProviderType : BuiltInProviderType>, options?: SignInOptions, authorizationParams?: SignInAuthorizationParams): Promise<P extends RedirectableProviderType ? SignInResponse | undefined : undefined>;
   // 첫번째 파라미터 provider의 타입이 provider?: LiteralUnion<P extends RedirectableProviderType ? P | BuiltInProviderType : BuiltInProviderType> 이다.
   // 그래서 handleOAuthSignIn 함수의 provider를 LiteralUnion으로 설정함

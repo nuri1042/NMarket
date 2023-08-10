@@ -11,28 +11,24 @@ const Mypage = () => {
   // useSession 은 Client Side(React) 에서 작동하는 Hook이다.
   // useSession 의 data 는 session/undefined/null 3가지가 있고
   // 로그인 한 user 객체가 session.user에 저장됨
+  console.log('mypage history', session);
 
-  const { push } = useRouter();
+  const router = useRouter();
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (!session) {
-      push('/Login');
+      router.push('/Login');
     }
   }, [session]);
 
-  const handleSignOut = async () => {
-    const data = await signOut({ redirect: false, callbackUrl: '/' });
-    // localStorage.clear(); // 로그아웃 시 redux 데이터 초기화
+  const handleSignOut = () => {
+    signOut({ redirect: true, callbackUrl: '/Login' });
+    localStorage.clear();
     dispatch(reset());
-    push(data.url);
   };
-  // const handleSignOut = () => {
-  //   signOut();
-  //   window.localStorage.clear(); // 로그아웃 시 redux 데이터 초기화
-  //   push("/");
-  // };
+
   return (
     <div className='container'>
       <ContainerWrap>

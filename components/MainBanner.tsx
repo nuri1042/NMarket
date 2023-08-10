@@ -17,8 +17,8 @@ const MainBanner = () => {
   };
   let dotNums;
   if (typeof document !== 'undefined') {
-    dotNums = document.querySelectorAll('.slick-dots button');
-    dotNums.forEach(removeText);
+    dotNums = document.querySelector('.slick-dots > li');
+    dotNums.querySelectorAll('button').forEach(removeText);
   }
 
   const SampleArrow = (props: any) => {
