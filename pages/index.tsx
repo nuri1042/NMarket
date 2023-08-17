@@ -1,6 +1,8 @@
-import AppLayout from '../components/AppLayout';
-import Head from 'next/head';
-import { IProductProps } from '../interfaces/productProps';
+import AppLayout from "../components/AppLayout";
+import Head from "next/head";
+import { IProductProps } from "../interfaces/productProps";
+import { getSession } from "next-auth/react";
+import { GetServerSideProps, GetStaticProps } from "next";
 
 export interface Props {
   children?: React.ReactNode;
@@ -11,7 +13,7 @@ export default function Home({ product }: { product: IProductProps[] }) {
     <>
       <AppLayout product={product} />
       <Head>
-        <meta charSet='utf-8' />
+        <meta charSet="utf-8" />
         <title>NMarket</title>
       </Head>
     </>
@@ -43,26 +45,19 @@ export default function Home({ product }: { product: IProductProps[] }) {
 // SSR 은 페이지 로드 전에 API 에 접근함
 // CSR과 차이점 : 페이지가 렌더되기 전에 getStaticProps 함수를 이용해서 데이터를 먼저 fetch 하게 되고, 데이터가 fetch 되면 렌더딩이 일어난다.
 //              따라서 데이터가 fetch 되기까지의 로딩시간이 존재하지 않는다.
-// export async function getServerSideProps() {
-//   const res = await fetch(
-//     "https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products"
-//   );
-//   const product: IProductProps[] = await res.json();
-//   return {
-//     props: {
-//       product,
-//     },
-//   };
-// }
 
-// Static Generation 이용해서 Mock API로부터 데이터 받아오기
-export async function getStaticProps() {
-  const res = await fetch('https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products');
+// SSR 이용해서 Mock API로부터 데이터 받아오기
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session = await getSession(context);
+  const res = await fetch(
+    "https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products"
+  );
   const product: IProductProps[] = await res.json();
 
   return {
     props: {
       product,
+      session,
     },
   };
-}
+};

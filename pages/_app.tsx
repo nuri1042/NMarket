@@ -2,14 +2,13 @@ import Head from "next/head";
 import Link from "next/link";
 import wrapper from "../redux/store/configureStore";
 import "../styles/styles.css";
-import { SessionProvider, useSession } from "next-auth/react";
+import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/dist/shared/lib/router/router";
-import dynamic from "next/dynamic";
 
 // 전 페이지에서 공통되는 레이아웃 관리
-const App = ({ Component, pageProps, session }: AppProps) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   // custom App에는 built-in type 'AppProps'를 사용
-
+  console.log(`app`, session);
   return (
     // SessionProvider로 Component 를 감싸 nextjs에서 useSession Hook을 통해 session 정보에 접근할 수 있게 함
     <SessionProvider session={session}>
@@ -27,10 +26,17 @@ const App = ({ Component, pageProps, session }: AppProps) => {
               <Link href="/Cart">
                 <a className="btn-cart">장바구니</a>
               </Link>
-
-              <Link href="/Mypage">
-                <a className="btn-mypage">마이페이지</a>
-              </Link>
+              <div>
+                {session ? (
+                  <Link href="/Mypage">
+                    <a className="btn-mypage">마이페이지</a>
+                  </Link>
+                ) : (
+                  <Link href="/Login">
+                    <a className="btn-mypage">로그인</a>
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -21,7 +21,6 @@ const Cart = () => {
   const { itemList, totalPrice } = useSelector<RootState, ProductState>(
     (state) => state.product
   );
-  console.log("cart history");
 
   return (
     <div className="container">

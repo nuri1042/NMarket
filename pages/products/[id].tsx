@@ -1,12 +1,12 @@
-import { useCallback, FunctionComponent } from 'react';
-import { useRouter } from 'next/dist/client/router';
-import Router from 'next/dist/server/router';
-import Link from 'next/link';
-import { Form } from 'antd';
-import { useDispatch } from 'react-redux';
-import { addItem, addFavor } from '../../redux/actions/product';
-import { useSession } from 'next-auth/react';
-import Image from 'next/image';
+import { useCallback, FunctionComponent } from "react";
+import { useRouter } from "next/dist/client/router";
+import Router from "next/dist/server/router";
+import Link from "next/link";
+import { Form } from "antd";
+import { useDispatch } from "react-redux";
+import { addItem, addFavor } from "../../redux/actions/product";
+import { useSession } from "next-auth/react";
+import Image from "next/image";
 import {
   AddToCartBtn,
   AddToFavorBtn,
@@ -24,8 +24,8 @@ import {
   SaleInfo,
   SalePoint,
   ShipInfo,
-} from '../../styles/productStyle.js';
-import { IProductProps } from '../../interfaces/productProps';
+} from "../../styles/productStyle.js";
+import { IProductProps } from "../../interfaces/productProps";
 
 export interface IParams {
   params: {
@@ -33,7 +33,9 @@ export interface IParams {
   };
 }
 // props 매개변수에 직접적으로 typing해줘도 되지만 generic으로 함수형 컴포넌트의 props type을 지정 가능
-const Products: FunctionComponent<{ product: IProductProps[] }> = ({ product }) => {
+const Products: FunctionComponent<{ product: IProductProps[] }> = ({
+  product,
+}) => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
 
   const router = useRouter();
@@ -43,19 +45,21 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({ product }) 
 
   const onAddCart = useCallback(() => {
     if (!session) {
-      alert('로그인 후 이용해주세요.');
-      router.push('/Login');
+      alert("로그인 후 이용해주세요.");
+      router.push("/Login");
     } else {
       dispatch(addItem(product[id]));
+      router.push("/Cart");
     }
   }, [product[id], session]);
 
   const onAddFavor = useCallback(() => {
     if (!session) {
-      alert('로그인 후 이용해주세요.');
-      router.push('/Login');
+      alert("로그인 후 이용해주세요.");
+      router.push("/Login");
     } else {
       dispatch(addFavor(product[id]));
+      router.push("/Mypage");
     }
   }, [product[id], session]);
   return (
@@ -65,34 +69,45 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({ product }) 
           <ProductInfoWrap>
             <ProductPhotoWrap>
               <ProductPhoto>
-                <img src={product[id]?.imageUrl} alt='product photo' />
+                <img src={product[id]?.imageUrl} alt="product photo" />
               </ProductPhoto>
             </ProductPhotoWrap>
             <ProductDetailWrap>
               <ProductInfo>
                 <Bnr>
-                  <Image src='http://imgstatic.10x10.co.kr/main/202204/715/itemprdbanner_84780_20220411180738.jpg' alt='정기세일' width={'440px'} height={'65px'} priority={true} />
+                  <Image
+                    src="http://imgstatic.10x10.co.kr/main/202204/715/itemprdbanner_84780_20220411180738.jpg"
+                    alt="정기세일"
+                    width={"440px"}
+                    height={"65px"}
+                    priority={true}
+                  />
                 </Bnr>
                 <ProductBasic>
                   <h2>
                     <p>{product[id]?.name}</p>
                   </h2>
                 </ProductBasic>
-                <div className='detailInfo'>
+                <div className="detailInfo">
                   <SaleInfo
                     style={{
-                      paddingTop: '26px',
+                      paddingTop: "26px",
                     }}
                   >
                     <dt>판매가</dt>
                     <dd>
-                      <strong>{new String(product[id]?.originPrice).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</strong>
+                      <strong>
+                        {new String(product[id]?.originPrice).replace(
+                          /\B(?=(\d{3})+(?!\d))/g,
+                          ","
+                        )}
+                      </strong>
                     </dd>
                   </SaleInfo>
                   <SaleInfo>
                     <dt
                       style={{
-                        paddingTop: '16px',
+                        paddingTop: "16px",
                       }}
                     >
                       마일리지
@@ -104,7 +119,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({ product }) 
                   <SaleInfo>
                     <dt
                       style={{
-                        paddingTop: '16px',
+                        paddingTop: "16px",
                       }}
                     >
                       배송정보
@@ -118,16 +133,12 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({ product }) 
               <BtnArea>
                 <Form>
                   <FormSpan>
-                    <Link href='/Cart'>
-                      <a>
-                        <AddToCartBtn onClick={onAddCart}>장바구니</AddToCartBtn>
-                      </a>
-                    </Link>
-                    <Link href='/Mypage'>
-                      <a>
-                        <AddToFavorBtn onClick={onAddFavor}>찜하기</AddToFavorBtn>
-                      </a>
-                    </Link>
+                    <div>
+                      <AddToCartBtn onClick={onAddCart}>장바구니</AddToCartBtn>
+                    </div>
+                    <div>
+                      <AddToFavorBtn onClick={onAddFavor}>찜하기</AddToFavorBtn>
+                    </div>
                   </FormSpan>
                 </Form>
               </BtnArea>
@@ -144,7 +155,9 @@ export async function getStaticProps({ params }: IParams) {
   // 만약 route가 /products/1이면 params.id는 1이다
 
   const id = params.id!;
-  const res = await fetch(`https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products/${id}`);
+  const res = await fetch(
+    `https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products/${id}`
+  );
   const product: IProductProps[] = await res.json();
 
   return { props: { product } };
@@ -152,7 +165,9 @@ export async function getStaticProps({ params }: IParams) {
 
 // data에 따라 pre-rendering할 페이지의 동적 경로를 지정하는 함수
 export async function getStaticPaths() {
-  const res = await fetch('https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products');
+  const res = await fetch(
+    "https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products"
+  );
   const products: IProductProps[] = await res.json();
 
   // pre-render할 path를 얻음
