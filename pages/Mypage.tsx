@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import { signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/dist/client/router";
 import FavorList from "../components/FavorList";
 import {
   ContainerWrap,
@@ -21,9 +19,10 @@ const Mypage = () => {
   // 로그인 한 user 객체가 session.user에 저장됨
 
   const dispatch = useDispatch();
-
+  console.log(`mypage`, session);
   const handleSignOut = () => {
     signOut({ redirect: true, callbackUrl: "/Login" });
+
     localStorage.clear();
     dispatch(reset());
   };
