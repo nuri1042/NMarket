@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LiteralUnion, signIn, useSession } from "next-auth/react";
 import { Form } from "antd";
 import {
@@ -15,8 +15,33 @@ import { useRouter } from "next/dist/client/router";
 // next-auth 로 로그인 구현한 코드
 const Login = () => {
   const router = useRouter();
+  const { data: session, status } = useSession();
 
   const [email, setEmail] = useState("");
+
+  // beforePopstate 말고 뒤로가기 버튼 클릭 감지하는 event listener로 방지
+  // useEffect(() => {
+  //   if (status !== "authenticated") {
+  //     router.beforePopState(({ url, as, options }) => {
+  //       if (as !== "/") {
+  //         console.log(`moved page`, as);
+  //         window.location.href = as;
+  //         return false;
+  //       } else {
+  //         console.log(`moved page`, as);
+
+  //         return true;
+  //       }
+  //     });
+  //   }
+  // }, [status]);
+  // useEffect(() => {
+  //   if (status !== "authenticated") {
+  //     window.onpopstate = () => {
+  //       router.replace("/");
+  //     };
+  //   }
+  // }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLElement>) => {
     e.preventDefault();
@@ -33,8 +58,10 @@ const Login = () => {
   };
 
   const handleOAuthSignIn = (provider: LiteralUnion<string>) => () => {
+    // router.replace("/");
+
     signIn(provider, { redirect: true, callbackUrl: "/" });
-    // router.replace('/');
+    router.replace("/");
   };
 
   const providers = [

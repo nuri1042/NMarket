@@ -11,22 +11,35 @@ import {
 } from "../styles/mypageStyle";
 import { useDispatch } from "react-redux";
 import { reset } from "../redux/actions/product";
+import { useEffect } from "react";
+import { useRouter } from "next/dist/client/router";
 
 const Mypage = () => {
-  const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
+  const { data: session, status } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
   // useSession 은 Client Side(React) 에서 작동하는 Hook이다.
   // useSession 의 data 는 session/undefined/null 3가지가 있고
   // 로그인 한 user 객체가 session.user에 저장됨
+  const router = useRouter();
 
   const dispatch = useDispatch();
-  console.log(`mypage`, session);
+  console.log(`mypage`, session, status);
   const handleSignOut = () => {
-    signOut({ redirect: true, callbackUrl: "/Login" });
+    signOut({ redirect: true, callbackUrl: "/" });
 
     localStorage.clear();
     dispatch(reset());
+    router.replace("/");
   };
 
+  // useEffect(() => {
+  //   router.beforePopState(({ url, as, options }) => {
+  //     if (as !== "/") {
+  //       window.location.href = as;
+  //       return false;
+  //     }
+  //     return true;
+  //   });
+  // });
   return (
     <div className="container">
       <ContainerWrap>
