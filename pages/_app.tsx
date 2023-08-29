@@ -4,11 +4,12 @@ import wrapper from "../redux/store/configureStore";
 import "../styles/styles.css";
 import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/dist/shared/lib/router/router";
+import UserInfo from "../components/UserInfo";
 
 // 전 페이지에서 공통되는 레이아웃 관리
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   // custom App에는 built-in type 'AppProps'를 사용
-  console.log(`app`, session);
+
   return (
     // SessionProvider로 Component 를 감싸 nextjs에서 useSession Hook을 통해 session 정보에 접근할 수 있게 함
     <SessionProvider session={session}>
@@ -27,15 +28,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
                 <a className="btn-cart">장바구니</a>
               </Link>
               <div>
-                {session ? (
-                  <Link href="/Mypage">
-                    <a className="btn-mypage">마이페이지</a>
-                  </Link>
-                ) : (
-                  <Link href="/Login">
-                    <a className="btn-mypage">로그인</a>
-                  </Link>
-                )}
+                <UserInfo />
               </div>
             </div>
           </div>
@@ -48,13 +41,11 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
       <div className="footer">
         <div className="foot-cont-company">
           <em>(주)NMarket</em>
-          <p>
-            주소 : 서울시 종로구 대학로 57 홍익대학교 대학로캠퍼스 교육동 14층
-          </p>
+          <p>주소 : 서울시 종로구 대학로 50</p>
           <p>통신판매업 신고 : 제 01-1968호</p>
           <p>개인정보보호책임자 : 소비자피해보상보험 SGI 서울보증</p>
           <p className="tPad">호스팅서비스:(주) NMarket</p>
-          <p>COPYRIGHT © TENBYTEN ALL RIGHTS RESERVED</p>
+          <p>COPYRIGHT © NMARKET ALL RIGHTS RESERVED</p>
         </div>
       </div>
     </SessionProvider>

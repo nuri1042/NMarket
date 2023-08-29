@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Form } from "antd";
 import { useDispatch } from "react-redux";
 import { addItem, addFavor } from "../../redux/actions/product";
-import { useSession } from "next-auth/react";
+import { getSession, useSession } from "next-auth/react";
 import Image from "next/image";
 import {
   AddToCartBtn,

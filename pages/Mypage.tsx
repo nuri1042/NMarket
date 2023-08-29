@@ -23,23 +23,17 @@ const Mypage = () => {
 
   const dispatch = useDispatch();
   console.log(`mypage`, session, status);
+
   const handleSignOut = () => {
-    signOut({ redirect: true, callbackUrl: "/" });
+    // signOut({ callbackUrl: "/" });
+    signOut({ callbackUrl: "/" }).then(() => {
+      router.replace("/");
+    });
 
     localStorage.clear();
     dispatch(reset());
-    router.replace("/");
   };
 
-  // useEffect(() => {
-  //   router.beforePopState(({ url, as, options }) => {
-  //     if (as !== "/") {
-  //       window.location.href = as;
-  //       return false;
-  //     }
-  //     return true;
-  //   });
-  // });
   return (
     <div className="container">
       <ContainerWrap>
