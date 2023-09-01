@@ -24,7 +24,7 @@
 
 
 ## 프로젝트 배포 링크
-https://nmarket-three.vercel.app/
+https://nmarket.netlify.app
 
 
 
