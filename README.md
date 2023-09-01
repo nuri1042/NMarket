@@ -23,8 +23,8 @@
 - Static Side Generation 으로 Dynamic routing 구현해 상품의 상세 페이지로 이동
 
 
-## 프로젝트 페이지
-https://vercel.com/nuri1042/nmarket
+## 프로젝트 배포 링크
+https://nmarket-three.vercel.app/
 
 
 
