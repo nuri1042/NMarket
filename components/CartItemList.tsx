@@ -20,6 +20,7 @@ import {
   ItemPrice,
 } from "../styles/cartItemStyle";
 import { IProductProps } from "../interfaces/productProps";
+import React from "react";
 
 const CartItem = ({ itemList }: { itemList: IProductProps }) => {
   const dispatch = useDispatch();
@@ -109,7 +110,6 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
                       maxLength={4}
                       pattern="[0-9]*"
                       value={itemList.quantity}
-                      // onChange={(event: React.FormEvent<HTMLInputElement>) => this.onChangeQty(event)
                       onChange={onChangeQty}
                       style={{
                         width: "32px",
@@ -119,7 +119,6 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
                         boxSizing: "border-box",
                       }}
                     />
-
                     <button
                       style={{
                         width: "30px",
@@ -169,4 +168,4 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
     </>
   );
 };
-export default CartItem;
+export default React.memo(CartItem);

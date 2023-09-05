@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import Image from "next/image";
+import { media } from "./theme";
 
 export const ItemlistContainer = styled.div`
   padding: 83px 0 30px 0;
@@ -24,6 +26,11 @@ export const Items = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 auto;
+
+  ${media.medium`
+     width: 900px;
+    justify-content: space-around;
+  `}
 `;
 export const ItemsUl = styled.ul`
   margin: 0 -20px;
@@ -40,20 +47,47 @@ export const ItemsLi = styled.li`
     transition: box-shadow 0.3 ease-in-out;
     border-radius: 7px;
   }
+
+  ${media.medium`
+    width: 350px;
+    height: 350px;
+    margin-bottom: 130px;
+  `}
 `;
-export const ThumbImg = styled.img`
+export const Thumbnail = styled.div`
+  position: relative;
   width: 260px;
   height: 260px;
+  }
+
+  ${media.medium`
+    width: 350px;
+    height: 350px;
+  `}
+`;
+export const ThumbImg = styled(Image)`
+  width: 260px;
+  height: 260px;
+  objectFit="contain"
+
   &:hover{
     scale(1.5);
   }
 
+  ${media.medium`
+    width: 350px;
+    height: 350px;
+  `}
 `;
 export const DescName = styled.p`
   heigth: 35px;
-  padding: 12px 0 8px 8px;
+  padding: 16px 0 8px 8px;
   font-size: 14px;
   line-height: 1.29;
+
+  ${media.medium`
+    font-size: 24px;
+  `}
 `;
 export const Price = styled.div`
   font-size: 13px;

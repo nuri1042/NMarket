@@ -11,7 +11,6 @@ import {
 } from "../styles/mypageStyle";
 import { useDispatch } from "react-redux";
 import { reset } from "../redux/actions/product";
-import { useEffect } from "react";
 import { useRouter } from "next/dist/client/router";
 
 const Mypage = () => {
@@ -25,10 +24,10 @@ const Mypage = () => {
   console.log(`mypage`, session, status);
 
   const handleSignOut = () => {
-    // signOut({ callbackUrl: "/" });
     signOut({ callbackUrl: "/" }).then(() => {
-      router.replace("/");
+      window.history.replaceState(window.history.state, "", "/");
     });
+    // router.replace("/");
 
     localStorage.clear();
     dispatch(reset());
