@@ -3,7 +3,7 @@ import { css, CSSProp } from "styled-components";
 type MediaQueryProps = {
   [key: string]: number;
 };
-const breakpoints: MediaQueryProps = {
+export const breakpoints: MediaQueryProps = {
   small: 360,
   medium: 750,
   large: 960,

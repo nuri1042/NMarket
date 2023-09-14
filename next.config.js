@@ -43,6 +43,7 @@ module.exports = withBundleAnalyzer({
   webpack(config, { webpack }) {
     const prod = process.env.NODE_ENV === "production";
     const plugins = [...config.plugins];
+
     return {
       ...config,
       mode: prod ? "production" : "development",

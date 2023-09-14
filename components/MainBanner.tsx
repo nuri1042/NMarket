@@ -3,23 +3,24 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import Image from "next/image";
+import { useState } from "react";
+import { BannerImages } from "../database/bannerImage";
+import { number, string } from "prop-types";
 
+interface ImagesType {
+  id: number;
+  src: string;
+  alt: string;
+}
 const MainBanner = () => {
+  const [images, setImages] = useState<ImagesType[]>(BannerImages);
+
   const SliderWrap = styled.div`
     overflow: hidden;
     .slick-track {
       display: flex;
     }
   `;
-  // slick-dots > li > button에 가끔씩 숫자가 노출되는 것 innerHTML=""로 해결
-  // const removeText = (item: any) => {
-  //   item.innerHTML = "";
-  // };
-  // let dotNums;
-  // if (typeof document !== "undefined") {
-  //   dotNums = document.querySelector(".slick-dots > li");
-  //   dotNums.querySelectorAll("button").forEach(removeText);
-  // }
 
   const SampleArrow = (props: any) => {
     const { className, style } = props;
@@ -47,69 +48,18 @@ const MainBanner = () => {
     <>
       <SliderWrap>
         <Slider {...settings}>
-          <div>
-            <Image
-              src="/img/banners/banner1.jpg"
-              alt="first slide"
-              width={"1920px"}
-              height={"600px"}
-              layout={"responsive"}
-            />
-          </div>
-          <div>
-            <Image
-              src="/img/banners/banner2.png"
-              alt="second slide"
-              width={"1920px"}
-              height={"600px"}
-              layout={"responsive"}
-            />
-          </div>
-          <div>
-            <Image
-              src="/img/banners/banner3.jpg"
-              alt="third slide"
-              width={"1920px"}
-              height={"600px"}
-              layout={"responsive"}
-            />
-          </div>
-          <div>
-            <Image
-              src="/img/banners/banner4.jpg"
-              alt="fourth slide"
-              width={"1920px"}
-              height={"600px"}
-              layout={"responsive"}
-            />
-          </div>
-          <div>
-            <Image
-              src="/img/banners/banner5.png"
-              alt="fifth slide"
-              width={"1920px"}
-              height={"600px"}
-              layout={"responsive"}
-            />
-          </div>
-          <div>
-            <Image
-              src="/img/banners/banner6.png"
-              alt="sixth slide"
-              width={"1920px"}
-              height={"600px"}
-              layout={"responsive"}
-            />
-          </div>
-          <div>
-            <Image
-              src="/img/banners/banner7.jpg"
-              alt="seventh slide"
-              width={"1920px"}
-              height={"600px"}
-              layout={"responsive"}
-            />
-          </div>
+          {images.map((item) => {
+            return (
+              <div>
+                <Image
+                  src={`/${item.src}`}
+                  width={"1920px"}
+                  height={"600px"}
+                  layout={"responsive"}
+                />
+              </div>
+            );
+          })}
         </Slider>
       </SliderWrap>
     </>

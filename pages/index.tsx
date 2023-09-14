@@ -1,5 +1,4 @@
 import AppLayout from "../components/AppLayout";
-import Head from "next/head";
 import { IProductProps } from "../interfaces/productProps";
 import { getSession } from "next-auth/react";
 import { GetServerSideProps, GetStaticProps } from "next";
@@ -12,10 +11,6 @@ export default function Home({ product }: { product: IProductProps[] }) {
   return (
     <>
       <AppLayout product={product} />
-      <Head>
-        <meta charSet="utf-8" />
-        <title>NMarket</title>
-      </Head>
     </>
   );
 }

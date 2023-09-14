@@ -38,6 +38,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
 }) => {
   const { data: session } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
 
+  console.log(`detail page`, session);
   const router = useRouter();
   const id = parseInt(router.query.id as string, 10); // router.query는 ParsedUrlQuery object이다.
 
@@ -51,6 +52,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
       dispatch(addItem(product[id]));
       router.push("/Cart");
     }
+    console.log(`add cart`, session);
   }, [product[id], session]);
 
   const onAddFavor = useCallback(() => {
@@ -61,6 +63,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
       dispatch(addFavor(product[id]));
       router.push("/Mypage");
     }
+    console.log(`add favor`, session);
   }, [product[id], session]);
   return (
     <>

@@ -10,7 +10,6 @@ import {
   ThumbImg,
   Thumbnail,
 } from "../styles/ItemListStyle";
-import Image from "next/image";
 import { IProductProps } from "../interfaces/productProps";
 
 const ItemList = ({ product }: { product: IProductProps[] }) => {
@@ -37,8 +36,6 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
                             <ThumbImg
                               src={product.imageUrl}
                               alt="product image"
-                              width={"260px"}
-                              height={"260px"}
                               layout="fill"
                             />
                           </Thumbnail>

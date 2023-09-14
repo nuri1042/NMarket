@@ -5,7 +5,7 @@
 }
 html,
 body {
-  min-width: 1200px;
+  min-width: 1100px;
   width: 100%;
   height: 100%;
   font-family: "Inter", "Noto Sans KR", "맑은 고딕", "malgun gothic", "돋움",
@@ -35,6 +35,7 @@ body {
   line-height: 1.6;
   border-bottom: 1px solid #eee;
   height: 100%;
+  min-width: 1100px;
   max-width: 1900px;
   margin: 0 auto;
   min-width: 600px;
@@ -54,7 +55,7 @@ body {
   display: flex;
 }
 .nav-service > a {
-  margin-right: 12px;
+  margin-right: 16px;
 }
 .btn-cart {
   width: 48px;
@@ -81,7 +82,6 @@ body {
   position: relative;
 }
 #banner {
-  height: 600px;
   margin: 0 auto;
 }
 
@@ -129,7 +129,6 @@ a {
 @media screen and (max-width: 1600px) {
   #banner {
     width: 1600px;
-    height: 550px;
   }
   .slick-track .slick-slide {
     width: 1600px;
@@ -141,9 +140,7 @@ a {
 }
 @media screen and (max-width: 1400px) {
   #banner {
-    height: 450px;
     width: 1400px;
-    padding-bottom: 83px;
   }
   .slick-track .slick-slide {
     width: 1400px;
@@ -156,8 +153,7 @@ a {
 }
 @media screen and (max-width: 1200px) {
   #banner {
-    height: 375px;
-    width: 1200px;
+    width: 100%;
   }
   .slick-track .slick-slide {
     width: 1200px;
@@ -170,15 +166,28 @@ a {
 
 @media screen and (max-width: 768px) {
   #banner {
-    height: 375px;
-    width: 1000px;
+    width: 100%;
   }
   .slick-track .slick-slide {
     width: 1000px;
   }
 
   .slick-slide img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #banner {
+    width: 100%;
+  }
+  .slick-track .slick-slide {
     width: 1000px;
-    height: 375px;
+  }
+  .btn-cart,
+  .btn-mypage {
+    width: 48px;
+    height: 48px;
+    background-size: 35px 35px;
   }
 }

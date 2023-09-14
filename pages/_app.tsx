@@ -12,31 +12,33 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
 
   return (
     // SessionProvider로 Component 를 감싸 nextjs에서 useSession Hook을 통해 session 정보에 접근할 수 있게 함
-    <SessionProvider session={session}>
-      <Head>
-        <meta charSet="utf-8" />
-        <title>NMarket</title>
-      </Head>
-      <div id="header">
-        <div id="header-inner">
-          <Link href="/" prefetch={true}>
-            <a className="site-logo"></a>
-          </Link>
-          <div className="head-service">
-            <div className="nav-service">
-              <Link href="/Cart">
-                <a className="btn-cart">장바구니</a>
-              </Link>
-              <div>
-                <UserInfo />
+    <>
+      <SessionProvider session={session}>
+        <Head>
+          <meta charSet="utf-8" />
+          <title>NMarkets</title>
+        </Head>
+        <div id="header">
+          <div id="header-inner">
+            <Link href="/" prefetch={true}>
+              <a className="site-logo"></a>
+            </Link>
+            <div className="head-service">
+              <div className="nav-service">
+                <Link href="/Cart">
+                  <a className="btn-cart">장바구니</a>
+                </Link>
+                <div>
+                  <UserInfo />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div id="body">
-        <Component {...pageProps} />
-      </div>
+        <div id="body">
+          <Component {...pageProps} />
+        </div>
+      </SessionProvider>
 
       <div className="footer">
         <div className="foot-cont-company">
@@ -48,7 +50,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
           <p>COPYRIGHT © NMARKET ALL RIGHTS RESERVED</p>
         </div>
       </div>
-    </SessionProvider>
+    </>
   );
 };
 
