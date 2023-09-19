@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import { media } from "./theme";
+
 export const CartWrap = styled.div`
   padding-bottom: 80px;
-  height: 120vh;
-  min-width: 1200px;
 `;
 export const PageTitle = styled.div`
   max-width: 1200px;
@@ -12,6 +12,12 @@ export const PageTitle = styled.div`
   & h1 {
     margin: 0;
     font-size: 32px;
+    ${media.medium`
+      font-size: 38px;
+     `}
+    ${media.small`
+      font-size: 43px;
+     `}
   }
 `;
 export const CartProductBox = styled.div`
@@ -27,6 +33,13 @@ export const CartProductBox = styled.div`
     & strong {
       margin-left: 0;
       font-size: 22px;
+
+      ${media.medium`
+      font-size: 30px;
+     `}
+      ${media.small`
+      font-size: 38px;
+     `}
     }
   }
 `;
@@ -39,7 +52,11 @@ export const CartHeader = styled.div`
 `;
 export const TitBox = styled.div`
   width: 100%;
-  height: 20px;
+  height: 30px;
+
+  ${media.small`
+         height: 40px;
+        `}
 `;
 export const ProductInfoCell = styled.p`
   float: left;
@@ -48,6 +65,14 @@ export const ProductInfoCell = styled.p`
   font-weight: 700;
   text-align: center;
   width: 50.3%;
+  ${media.medium`
+      font-size: 22px;
+      font-weight: 600;
+     `}
+  ${media.small`
+      font-size: 30px;
+      font-weight: 600;
+     `}
 `;
 export const PaymentPriceInfo = styled.div`
   margin: 73px auto 60px;
@@ -78,12 +103,28 @@ export const PaymentPriceInfoBox = styled.div`
         font-size: 14px;
         font-weight: 400;
         color: #202429;
+        ${media.medium`
+          font-size: 22px;
+          font-weight: 700;
+        `}
+        ${media.small`
+          font-size: 28px;
+          font-weight: 700;
+        `}
       }
 
       & p {
         font-size: 18px;
         font-weight: 700;
         margin-top: 8px;
+        ${media.medium`
+          font-size: 22px;
+          font-weight: 700;
+        `}
+        ${media.small`
+          font-size: 24px;
+          font-weight: 700;
+        `}
       }
     }
   }
@@ -127,6 +168,12 @@ export const PaymentAllPriceBox = styled.div`
     font-size: 20px;
     font-weight: 700;
     color: #202429;
+    ${media.medium`
+        font-size: 25px;
+    `}
+    ${media.small`
+        font-size: 30px;
+    `}
   }
 
   & p {
@@ -134,5 +181,11 @@ export const PaymentAllPriceBox = styled.div`
     font-weight: 700;
     margin-top: 4px;
     color: #ff204b;
+    ${media.medium`
+        font-size: 28px;
+    `}
+    ${media.small`
+        font-size: 32px;
+    `}
   }
 `;

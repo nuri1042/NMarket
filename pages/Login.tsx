@@ -34,8 +34,8 @@ const Login = () => {
   };
 
   const handleOAuthSignIn = (provider: LiteralUnion<string>) => () => {
-    signIn(provider, { redirect: true, callbackUrl: "/" });
-    router.replace("/");
+    signIn(provider, { callbackUrl: "/" });
+    window.history.replaceState(window.history.state, "", "/");
   };
 
   const providers = [

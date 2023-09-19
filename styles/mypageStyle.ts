@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ContainerWrap = styled.div`
   padding-top: 40px;
   background: #f4eade;
-  height: 120vh;
+  height: 80vh;
   min-width: 1200px;
   padding-bottom: 80px;
 `;

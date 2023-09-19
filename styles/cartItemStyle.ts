@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "./theme";
 
 export const ItemInfoBox = styled.div`
   display: flex;
@@ -27,12 +28,30 @@ export const ProductInfo = styled.div`
   width: calc(100%-172px);
   margin: 0 42px 0 20px;
   float: left;
+  & p {
+    & a {
+      font-size: 18px;
+      font-weight: 600;
+      ${media.medium`
+      font-size: 22px;
+      `}
+      ${media.small`
+      font-size: 27px;
+      `}
+    }
+  }
 `;
 
 export const Price = styled.div`
   font-size: 16px;
   font-weight: 700;
   margin-top: 7px;
+  ${media.medium`
+      font-size: 20px;
+  `}
+  ${media.small`
+      font-size: 27px;
+  `}
 `;
 
 export const ItemOptionBox = styled.div`
@@ -42,10 +61,10 @@ export const ItemOptionBox = styled.div`
   justify-content: center;
   padding: 22px;
 
-  @media screen and (max-width: 768px) {
+  ${media.medium`
     flex-direction: column;
     align-items: center;
-  }
+  `}
 `;
 
 export const QtyDesc = styled.div`
@@ -53,9 +72,14 @@ export const QtyDesc = styled.div`
   font-size: 13px;
   margin: 23px 0;
 
-  @media screen and (max-width: 768px) {
+  ${media.medium`
     margin: 0;
-  }
+    font-size: 18px;
+  `}
+  ${media.small`
+    margin: 0;
+    font-size: 23px;
+  `}
 `;
 
 export const BtnItemBuyWrap = styled.div`
@@ -75,4 +99,10 @@ export const ItemPrice = styled.span`
   font-size: 16px;
   font-weight: 600;
   color: #202429;
+  ${media.medium`
+    font-size: 21px;
+  `}
+  ${media.small`
+    font-size: 30px;
+  `}
 `;

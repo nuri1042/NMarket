@@ -70,9 +70,7 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
                 <ProductInfo>
                   <p className="name" style={{ lineHeight: 1.4 }}>
                     <Link as={`/products/${itemList.id}`} href="/products/[id]">
-                      <a style={{ fontSize: "15px", fontWeight: 700 }}>
-                        {itemList.name}
-                      </a>
+                      <a>{itemList.name}</a>
                     </Link>
                   </p>
                   <div className="price-wrap">

@@ -1,11 +1,9 @@
 import { useCallback, FunctionComponent } from "react";
 import { useRouter } from "next/dist/client/router";
-import Router from "next/dist/server/router";
-import Link from "next/link";
 import { Form } from "antd";
 import { useDispatch } from "react-redux";
 import { addItem, addFavor } from "../../redux/actions/product";
-import { getSession, useSession } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 import {
   AddToCartBtn,
@@ -24,7 +22,7 @@ import {
   SaleInfo,
   SalePoint,
   ShipInfo,
-} from "../../styles/productStyle.js";
+} from "../../styles/productStyle";
 import { IProductProps } from "../../interfaces/productProps";
 
 export interface IParams {
