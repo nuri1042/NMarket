@@ -10,7 +10,6 @@ body {
   height: 100%;
   font-family: "Inter", "Noto Sans KR", "맑은 고딕", "malgun gothic", "돋움",
     "dotum", sans-serif;
-  overflow-x: hidden;
 }
 #header {
   position: relative;
