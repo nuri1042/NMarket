@@ -189,6 +189,11 @@ a {
   em {
     font-size: 24px;
   }
+
+  .container {
+    width: 900px;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 360px) {
