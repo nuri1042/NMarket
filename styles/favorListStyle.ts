@@ -147,7 +147,8 @@ export const Nodata = styled.div`
   margin-top: 70px;
   text-align: center;
   position: relative;
-  left: 32%;
+  padding-top: 3vh;
+  margin: 0 auto;
 `;
 
 export const NodataImg = styled.a`

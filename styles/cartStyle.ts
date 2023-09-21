@@ -4,6 +4,7 @@ import { media } from "./theme";
 export const CartWrap = styled.div`
   padding-bottom: 80px;
   width: 100%;
+  overflow-x: hidden;
 `;
 export const PageTitle = styled.div`
   max-width: 1200px;
