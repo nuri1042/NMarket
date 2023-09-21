@@ -6,10 +6,10 @@ export const FavorSection = styled.div`
   max-width: 900px;
 
   ${media.medium`
-    width: 50%;
+    width: 45%;
  `}
   ${media.small`
-    width: 50%;
+    width: 40%;
  `}
 `;
 
@@ -53,11 +53,11 @@ export const PdtList = styled.div`
   margin: 0 50px 10px 0;
 
   ${media.medium`
-    margin-right: 20px;
+    margin-right: 10px;
   `}
 
   ${media.small`
-    margin-right: 16px;
+    margin-right: 10px;
   `}
 `;
 export const PdtListImg = styled.div`
