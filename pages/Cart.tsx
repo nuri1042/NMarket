@@ -19,7 +19,7 @@ const Cart = () => {
   );
 
   return (
-    <div className="container">
+    <div className="container" style={{ width: "100%" }}>
       <CartWrap>
         <CartProductBox>
           <CartHeaderInfo />

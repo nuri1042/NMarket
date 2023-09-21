@@ -25,6 +25,7 @@ export const PageTitle = styled.div`
 export const CartProductBox = styled.div`
   margin: 40px auto 0;
   max-width: 1200px;
+  width: 100%;
   border-bottom: 0;
 
   & h2 {
