@@ -10,7 +10,6 @@ import {
   AddToFavorBtn,
   Bnr,
   BtnArea,
-  Container,
   ContentWrap,
   DetailInfo,
   FormSpan,
