@@ -12,6 +12,7 @@ import {
   BtnArea,
   Container,
   ContentWrap,
+  DetailInfo,
   FormSpan,
   ProductBasic,
   ProductDetailWrap,
@@ -88,7 +89,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
                     <p>{product[id]?.name}</p>
                   </h2>
                 </ProductBasic>
-                <div className="detailInfo">
+                <DetailInfo>
                   <SaleInfo
                     style={{
                       paddingTop: "26px",
@@ -128,7 +129,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
                       <ShipInfo>무료배송</ShipInfo>
                     </dd>
                   </SaleInfo>
-                </div>
+                </DetailInfo>
               </ProductInfo>
               <BtnArea>
                 <Form>

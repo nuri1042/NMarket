@@ -1,6 +1,11 @@
 import styled from "styled-components";
+import { media } from "./theme";
+
 export const Container = styled.div`
-  // height: 120vh;
+  ${media.medium`
+      width: 900px;
+      margin: 0 auto;
+    `}
 `;
 export const ContentWrap = styled.div`
   padding: 30px 0 80px 0;
@@ -28,6 +33,10 @@ export const ProductPhoto = styled.div`
     display: inline;
     vertical-align: top;
     padding-left: 100px;
+
+    ${media.medium`
+\     padding-left:40px;
+    `}
   }
 `;
 export const ProductDetailWrap = styled.div`
@@ -35,7 +44,7 @@ export const ProductDetailWrap = styled.div`
   float: right;
 `;
 export const ProductInfo = styled.div`
-  width: 570px;
+  width: 440px;
   padding-bottom: 39px;
   border-bottom: 1px solid #ddd;
   min-height: 310px;
@@ -58,6 +67,9 @@ export const ProductBasic = styled.div`
       color: #000;
     }
   }
+`;
+export const DetailInfo = styled.div`
+  width: 440px;
 `;
 export const SaleInfo = styled.dl`
   width: 440px;
