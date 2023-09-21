@@ -156,9 +156,7 @@ export async function getStaticProps({ params }: IParams) {
   // 만약 route가 /products/1이면 params.id는 1이다
 
   const id = params.id!;
-  const res = await fetch(
-    `https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products/${id}`
-  );
+  const res = await fetch(`${process.env.BASE_URL_API}/products/${id}`);
   const product: IProductProps[] = await res.json();
 
   return { props: { product } };
@@ -166,9 +164,7 @@ export async function getStaticProps({ params }: IParams) {
 
 // data에 따라 pre-rendering할 페이지의 동적 경로를 지정하는 함수
 export async function getStaticPaths() {
-  const res = await fetch(
-    "https://38840a05-1807-4390-bd4e-e1faca1add11.mock.pstmn.io/products"
-  );
+  const res = await fetch(`${process.env.BASE_URL_API}/products`);
   const products: IProductProps[] = await res.json();
 
   // pre-render할 path를 얻음
