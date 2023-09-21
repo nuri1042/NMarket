@@ -17,11 +17,21 @@ export const ProductInfoWrap = styled.div`
 export const ProductPhotoWrap = styled.div`
   width: 510px;
   margin-top: 5px;
+
+  ${media.medium`
+      width: 280px;
+      margin-right: 30px;
+    `}
 `;
 export const ProductPhoto = styled.div`
   width: 350px;
   height: 350px;
   padding: 5px 5px 50px 5px;
+
+  ${media.medium`
+    padding-right: 10px;
+    width: 100%;
+  `}
 
   & img {
     height: 350px;
@@ -30,7 +40,13 @@ export const ProductPhoto = styled.div`
     padding-left: 100px;
 
     ${media.medium`
-      padding-left:30px;
+      padding-left:20px;
+      width: 280px;
+      height: 280px;
+    `}
+    ${media.small`
+      width: 280px;
+      height: 280px;
     `}
   }
 `;
@@ -45,10 +61,6 @@ export const ProductInfo = styled.div`
   padding-bottom: 39px;
   border-bottom: 1px solid #ddd;
   min-height: 310px;
-
-  ${media.medium`
-    width: 400px;
-  `}
 `;
 export const Bnr = styled.div`
   margin-top: 10px;
@@ -75,6 +87,10 @@ export const ProductBasic = styled.div`
 `;
 export const DetailInfo = styled.div`
   width: 440px;
+
+  ${media.medium`
+    width: 400px;
+  `}
 `;
 export const SaleInfo = styled.dl`
   width: 440px;
@@ -104,6 +120,10 @@ export const BtnArea = styled.div`
   padding-top: 15px;
   width: 100%;
   display: table;
+
+  ${media.medium`
+    width: 400px;
+  `}
 `;
 export const FormSpan = styled.span`
   display: inline-flex;

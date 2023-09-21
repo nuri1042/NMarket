@@ -112,6 +112,7 @@ export const ProfileContainer = styled.div`
     border: none;
     padding: 5px;
     cursor: pointer;
+    color: #000;
 
     ${media.medium`
       font-size: 16px;

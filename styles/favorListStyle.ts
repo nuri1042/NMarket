@@ -51,6 +51,14 @@ export const PdtList = styled.div`
   align-items: flex-start;
   cursor: pointer;
   margin: 0 50px 10px 0;
+
+  ${media.medium`
+    margin-right: 20px;
+  `}
+
+  ${media.small`
+    margin-right: 16px;
+  `}
 `;
 export const PdtListImg = styled.div`
   float: left;
@@ -60,10 +68,7 @@ export const PdtListImg = styled.div`
   margin-bottom: 10px;
 
   & a {
-    // padding: 0 18px;
-
     overflow: hidden;
-
     margin-bottom: 12px;
 
     & img {
@@ -73,8 +78,8 @@ export const PdtListImg = styled.div`
       height: 135px;
 
       ${media.medium`
-      width: 165px;
-      height: 165px;
+      width: 145px;
+      height: 145px;
      `}
     }
   }
@@ -139,6 +144,7 @@ export const PdtName = styled.span`
       height: 16px;
       font-size: 9px;
       cursor: pointer;
+      color: #000;
 
       ${media.medium`
       width: 60px;
