@@ -12,7 +12,6 @@ export const ContainerWrap = styled.div`
   `}
 `;
 export const MyprofileInfo = styled.div`
-  width: 100%;
   margin: 0 auto;
 `;
 export const MypageMain = styled.div`
@@ -21,6 +20,10 @@ export const MypageMain = styled.div`
   margin-top: 4px;
   padding: 0 70px 0 70px;
 
+  ${media.medium`
+  padding: 0 70px 0 20px;
+ `}
+
   & h2 {
     line-height: 16px;
     font-size: 24px;
@@ -28,11 +31,15 @@ export const MypageMain = styled.div`
   }
 `;
 export const ProfileDetail = styled.div`
-  width: 15%;
+  max-width: 250px;
+  width: 20%;
   margin-top: 20px;
-  margin-right: 60px;
+  margin-right: 50px;
 
   ${media.medium`
+    width: 25%;
+ `}
+  ${media.small`
     width: 20%;
  `}
 `;

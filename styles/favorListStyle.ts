@@ -3,6 +3,7 @@ import { media } from "./theme";
 
 export const FavorSection = styled.div`
   width: 60%;
+  max-width: 900px;
 `;
 
 export const ArticleWish = styled.div`

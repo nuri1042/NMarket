@@ -35,7 +35,7 @@ export const ProductPhoto = styled.div`
     padding-left: 100px;
 
     ${media.medium`
-\     padding-left:40px;
+      padding-left:30px;
     `}
   }
 `;
@@ -48,6 +48,10 @@ export const ProductInfo = styled.div`
   padding-bottom: 39px;
   border-bottom: 1px solid #ddd;
   min-height: 310px;
+
+  ${media.medium`
+    width: 400px;
+  `}
 `;
 export const Bnr = styled.div`
   margin-top: 10px;
@@ -56,6 +60,10 @@ export const ProductBasic = styled.div`
   padding: 29px 0 0 0;
   border-bottom: 1px solid #ddd;
   width: 440px;
+
+  ${media.medium`
+    width: 400px;
+  `}
 
   & h2 {
     padding-bottom: 25px;

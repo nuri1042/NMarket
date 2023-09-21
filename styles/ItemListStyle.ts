@@ -28,7 +28,6 @@ export const Items = styled.div`
   margin: 0 auto;
 
   ${media.medium`
-     width: 900px;
     justify-content: space-around;
   `}
 `;

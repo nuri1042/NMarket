@@ -5,7 +5,7 @@
 }
 html,
 body {
-  min-width: 900px;
+  min-width: 870px;
   width: 100%;
   height: 100%;
   font-family: "Inter", "Noto Sans KR", "맑은 고딕", "malgun gothic", "돋움",
@@ -96,6 +96,7 @@ body {
   /* position: relative; */
   background: #f8f8f8;
   height: 300px;
+  min-width: 870px;
 }
 .foot-cont-company {
   width: 540px;
@@ -185,7 +186,6 @@ a {
   }
   .footer {
     font-size: 17px;
-    width: 900px;
     margin: 0 auto;
   }
   em {
