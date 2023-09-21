@@ -50,6 +50,19 @@ export const CartHeader = styled.div`
   border-top: 1px solid #ebeef2;
   border-bottom: 1px solid #ebeef2;
 `;
+
+export const EmptyCartDesc = styled.div`
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 18px;
+
+  ${media.medium`
+      font-size: 22px;
+      font-weight: 600;
+     `}
+`;
+
 export const TitBox = styled.div`
   width: 100%;
   height: 30px;

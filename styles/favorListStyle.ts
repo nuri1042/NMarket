@@ -1,13 +1,12 @@
 import styled from "styled-components";
+import { media } from "./theme";
 
 export const FavorSection = styled.div`
-  width: 598px;
-  margin-left: 40px;
-  float: left;
+  width: 60%;
 `;
 
 export const ArticleWish = styled.div`
-  margin-top: 20px;
+  margin-top: 56px;
   padding-top: 16px;
   border-top: 2px solid #555;
   background-color: #fff;
@@ -17,6 +16,10 @@ export const ArticleWish = styled.div`
     padding-left: 28px;
     font-size: 14px;
     line-height: 1.25em;
+
+    ${media.medium`
+      font-size: 19px;
+     `}
   }
 `;
 
@@ -24,9 +27,14 @@ export const PdtListContainer = styled.div`
   padding-bottom: 20px;
   overflow: hidden;
   margin-top: 26px;
-  padding-left: 13px;
+  padding-left: 23px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+
+  ${media.medium`
+    justify-content: space-around;
+  `}
 `;
 
 export const PdtList = styled.div`
@@ -34,7 +42,7 @@ export const PdtList = styled.div`
   flex-direction: column;
   align-items: flex-start;
   cursor: pointer;
-  margin: 0 17px 10px 0;
+  margin: 0 50px 10px 0;
 `;
 export const PdtListImg = styled.div`
   float: left;
@@ -44,42 +52,75 @@ export const PdtListImg = styled.div`
   margin-bottom: 10px;
 
   & a {
-    padding: 0 18px;
-    width: 126px;
-    height: 126px;
+    // padding: 0 18px;
+
     overflow: hidden;
-    display: flex;
-    align-items: center;
+
     margin-bottom: 12px;
 
     & img {
       height: 100%;
       vertical-align: top;
+      width: 135px;
+      height: 135px;
+
+      ${media.medium`
+      width: 165px;
+      height: 165px;
+     `}
     }
   }
 `;
+export const ImgCaption = styled.div`
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  opacity: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
 
+  & h3 {
+    padding: 16px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+`;
 export const PdtName = styled.span`
   display: inline-block;
-  width: 100px;
-  margin-left: 24px;
+  width: 130px;
+  // margin-left: 24px;
   min-height: 26px;
   margin-bottom: 5px;
   vertical-align: top;
-  line-height: 1.2em;
+  // line-height: 1.2em;
   overflow: hidden;
+
+  ${media.medium`
+      width: 150px;
+     `}
 
   & a {
     color: #777;
     font-weight: normal;
     font-size: 13px;
-    display: -webkit-box;
+    display: block;
     word-wrap: break-word;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    height: 26px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    // height: 28px;
     margin-bottom: 11px;
+
+    ${media.medium`
+      font-size: 18px;
+      font-weight: 600;
+      line-height:1.6;
+     `}
   }
 
   & div {
@@ -90,6 +131,14 @@ export const PdtName = styled.span`
       height: 16px;
       font-size: 9px;
       cursor: pointer;
+
+      ${media.medium`
+      width: 60px;
+      height: 24px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height:1.6;
+     `}
     }
   }
 `;

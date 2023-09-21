@@ -11,6 +11,7 @@ import {
   PdtListContainer,
   PdtName,
   PdtList,
+  ImgCaption,
 } from "../styles/favorListStyle";
 import { useDispatch } from "react-redux";
 import { RootState } from "../redux/reducers";
@@ -42,12 +43,16 @@ const FavorList = () => {
                             src={favorList.imageUrl}
                             alt="favor item image"
                           />
+                          <ImgCaption>
+                            <h3>{favorList.name}</h3>
+                            <p>{favorList.originPrice}원</p>
+                          </ImgCaption>
                         </a>
                       </PdtListImg>
                     </Link>
                     <PdtName>
                       <a>{favorList.name}</a>
-                      <div style={{ marginLeft: "20px" }}>
+                      <div>
                         <button
                           onClick={() => dispatch(removeFavor(favorList))}
                         >

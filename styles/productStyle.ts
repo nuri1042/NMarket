@@ -1,25 +1,22 @@
 import styled from "styled-components";
 export const Container = styled.div`
-  height: 120vh;
+  // height: 120vh;
 `;
 export const ContentWrap = styled.div`
   padding: 30px 0 80px 0;
-  width: 1140px;
   margin: 0 auto;
 `;
 export const ProductInfoWrap = styled.div`
   position: relative;
-  width: 1140px;
   margin-top: 10px;
   padding-top: 23px;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
 `;
 export const ProductPhotoWrap = styled.div`
-  position: relative;
-  float: left;
   width: 510px;
   margin-top: 5px;
-  padding: 0 25px;
 `;
 export const ProductPhoto = styled.div`
   width: 350px;

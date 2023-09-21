@@ -8,6 +8,7 @@ import { RootState } from "../redux/reducers";
 import {
   CartProductBox,
   CartWrap,
+  EmptyCartDesc,
   PaymentPriceInfo,
   PaymentPriceInfoBox,
 } from "../styles/cartStyle";
@@ -27,16 +28,7 @@ const Cart = () => {
               return <CartItem itemList={itemList} key={itemList.id} />;
             })
           ) : (
-            <div
-              style={{
-                position: "relative",
-                left: "45%",
-                width: "150px",
-                marginTop: "5%",
-              }}
-            >
-              장바구니가 비어있습니다.
-            </div>
+            <EmptyCartDesc>장바구니가 비어있습니다.</EmptyCartDesc>
           )}
         </CartProductBox>
         <PaymentPriceInfo>

@@ -1,32 +1,42 @@
 import styled from "styled-components";
+import { media } from "./theme";
 
 export const ContainerWrap = styled.div`
   padding-top: 40px;
   background: #f4eade;
   height: 80vh;
-  min-width: 1200px;
   padding-bottom: 80px;
+
+  ${media.xlarge`
+    height: 100%
+  `}
 `;
 export const MyprofileInfo = styled.div`
-  width: 1140px;
+  width: 100%;
   margin: 0 auto;
+`;
+export const MypageMain = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+  padding: 0 70px 0 70px;
 
   & h2 {
     line-height: 16px;
     font-size: 24px;
     color: #000;
-    padding-left: 130px;
   }
 `;
-export const MypageMain = styled.div`
-  margin-top: 4px;
-  width: 1140px;
-  padding: 0 70px 0 70px;
+export const ProfileDetail = styled.div`
+  width: 15%;
+  margin-top: 20px;
+  margin-right: 60px;
+
+  ${media.medium`
+    width: 20%;
+ `}
 `;
-export const MyprofileContainer = styled.div`
-  float: left;
-  width: 212px;
-`;
+
 export const Profile = styled.div`
   margin-top: 20px;
   padding-top: 19px;
@@ -39,6 +49,10 @@ export const Profile = styled.div`
     font-weight: bold;
     line-height: 1.25em;
     padding: 10px;
+
+    ${media.medium`
+      font-size: 19px;
+     `}
   }
 
   & ul {
@@ -55,6 +69,11 @@ export const Profile = styled.div`
       & strong {
         display: block;
         color: #000;
+
+        ${media.medium`
+        font-size: 16px;
+        font-weight: 500;
+     `}
       }
     }
   }
@@ -86,5 +105,9 @@ export const ProfileContainer = styled.div`
     border: none;
     padding: 5px;
     cursor: pointer;
+
+    ${media.medium`
+      font-size: 16px;
+     `}
   }
 `;
