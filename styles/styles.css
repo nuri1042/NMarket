@@ -209,4 +209,10 @@ a {
     height: 48px;
     background-size: 35px 35px;
   }
+  .container {
+    width: 900px;
+    margin: 0 auto;
+    position: fixed;
+    overflow-x: hidden;
+  }
 }
