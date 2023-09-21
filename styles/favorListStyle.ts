@@ -4,6 +4,13 @@ import { media } from "./theme";
 export const FavorSection = styled.div`
   width: 60%;
   max-width: 900px;
+
+  ${media.medium`
+    width: 50%;
+ `}
+  ${media.small`
+    width: 50%;
+ `}
 `;
 
 export const ArticleWish = styled.div`

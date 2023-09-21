@@ -18,6 +18,9 @@ import {
   BtnItemBuyWrap,
   BtnItemBuyBox,
   ItemPrice,
+  InputQty,
+  InputQtyBtn,
+  ItemDelBtn,
 } from "../styles/cartItemStyle";
 import { IProductProps } from "../interfaces/productProps";
 import React from "react";
@@ -85,23 +88,9 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
               </ItemInfo>
               <ItemOptionBox>
                 <QtyDesc>수량</QtyDesc>
-                <div
-                  className="input-quantity"
-                  style={{ float: "right", padding: "0 12px" }}
-                >
-                  <div className="qty" style={{ paddingTop: "16px" }}>
-                    <button
-                      style={{
-                        width: "30px",
-                        height: "30px",
-                        float: "left",
-                        backgroundColor: "transparent",
-                        border: "1px solid #ebeef2",
-                      }}
-                      onClick={onDecrease}
-                    >
-                      -
-                    </button>
+                <InputQty>
+                  <div className="qty">
+                    <InputQtyBtn onClick={onDecrease}>-</InputQtyBtn>
                     <input
                       type="text"
                       name="itemQty"
@@ -109,40 +98,11 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
                       pattern="[0-9]*"
                       value={itemList.quantity}
                       onChange={onChangeQty}
-                      style={{
-                        width: "32px",
-                        height: "30px",
-                        textAlign: "center",
-                        border: "1px solid #ebeef2",
-                        boxSizing: "border-box",
-                      }}
                     />
-                    <button
-                      style={{
-                        width: "30px",
-                        height: "30px",
-                        backgroundColor: "transparent",
-                        border: "1px solid #ebeef2",
-                      }}
-                      onClick={onIncrease}
-                    >
-                      +
-                    </button>
+                    <InputQtyBtn onClick={onIncrease}>+</InputQtyBtn>
                   </div>
-                </div>
-                <button
-                  style={{
-                    width: "48px",
-                    height: "24px",
-                    marginTop: "20px",
-                    background: "#202429",
-                    border: "none",
-                    color: "#fff",
-                  }}
-                  onClick={onRemove}
-                >
-                  삭제
-                </button>
+                </InputQty>
+                <ItemDelBtn onClick={onRemove}>삭제</ItemDelBtn>
               </ItemOptionBox>
               <BtnItemBuyWrap>
                 <BtnItemBuyBox>

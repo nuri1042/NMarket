@@ -193,7 +193,7 @@ a {
   }
 
   .container {
-    width: 900px;
+    width: 870px;
     margin: 0 auto;
     overflow-x: hidden;
   }
@@ -211,10 +211,5 @@ a {
     width: 48px;
     height: 48px;
     background-size: 35px 35px;
-  }
-  .container {
-    width: 900px;
-    margin: 0 auto;
-    overflow-x: hidden;
   }
 }

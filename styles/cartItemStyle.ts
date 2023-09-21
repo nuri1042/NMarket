@@ -78,10 +78,52 @@ export const QtyDesc = styled.div`
   `}
   ${media.small`
     margin: 0;
-    font-size: 23px;
+    font-size: 22px;
+    font-weight: 500;
   `}
 `;
 
+export const InputQty = styled.div`
+  float: right;
+  padding: 0 12px;
+
+  & div {
+    padding-top: 16px;
+
+    & input {
+      width: 32px;
+      height: 30px;
+      text-align: center;
+      border: 1px solid #ebeef2;
+      box-sizing: border-box;
+
+      ${media.medium`
+      font-size: 14px;
+  `}
+    }
+  }
+`;
+export const InputQtyBtn = styled.button`
+  width: 30px;
+  height: 30px;
+  float: left;
+  background-color: transparent;
+  border: 1px solid #ebeef2;
+`;
+export const ItemDelBtn = styled.button`
+  width: 48px;
+  height: 24px;
+  margin-top: 20px;
+  background: #202429;
+  border: none;
+  color: #fff;
+
+  ${media.medium`
+    width: 54px;
+    height: 32px;
+    font-size: 16px;
+  `}
+`;
 export const BtnItemBuyWrap = styled.div`
   position: relative;
   width: 21.4%;

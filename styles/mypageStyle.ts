@@ -6,6 +6,8 @@ export const ContainerWrap = styled.div`
   background: #f4eade;
   height: 80vh;
   padding-bottom: 80px;
+  width: 100%;
+  overflow-x: hidden;
 
   ${media.xlarge`
     height: 100%
@@ -21,7 +23,7 @@ export const MypageMain = styled.div`
   padding: 0 70px 0 70px;
 
   ${media.medium`
-  padding: 0 70px 0 20px;
+  padding: 0 ;
  `}
 
   & h2 {
@@ -34,13 +36,11 @@ export const ProfileDetail = styled.div`
   max-width: 250px;
   width: 20%;
   margin-top: 20px;
-  margin-right: 50px;
+  margin-right: 40px;
 
   ${media.medium`
-    width: 25%;
- `}
-  ${media.small`
     width: 20%;
+    margin-right: 30px;
  `}
 `;
 

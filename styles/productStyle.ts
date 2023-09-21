@@ -1,15 +1,10 @@
 import styled from "styled-components";
 import { media } from "./theme";
 
-export const Container = styled.div`
-  ${media.medium`
-      width: 900px;
-      margin: 0 auto;
-    `}
-`;
 export const ContentWrap = styled.div`
   padding: 30px 0 80px 0;
-  margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
 `;
 export const ProductInfoWrap = styled.div`
   position: relative;
@@ -40,8 +35,10 @@ export const ProductPhoto = styled.div`
   }
 `;
 export const ProductDetailWrap = styled.div`
-  width: 570px;
-  float: right;
+  width: 650px;
+  ${media.medium`
+    width: 510px;
+  `}
 `;
 export const ProductInfo = styled.div`
   width: 440px;

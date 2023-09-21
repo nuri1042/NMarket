@@ -65,7 +65,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
   }, [product[id], session]);
   return (
     <>
-      <Container>
+      <div className="container">
         <ContentWrap>
           <ProductInfoWrap>
             <ProductPhotoWrap>
@@ -146,7 +146,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
             </ProductDetailWrap>
           </ProductInfoWrap>
         </ContentWrap>
-      </Container>
+      </div>
     </>
   );
 };
