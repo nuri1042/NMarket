@@ -41,6 +41,7 @@ body {
 
   padding-bottom: 300px;
   min-height: calc(100vh - 300px);
+  overflow-x: hidden;
 }
 
 .site-logo {
