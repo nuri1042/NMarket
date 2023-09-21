@@ -15,7 +15,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
     <>
       <SessionProvider session={session}>
         <Head>
-          <meta charSet="utf-8" />
+          <meta charSet="utf-8" name="viewport" content="user-scalable=0" />
           <title>NMarkets</title>
         </Head>
         <div id="header">
