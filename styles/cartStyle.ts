@@ -3,9 +3,11 @@ import { media } from "./theme";
 
 export const CartWrap = styled.div`
   padding-bottom: 80px;
+  width: 100%;
 `;
 export const PageTitle = styled.div`
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 54px 20px 30px;
 
@@ -89,6 +91,7 @@ export const ProductInfoCell = styled.p`
 `;
 export const PaymentPriceInfo = styled.div`
   margin: 73px auto 60px;
+  width: 100%;
 `;
 export const PaymentPriceInfoBox = styled.div`
   display: flex;
