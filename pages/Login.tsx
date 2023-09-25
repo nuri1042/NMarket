@@ -10,11 +10,9 @@ import {
   LoginFormBox,
   SocialLoginBtn,
 } from "../styles/loginStyle";
-import { useRouter } from "next/dist/client/router";
 
 // next-auth 로 로그인 구현한 코드
 const Login = () => {
-  const router = useRouter();
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLElement>) => {

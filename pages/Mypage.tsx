@@ -52,7 +52,7 @@ const Mypage = () => {
                     </Figure>
                     <ul>
                       <li>
-                        <strong>8장</strong>
+                        <strong>0장</strong>
                         쿠폰
                       </li>
                       <li>

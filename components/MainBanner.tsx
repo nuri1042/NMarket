@@ -5,7 +5,6 @@ import styled from "styled-components";
 import Image from "next/image";
 import { useState } from "react";
 import { BannerImages } from "../database/bannerImage";
-import { number, string } from "prop-types";
 
 interface ImagesType {
   id: number;

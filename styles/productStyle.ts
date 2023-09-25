@@ -19,9 +19,13 @@ export const ProductPhotoWrap = styled.div`
   margin-top: 5px;
 
   ${media.medium`
-      width: 280px;
+      width: 250px;
       margin-right: 30px;
     `}
+  ${media.small`
+      width: 240px;
+      margin-right: 30px;
+    `}    
 `;
 export const ProductPhoto = styled.div`
   width: 350px;
@@ -29,8 +33,12 @@ export const ProductPhoto = styled.div`
   padding: 5px 5px 50px 5px;
 
   ${media.medium`
-    padding-right: 10px;
-    width: 100%;
+    width: 250px;
+    height: 250px;
+  `}
+  ${media.small`
+    width: 240px;
+    height: 240px;
   `}
 
   & img {
@@ -40,20 +48,20 @@ export const ProductPhoto = styled.div`
     padding-left: 100px;
 
     ${media.medium`
-      padding-left:20px;
-      width: 280px;
-      height: 280px;
+      padding-left:0px;
+      width: 250px;
+      height: 250px;
     `}
     ${media.small`
-      width: 280px;
-      height: 280px;
+      width: 240px;
+      height: 240px;
     `}
   }
 `;
 export const ProductDetailWrap = styled.div`
   width: 650px;
   ${media.medium`
-    width: 510px;
+    width: 400px;
   `}
 `;
 export const ProductInfo = styled.div`
@@ -61,6 +69,10 @@ export const ProductInfo = styled.div`
   padding-bottom: 39px;
   border-bottom: 1px solid #ddd;
   min-height: 310px;
+
+  ${media.medium`
+    width: 400px;
+  `}  
 `;
 export const Bnr = styled.div`
   margin-top: 10px;

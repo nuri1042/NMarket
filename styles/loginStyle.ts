@@ -18,7 +18,7 @@ export const ContentWrap = styled.div`
   padding-top: 85px;
 
   ${media.medium`
-    width: 700px;
+    width: 660px;
   `}
 `;
 export const LoginFormBox = styled.div`
@@ -47,7 +47,7 @@ export const LoginFormBox = styled.div`
     line-height: 16px;
 
     ${media.medium`
-      font-size: 14px;
+      font-size: 15px;
     `}
   }
 `;
@@ -77,6 +77,7 @@ export const EmailBtn = styled.button`
   cursor: pointer;
   margin: 14px 0 24px;
   background-color: #e4e4e4;
+  color: black;
 `;
 export const SocialLoginBtn = styled.button`
   width: 278px;
@@ -89,4 +90,9 @@ export const SocialLoginBtn = styled.button`
   letter-spacing: 2px;
   vertical-align: middle;
   cursor: pointer;
+
+     ${media.medium`
+       font-weight: 700;
+
+    `} 
 `;

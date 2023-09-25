@@ -20,15 +20,18 @@ export const ArticleWish = styled.div`
   background-color: #fff;
   min-height: 370px;
 
+  ${media.medium`
+    min-height: 630px;
+  `}  
   & h3 {
     padding-left: 28px;
     font-size: 14px;
     line-height: 1.25em;
 
     ${media.medium`
-      font-size: 19px;
+      font-size: 19px;   
      `}
-  }
+
 `;
 
 export const PdtListContainer = styled.div`
