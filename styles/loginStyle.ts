@@ -7,11 +7,12 @@ export const Container = styled.div`
 
   ${media.medium`
     overflow-x: hidden;
+    width: 90%;
+    margin: 0 auto;
   `}
 `;
 export const ContentWrap = styled.div`
   padding: 85px 150px 85px;
-  width:100%;
 `;
 export const LoginFormBox = styled.div`
   padding: 50px 76px 60px;
