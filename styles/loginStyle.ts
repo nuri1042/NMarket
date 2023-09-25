@@ -4,8 +4,7 @@ import { media } from "./theme";
 export const Container = styled.div`
   background-color: #f5f5f5;
   height: 700px;
-  width: 870px;
-  margin: 0 auto;
+  width: 100%;
 
   ${media.medium`
     overflow-x: hidden;
@@ -14,11 +13,11 @@ export const Container = styled.div`
 export const ContentWrap = styled.div`
   width: 820px;
   margin: 0 auto;
-  padding-top: 85px;
+  padding: 85px 100px 0;
 
-  ${media.medium`
-    width: 60%;
-  `}
+  // ${media.medium`
+  //   width: 100%;
+  // `}
 `;
 export const LoginFormBox = styled.div`
   padding: 50px 76px 60px;
