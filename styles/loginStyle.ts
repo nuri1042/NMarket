@@ -18,7 +18,7 @@ export const ContentWrap = styled.div`
   padding-top: 85px;
 
   ${media.medium`
-    width: 660px;
+    width: 70%;
   `}
 `;
 export const LoginFormBox = styled.div`
@@ -28,6 +28,7 @@ export const LoginFormBox = styled.div`
   background-color: #fff;
   margin-top: 25px;
   text-align: center;
+  width: 100%;
 
   & h3 {
     padding-bottom: 14px;

@@ -13,17 +13,18 @@ export const ProductInfoWrap = styled.div`
   padding-bottom: 20px;
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 export const ProductPhotoWrap = styled.div`
   width: 510px;
   margin-top: 5px;
 
   ${media.medium`
-      width: 250px;
+      width: 200px;
       margin-right: 30px;
     `}
   ${media.small`
-      width: 240px;
+      width: 180px;
       margin-right: 30px;
     `}    
 `;
@@ -33,12 +34,12 @@ export const ProductPhoto = styled.div`
   padding: 5px 5px 50px 5px;
 
   ${media.medium`
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
   `}
   ${media.small`
-    width: 240px;
-    height: 240px;
+    width: 180px;
+    height: 180px;
   `}
 
   & img {
@@ -49,12 +50,12 @@ export const ProductPhoto = styled.div`
 
     ${media.medium`
       padding-left:0px;
-      width: 250px;
-      height: 250px;
+      width: 200px;
+      height: 200px;
     `}
     ${media.small`
-      width: 240px;
-      height: 240px;
+      width: 180px;
+      height: 180px;
     `}
   }
 `;
@@ -71,7 +72,7 @@ export const ProductInfo = styled.div`
   min-height: 310px;
 
   ${media.medium`
-    width: 400px;
+    width: 360px;
   `}  
 `;
 export const Bnr = styled.div`
@@ -83,7 +84,7 @@ export const ProductBasic = styled.div`
   width: 440px;
 
   ${media.medium`
-    width: 400px;
+    width: 360px;
   `}
 
   & h2 {
@@ -101,7 +102,7 @@ export const DetailInfo = styled.div`
   width: 440px;
 
   ${media.medium`
-    width: 400px;
+    width: 360px;
   `}
 `;
 export const SaleInfo = styled.dl`
@@ -134,11 +135,12 @@ export const BtnArea = styled.div`
   display: table;
 
   ${media.medium`
-    width: 400px;
+    width: 360px;
   `}
 `;
 export const FormSpan = styled.span`
   display: inline-flex;
+
 `;
 export const AddToCartBtn = styled.button`
   width: 190px;
@@ -152,6 +154,10 @@ export const AddToCartBtn = styled.button`
   background: #d50c0c;
   border: 1px solid #d50c0c;
   border-radius: 6px;
+
+    ${media.medium`
+    width: 160px;
+  `}
 `;
 export const AddToFavorBtn = styled.div`
   width: 190px;
@@ -165,4 +171,8 @@ export const AddToFavorBtn = styled.div`
   border-radius: 6px;
   margin-left: 14px;
   color: #d50c0c;
+
+  ${media.medium`
+    width: 160px;
+  `}
 `;
