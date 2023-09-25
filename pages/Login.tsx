@@ -62,7 +62,7 @@ const Login = () => {
   // 그래서 handleOAuthSignIn 함수의 provider를 LiteralUnion으로 설정함
   return (
     <>
-      <Container>
+      <div className="container">
         <ContentWrap>
           <LoginFormBox>
             <h3>회원 로그인</h3>
@@ -98,7 +98,7 @@ const Login = () => {
             </Form>
           </LoginFormBox>
         </ContentWrap>
-      </Container>
+      </div>
     </>
   );
 };

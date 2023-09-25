@@ -3,16 +3,18 @@ import { media } from "./theme";
 
 export const Container = styled.div`
   background-color: #f5f5f5;
-  width: 870px;
 
   ${media.medium`
     overflow-x: hidden;
-    width: 90%;
+    width: 870px;
     margin: 0 auto;
   `}
 `;
 export const ContentWrap = styled.div`
   padding: 85px 150px 85px;
+  width: 100%;
+  padding-bottom: 80px;
+
 `;
 export const LoginFormBox = styled.div`
   padding: 50px 76px 60px;
