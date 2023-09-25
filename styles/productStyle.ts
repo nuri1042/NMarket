@@ -16,7 +16,7 @@ export const ProductInfoWrap = styled.div`
   justify-content: center;
 
     ${media.medium`
-      width: 80%;
+      max-width: 80%;
       margin: 0 auto;
     `}
 `;

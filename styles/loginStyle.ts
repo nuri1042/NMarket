@@ -1,15 +1,6 @@
 import styled from "styled-components";
 import { media } from "./theme";
 
-
-export const Container = styled.div`
- 
-  ${media.medium`
-    width: 850px;
-    margin: 0 auto;
-    overflow-x: hidden;
-  `}
-`
 export const ContentWrap = styled.div`
   padding: 85px 150px 85px;
   width: 100%;
@@ -37,7 +28,7 @@ export const LoginFormBox = styled.div`
 
   ${media.medium`
     overflow-x: hidden;
-    width: 60%;
+    max-width: 60%;
     margin: 0 auto;
   `}
 
