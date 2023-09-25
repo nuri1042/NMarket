@@ -18,7 +18,7 @@ export const ArticleWish = styled.div`
   padding-top: 16px;
   border-top: 2px solid #555;
   background-color: #fff;
-  min-height: 339px;
+  min-height: 370px;
 
   & h3 {
     padding-left: 28px;
@@ -33,9 +33,9 @@ export const ArticleWish = styled.div`
 
 export const PdtListContainer = styled.div`
   padding-bottom: 20px;
+  padding-left: 23px;
   overflow: hidden;
   margin-top: 26px;
-  padding-left: 23px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
