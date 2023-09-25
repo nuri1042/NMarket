@@ -37,7 +37,7 @@ export const LoginFormBox = styled.div`
 
   ${media.medium`
     overflow-x: hidden;
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
   `}
 
