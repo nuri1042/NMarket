@@ -7,6 +7,7 @@ export const Container = styled.div`
   ${media.medium`
     width: 780px;
     margin: 0 auto;
+    overflow-x: hidden;
   `}
 `
 export const ContentWrap = styled.div`
@@ -18,20 +19,26 @@ export const ContentWrap = styled.div`
   ${media.xlarge`
     height: 100%
   `}
+
+    ${media.medium`
+      padding: 85px 0;
+      margin: 0 auto;
+  `}
 `;
 export const LoginFormBox = styled.div`
   padding: 50px 76px 60px;
   border: 1px solid #eee;
   border-top: 3px solid #d50c0c;
   background-color: #fff;
-  // margin-top: 25px;
+  margin-top: 25px;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
 
   ${media.medium`
     overflow-x: hidden;
-
+    width: 70%;
+    margin: 0 auto;
   `}
 
   & h3 {
@@ -61,6 +68,10 @@ export const LoginFormBox = styled.div`
     `}
   }
 `;
+export const FormDetail = styled.div`
+  width: 100%;
+  overflow-x: hidden;
+`
 export const FormLabel = styled.div`
   position: relative;
   width: 150px;

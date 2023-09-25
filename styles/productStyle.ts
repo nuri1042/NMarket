@@ -5,6 +5,7 @@ export const ContentWrap = styled.div`
   padding: 30px 0 80px 0;
   width: 100%;
   overflow-x: hidden;
+  margin: 0 auto;
 `;
 export const ProductInfoWrap = styled.div`
   position: relative;
@@ -13,7 +14,11 @@ export const ProductInfoWrap = styled.div`
   padding-bottom: 20px;
   display: flex;
   justify-content: center;
-  // width: 100%;
+
+    ${media.medium`
+      width: 80%;
+      margin: 0 auto;
+    `}
 `;
 export const ProductPhotoWrap = styled.div`
   width: 430px;

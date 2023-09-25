@@ -2,9 +2,9 @@ import { useState } from "react";
 import { LiteralUnion, signIn } from "next-auth/react";
 import { Form } from "antd";
 import {
-  Container,
   ContentWrap,
   EmailBtn,
+  FormDetail,
   FormInput,
   FormLabel,
   LoginFormBox,
@@ -62,9 +62,10 @@ const Login = () => {
   // 그래서 handleOAuthSignIn 함수의 provider를 LiteralUnion으로 설정함
   return (
     <>
-      <Container>
+      <div className="container" >
         <ContentWrap>
           <LoginFormBox>
+            <FormDetail>
             <h3>회원 로그인</h3>
             <p className="tip">로그인 후에 이용해주세요.</p>
             <Form style={{ marginTop: "28px", color: "#999" }}>
@@ -96,9 +97,10 @@ const Login = () => {
                 </Form.Item>
               ))}
             </Form>
+            </FormDetail>
           </LoginFormBox>
         </ContentWrap>
-      </Container>
+      </div>
     </>
   );
 };
