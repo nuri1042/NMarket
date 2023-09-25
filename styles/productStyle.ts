@@ -16,8 +16,7 @@ export const ProductInfoWrap = styled.div`
   justify-content: center;
 
     ${media.medium`
-      max-width: 80%;
-      margin: 0 auto;
+        min-height: 630px;
     `}
 `;
 export const ProductPhotoWrap = styled.div`

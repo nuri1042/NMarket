@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { media } from "./theme";
 
 export const ContentWrap = styled.div`
-  padding: 85px 150px 85px;
+  padding-top: 85px;
   width: 100%;
   background: #f5f5f5;
   overflow-x: hidden;
@@ -12,12 +12,12 @@ export const ContentWrap = styled.div`
   `}
 
     ${media.medium`
-      padding: 85px 0;
+      padding: 130px 150px;
       margin: 0 auto;
   `}
 `;
 export const LoginFormBox = styled.div`
-  padding: 50px 76px 60px;
+  padding: 80px 76px 60px;
   border: 1px solid #eee;
   border-top: 3px solid #d50c0c;
   background-color: #fff;
@@ -28,8 +28,9 @@ export const LoginFormBox = styled.div`
 
   ${media.medium`
     overflow-x: hidden;
-    max-width: 60%;
-    margin: 0 auto;
+    // max-width: 60%;
+    // margin: 0 auto;
+    min-height: 600px;
   `}
 
   & h3 {

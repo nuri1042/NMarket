@@ -193,9 +193,10 @@ a {
   }
 
   .container {
-    width: 870px;
+    width: 840px;
     margin: 0 auto;
     overflow-x: hidden;
+    border: 1px solid black;
   }
 }
 
