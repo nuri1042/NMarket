@@ -3,7 +3,6 @@ import { media } from "./theme";
 
 export const Container = styled.div`
   background-color: #f5f5f5;
-  height: 700px;
   width: 870px;
 
   ${media.medium`
@@ -11,8 +10,8 @@ export const Container = styled.div`
   `}
 `;
 export const ContentWrap = styled.div`
-  // width: 100%;
-  padding: 85px 100px 0;
+  padding: 85px 150px 85px;
+  width:100%;
 `;
 export const LoginFormBox = styled.div`
   padding: 50px 76px 60px;
