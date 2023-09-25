@@ -13,19 +13,21 @@ export const ProductInfoWrap = styled.div`
   padding-bottom: 20px;
   display: flex;
   justify-content: center;
-  width: 100%;
+  // width: 100%;
 `;
 export const ProductPhotoWrap = styled.div`
-  width: 510px;
+  width: 430px;
   margin-top: 5px;
 
+   ${media.large`
+      width: 300px;
+      margin-right: 30px;
+    `} 
   ${media.medium`
       width: 200px;
-      margin-right: 30px;
     `}
   ${media.small`
       width: 180px;
-      margin-right: 30px;
     `}    
 `;
 export const ProductPhoto = styled.div`
@@ -33,6 +35,10 @@ export const ProductPhoto = styled.div`
   height: 350px;
   padding: 5px 5px 50px 5px;
 
+ ${media.large`
+    width: 300px;
+    heigth: 300px;
+ `} 
   ${media.medium`
     width: 200px;
     height: 200px;
@@ -46,8 +52,11 @@ export const ProductPhoto = styled.div`
     height: 350px;
     display: inline;
     vertical-align: top;
-    padding-left: 100px;
-
+    // padding-left: 100px;
+    ${media.large`
+      width: 300px;
+      height: 300px;
+    `}
     ${media.medium`
       padding-left:0px;
       width: 200px;
@@ -62,7 +71,8 @@ export const ProductPhoto = styled.div`
 export const ProductDetailWrap = styled.div`
   width: 650px;
   ${media.medium`
-    width: 400px;
+    // width: 400px;
+    width: 40%;
   `}
 `;
 export const ProductInfo = styled.div`
@@ -72,7 +82,8 @@ export const ProductInfo = styled.div`
   min-height: 310px;
 
   ${media.medium`
-    width: 360px;
+    // width: 360px;
+    width: 100%;
   `}  
 `;
 export const Bnr = styled.div`
@@ -84,7 +95,8 @@ export const ProductBasic = styled.div`
   width: 440px;
 
   ${media.medium`
-    width: 360px;
+    // width: 360px;
+    width: 100%;
   `}
 
   & h2 {
@@ -95,6 +107,7 @@ export const ProductBasic = styled.div`
       font-size: 26px;
       line-height: 130%;
       color: #000;
+      width:100%;
     }
   }
 `;
@@ -102,7 +115,8 @@ export const DetailInfo = styled.div`
   width: 440px;
 
   ${media.medium`
-    width: 360px;
+    // width: 360px;
+    width: 100%;
   `}
 `;
 export const SaleInfo = styled.dl`
@@ -136,6 +150,7 @@ export const BtnArea = styled.div`
 
   ${media.medium`
     width: 360px;
+    width:100%;
   `}
 `;
 export const FormSpan = styled.span`

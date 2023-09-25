@@ -4,7 +4,12 @@ import { media } from "./theme";
 export const ContentWrap = styled.div`
   padding: 85px 150px 85px;
   width: 100%;
+  background: #f5f5f5;
+  overflow-x: hidden;
 
+  ${media.xlarge`
+    height: 100%
+  `}
 `;
 export const LoginFormBox = styled.div`
   padding: 50px 76px 60px;
@@ -13,7 +18,14 @@ export const LoginFormBox = styled.div`
   background-color: #fff;
   margin-top: 25px;
   text-align: center;
-  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  ${media.medium`
+    width:100%;
+    overflow-x: hidden;
+
+  `}
 
   & h3 {
     padding-bottom: 14px;
@@ -21,10 +33,12 @@ export const LoginFormBox = styled.div`
     font-weight: 700;
     line-height: 1.1;
     color: #ff3131;
+    // width:100px;
+    margin: 0 auto;
 
     ${media.medium`
+      width: 110px;
       font-size: 23px;
-      width: 70%;
     `}
   }
 
@@ -32,6 +46,8 @@ export const LoginFormBox = styled.div`
     font-size: 12px;
     color: #999;
     line-height: 16px;
+    width: 200px;
+    margin: 0 auto;
 
     ${media.medium`
       font-size: 15px;
@@ -40,12 +56,13 @@ export const LoginFormBox = styled.div`
 `;
 export const FormLabel = styled.div`
   position: relative;
-  left: -100px;
+  width: 150px;
+  margin: 0 auto;
   color: #999;
   font-size: 14px;
 `;
 export const FormInput = styled.input`
-  width: 278px;
+  width: 279px;
   height: 36px;
   margin: auto;
   margin-top: 6px;
