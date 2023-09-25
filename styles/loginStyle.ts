@@ -11,8 +11,8 @@ export const Container = styled.div`
   `}
 `;
 export const ContentWrap = styled.div`
-  width: 100%;
-  padding: 85px 100px 0;
+  // width: 100%;
+  // padding: 85px 100px 0;
 `;
 export const LoginFormBox = styled.div`
   padding: 50px 76px 60px;
