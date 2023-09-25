@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import { media } from "./theme";
 
+
+export const Container = styled.div`
+ 
+  ${media.medium`
+    width: 780px;
+    margin: 0 auto;
+  `}
+`
 export const ContentWrap = styled.div`
   padding: 85px 150px 85px;
   width: 100%;
