@@ -2,7 +2,6 @@ import { useState } from "react";
 import { LiteralUnion, signIn } from "next-auth/react";
 import { Form } from "antd";
 import {
-  Container,
   ContentWrap,
   EmailBtn,
   FormInput,
@@ -62,7 +61,7 @@ const Login = () => {
   // 그래서 handleOAuthSignIn 함수의 provider를 LiteralUnion으로 설정함
   return (
     <>
-      <div className="container">
+      <div className="container" style={{ backgroundColor: '#f5f5f5'}}>
         <ContentWrap>
           <LoginFormBox>
             <h3>회원 로그인</h3>

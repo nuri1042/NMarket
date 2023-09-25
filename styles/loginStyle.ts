@@ -1,19 +1,9 @@
 import styled from "styled-components";
 import { media } from "./theme";
 
-export const Container = styled.div`
-  background-color: #f5f5f5;
-
-  ${media.medium`
-    overflow-x: hidden;
-    width: 870px;
-    margin: 0 auto;
-  `}
-`;
 export const ContentWrap = styled.div`
   padding: 85px 150px 85px;
   width: 100%;
-  padding-bottom: 80px;
 
 `;
 export const LoginFormBox = styled.div`
@@ -34,6 +24,7 @@ export const LoginFormBox = styled.div`
 
     ${media.medium`
       font-size: 23px;
+      width: 70%;
     `}
   }
 
