@@ -5,11 +5,10 @@ export const Container = styled.div`
   background-color: #f5f5f5;
   height: 700px;
   width: 100%;
+  margin: 0 auto;
 
   ${media.medium`
-    width: 770px;
-    margin: 0 auto;
-    margin: 10 0;
+    // width: 770px;
     overflow-x: hidden;
   `}
 `;
