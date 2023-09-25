@@ -120,7 +120,7 @@ export const DetailInfo = styled.div`
   `}
 `;
 export const SaleInfo = styled.dl`
-  width: 440px;
+  width: 100%;
   font-size: 16px;
   color: #555;
 

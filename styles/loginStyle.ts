@@ -16,13 +16,12 @@ export const LoginFormBox = styled.div`
   border: 1px solid #eee;
   border-top: 3px solid #d50c0c;
   background-color: #fff;
-  margin-top: 25px;
+  // margin-top: 25px;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
 
   ${media.medium`
-    width:100%;
     overflow-x: hidden;
 
   `}
