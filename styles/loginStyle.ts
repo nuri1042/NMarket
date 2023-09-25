@@ -5,7 +5,7 @@ import { media } from "./theme";
 export const Container = styled.div`
  
   ${media.medium`
-    width: 780px;
+    width: 850px;
     margin: 0 auto;
     overflow-x: hidden;
   `}
@@ -17,7 +17,7 @@ export const ContentWrap = styled.div`
   overflow-x: hidden;
 
   ${media.xlarge`
-    height: 100%
+    height: 100%;
   `}
 
     ${media.medium`
