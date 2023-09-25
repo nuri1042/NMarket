@@ -1,26 +1,49 @@
- {
-    "extends": ["next/core-web-vitals","eslint:recommended", 
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier" ],
-    "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint/recommended",
-    	"plugin:prettier/recommended",
-      "prettier/@typescript-eslint"],
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:prettier/recommended" // eslint의 포매팅을 prettier로 사용.
+    ],
     "parserOptions": {
-    "project": "./tsconfig.json"
-  },
-  "rules": {
-    "no-var": "error", // var 금지
-    "no-multiple-empty-lines": "error", // 여러 줄 공백 금지
-    "no-console": ["warn", { "allow": ["warn", "error", "info", "confirm"] }], // console.log() 금지
-    "eqeqeq": "error", // 일치 연산자 사용 필수
-    "dot-notation": "error", // 가능하다면 dot notation 사용
-    "no-restricted-globals": "off",
-     // 'React' must be in scope when using JSX 에러 해결 (Next.js)
-  	"react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }]
-  }
-    
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "prettier/prettier": "error",
+        "no-var": "error", // var 금지
+        "no-multiple-empty-lines": "error", // 여러 줄 공백 금지
+        "no-console": ["warn", { "allow": ["warn", "error", "info", "confirm"] }], // console.log() 금지
+        "eqeqeq": "error", // 일치 연산자 사용 필수
+        "dot-notation": "error", // 가능하다면 dot notation 사용
+        "no-restricted-globals": "off",
+        "no-unused-vars": "off", //타입스크립트 사용시 interface의 변수명을 eslint가 잡지 않도록 함.
+        "react/react-in-jsx-scope": "off"
+    }
 }
