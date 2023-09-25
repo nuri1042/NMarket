@@ -7,7 +7,7 @@ export const Container = styled.div`
   width: 100%;
 
   ${media.medium`
-    width: 870px;
+    width: 800px;
     margin: 0 auto;
     overflow-x: hidden;
   `}
