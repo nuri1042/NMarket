@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { media } from "./theme";
+import Image from 'next/image';
 
 export const ContentWrap = styled.div`
   padding: 30px 0 80px 0;
@@ -28,10 +29,10 @@ export const ProductPhotoWrap = styled.div`
       margin-right: 30px;
     `} 
   ${media.medium`
-      width: 200px;
+      width: 250px;
     `}
   ${media.small`
-      width: 180px;
+      width: 220px;
     `}    
 `;
 export const ProductPhoto = styled.div`
@@ -44,38 +45,37 @@ export const ProductPhoto = styled.div`
     heigth: 300px;
  `} 
   ${media.medium`
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
   `}
   ${media.small`
-    width: 180px;
-    height: 180px;
+    width: 220px;
+    height: 220px;
   `}
 
   & img {
     height: 350px;
     display: inline;
     vertical-align: top;
-    // padding-left: 100px;
     ${media.large`
       width: 300px;
       height: 300px;
     `}
     ${media.medium`
       padding-left:0px;
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
     `}
     ${media.small`
-      width: 180px;
-      height: 180px;
+      width: 220px;
+      height: 220px;
     `}
   }
 `;
+
 export const ProductDetailWrap = styled.div`
   width: 650px;
   ${media.medium`
-    // width: 400px;
     width: 40%;
   `}
 `;
@@ -86,7 +86,6 @@ export const ProductInfo = styled.div`
   min-height: 310px;
 
   ${media.medium`
-    // width: 360px;
     width: 100%;
   `}  
 `;
@@ -99,7 +98,6 @@ export const ProductBasic = styled.div`
   width: 440px;
 
   ${media.medium`
-    // width: 360px;
     width: 100%;
   `}
 
@@ -119,7 +117,6 @@ export const DetailInfo = styled.div`
   width: 440px;
 
   ${media.medium`
-    // width: 360px;
     width: 100%;
   `}
 `;

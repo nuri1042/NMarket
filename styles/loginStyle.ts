@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { media } from "./theme";
 
 export const ContentWrap = styled.div`
-  padding-top: 85px;
+  padding: 85px 0;
+  
   width: 100%;
   background: #f5f5f5;
   overflow-x: hidden;
