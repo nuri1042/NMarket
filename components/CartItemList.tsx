@@ -97,7 +97,7 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
                       maxLength={4}
                       pattern="[0-9]*"
                       value={itemList.quantity}
-                      onChange={onChangeQty}
+                      // onChange={onChangeQty}
                     />
                     <InputQtyBtn onClick={onIncrease}>+</InputQtyBtn>
                   </div>

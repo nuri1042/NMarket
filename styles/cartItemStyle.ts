@@ -106,7 +106,6 @@ export const InputQty = styled.div`
 export const InputQtyBtn = styled.button`
   width: 30px;
   height: 30px;
-  float: left;
   background-color: transparent;
   border: 1px solid #ebeef2;
 `;

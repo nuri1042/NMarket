@@ -21,7 +21,7 @@ export const ArticleWish = styled.div`
   min-height: 370px;
 
   ${media.medium`
-    // min-height: 630px;
+    min-height: 630px;
   `}  
   & h3 {
     padding-left: 28px;
