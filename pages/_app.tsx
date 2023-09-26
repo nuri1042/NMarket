@@ -21,7 +21,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
         <div id="header">
           <div id="header-inner">
             <Link href="/" prefetch={true}>
-              <a className="site-logo"></a>
+              <a className="site-logo" aria-label="nmarket"></a>
             </Link>
             <div className="head-service">
               <div className="nav-service">

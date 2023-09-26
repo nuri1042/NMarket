@@ -32,7 +32,7 @@ class MyDocument extends Document {
 
   render(): ReactElement {
     return (
-      <Html>
+      <Html lang='en'>
         <Head />
         <body>
           <Main />

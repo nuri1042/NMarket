@@ -7,6 +7,14 @@ export const ContentWrap = styled.div`
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto;
+
+     ${media.xlarge`
+      margin-left: 50px;
+    `} 
+      ${media.large`
+      margin-left: 40px;
+    `} 
+
 `;
 export const ProductInfoWrap = styled.div`
   position: relative;

@@ -28,6 +28,10 @@ export const ProductInfo = styled.div`
   width: calc(100%-172px);
   margin: 0 42px 0 20px;
   float: left;
+
+   ${media.medium`
+      width: 250px;
+  `} 
   & p {
     & a {
       font-size: 18px;
@@ -61,7 +65,7 @@ export const ItemOptionBox = styled.div`
   justify-content: center;
   padding: 22px;
 
-  ${media.medium`
+  ${media.large`
     flex-direction: column;
     align-items: center;
   `}
@@ -72,6 +76,9 @@ export const QtyDesc = styled.div`
   font-size: 13px;
   margin: 23px 0;
 
+  ${media.large`
+      margin: 0;
+  `} 
   ${media.medium`
     margin: 0;
     font-size: 18px;
@@ -97,9 +104,6 @@ export const InputQty = styled.div`
       border: 1px solid #ebeef2;
       box-sizing: border-box;
 
-      ${media.medium`
-      font-size: 14px;
-  `}
     }
   }
 `;

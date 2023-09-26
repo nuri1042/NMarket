@@ -41,4 +41,4 @@ const CartTotalInfo = () => {
     </>
   );
 };
-export default CartTotalInfo;
+export default React.memo(CartTotalInfo);
