@@ -4,7 +4,7 @@ import wrapper from "../redux/store/configureStore";
 import "../styles/styles.css";
 import { SessionProvider } from "next-auth/react";
 import { AppProps } from "next/dist/shared/lib/router/router";
-import UserInfo from "../components/UserInfo";
+import CheckUserSession from "../components/CheckUserSession";
 
 // 전 페이지에서 공통되는 레이아웃 관리
 const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
@@ -13,7 +13,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   return (
     // SessionProvider로 Component 를 감싸 nextjs에서 useSession Hook을 통해 session 정보에 접근할 수 있게 함
     <>
-      <SessionProvider session={session}>
+      <SessionProvider session={pageProps.session}>
         <Head>
           <meta charSet="utf-8" />
           <title>NMarket</title>
@@ -29,7 +29,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
                   <a className="btn-cart">장바구니</a>
                 </Link>
                 <div>
-                  <UserInfo />
+                  <CheckUserSession />
                 </div>
               </div>
             </div>

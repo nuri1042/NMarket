@@ -8,8 +8,8 @@ body {
   min-width: 850px;
   width: 100%;
   height: 100%;
-  font-family: "Inter", "Noto Sans KR", "맑은 고딕", "malgun gothic", "돋움",
-    "dotum", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-display: swap;
 }
 #header {
   position: relative;

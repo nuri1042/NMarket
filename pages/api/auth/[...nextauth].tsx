@@ -46,6 +46,12 @@ export default NextAuth({
       // }
       return token; // 반환하면 session 콜백으로 전달됨
     },
+    /*
+     * Session Callback
+     * ClientSide에서 NextAuth에 세션을 체크할때마다 실행
+     * 반환된 값은 useSession을 통해 ClientSide에서 사용할 수 있음
+     * JWT 토큰의 정보를 Session에 유지 시킨다.
+     */
     async session({ session, token }) {
       // session.accessToken = token.accessToken; // 전달받은 token 객체에서 토큰 값을 다시 session 객체에 담고
       return session; // 반환하면 client에서 접근 가능

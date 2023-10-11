@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 
-const UserInfo = () => {
+const CheckUserSession = () => {
   const { data: session } = useSession();
   return session ? (
     <Link href="/Mypage">
@@ -12,6 +12,7 @@ const UserInfo = () => {
       <a className="btn-mypage">로그인</a>
     </Link>
   );
+
 };
 
-export default UserInfo;
+export default CheckUserSession;
