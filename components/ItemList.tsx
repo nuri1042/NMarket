@@ -37,6 +37,7 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
                               src={product.imageUrl}
                               alt="product image"
                               layout="fill"
+                              loading="lazy"
                             />
                           </Thumbnail>
                           <div className="desc">

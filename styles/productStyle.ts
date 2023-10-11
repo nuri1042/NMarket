@@ -7,14 +7,6 @@ export const ContentWrap = styled.div`
   width: 100%;
   overflow-x: hidden;
   margin: 0 auto;
-
-     ${media.xlarge`
-      margin-left: 50px;
-    `} 
-      ${media.large`
-      margin-left: 40px;
-    `} 
-
 `;
 export const ProductInfoWrap = styled.div`
   position: relative;
@@ -26,14 +18,15 @@ export const ProductInfoWrap = styled.div`
 
     ${media.medium`
       min-height: 630px;
-      justify-content: flex-start;
-      margin-left: 3%;
     `}
 `;
 export const ProductPhotoWrap = styled.div`
-  width: 430px;
+  width: 30%;
   margin-top: 5px;
-
+   ${media.xlarge`
+      width: 300px;
+      margin-right: 30px;
+    `} 
    ${media.large`
       width: 300px;
       margin-right: 30px;
@@ -46,7 +39,11 @@ export const ProductPhoto = styled.div`
   width: 350px;
   height: 350px;
   padding: 5px 5px 50px 5px;
-
+  margin: 0 auto;
+   ${media.xlarge`
+      width: 300px;
+      margin-right: 30px;
+    `} 
  ${media.large`
     width: 300px;
     heigth: 300px;
@@ -60,6 +57,11 @@ export const PdtMainImg = styled(Image)`
   height: 350px;
     display: inline;
     vertical-align: top;
+
+    ${media.xlarge`
+      width: 300px;
+      margin-right: 30px;
+    `} 
     ${media.large`
       width: 300px;
       height: 300px;
@@ -71,9 +73,12 @@ export const PdtMainImg = styled(Image)`
     `}
 `
 export const ProductDetailWrap = styled.div`
-  width: 650px;
+  // width: 650px;
+  ${media.large`
+    width: 410px;
+  `}
   ${media.medium`
-    width: 40%;
+    width: 410px;
   `}
 `;
 export const ProductInfo = styled.div`
@@ -83,12 +88,18 @@ export const ProductInfo = styled.div`
   min-height: 310px;
 
   ${media.medium`
-    width: 100%;
+    width: 410px;
   `}  
 `;
 export const Bnr = styled.div`
   margin-top: 10px;
+    ${media.medium`
+    width: 100%;
+  `}  
 `;
+export const BnrImg = styled(Image)`
+  width: 100%;
+`
 export const ProductBasic = styled.div`
   padding: 29px 0 0 0;
   border-bottom: 1px solid #ddd;

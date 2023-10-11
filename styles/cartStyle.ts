@@ -5,6 +5,8 @@ export const CartWrap = styled.div`
   padding-bottom: 80px;
   width: 100%;
   overflow-x: hidden;
+  border: 1px solid black;
+
 `;
 export const PageTitle = styled.div`
   max-width: 1200px;

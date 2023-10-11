@@ -9,6 +9,7 @@ import {
   AddToCartBtn,
   AddToFavorBtn,
   Bnr,
+  BnrImg,
   BtnArea,
   ContentWrap,
   DetailInfo,
@@ -76,12 +77,11 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
             <ProductDetailWrap>
               <ProductInfo>
                 <Bnr>
-                  <Image
+                  <BnrImg
                     src='/img/icons/salebanner.png'
                     alt="정기세일"
                     width={440}
                     height={65}
-                    loading='eager'
                   />
                 </Bnr>
                 <ProductBasic>

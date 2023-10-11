@@ -28,7 +28,7 @@ export const Items = styled.div`
   margin: 0 auto;
 
   ${media.medium`
-    justify-content: space-around;
+    justify-content: space-evenly;
   `}
 `;
 export const ItemsUl = styled.ul`
@@ -48,8 +48,8 @@ export const ItemsLi = styled.li`
   }
 
   ${media.medium`
-    width: 350px;
-    height: 350px;
+    width: 330px;
+    height: 330px;
     margin-bottom: 130px;
   `}
 `;
@@ -60,8 +60,8 @@ export const Thumbnail = styled.div`
   }
 
   ${media.medium`
-    width: 350px;
-    height: 350px;
+    width: 330px;
+    height: 330px;
   `}
 `;
 export const ThumbImg = styled(Image)`

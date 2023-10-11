@@ -36,6 +36,7 @@ module.exports = withBundleAnalyzer({
   images: {
     formats: ["image/avif", "image/webp"],
     domains: ["webimage.10x10.co.kr", "imgstatic.10x10.co.kr"],
+    minimumCacheTTL: 31536000
   },
   Images,
   // webpack-bundle analyzer settings
