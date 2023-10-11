@@ -35,6 +35,7 @@ const MainBanner = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    lazyLoad: 'anticipated',
     prevArrow: <SampleArrow />,
     nextArrow: <SampleArrow />,
 

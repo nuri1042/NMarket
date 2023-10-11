@@ -25,7 +25,9 @@ export const ProductInfoWrap = styled.div`
   justify-content: center;
 
     ${media.medium`
-        min-height: 630px;
+      min-height: 630px;
+      justify-content: flex-start;
+      margin-left: 3%;
     `}
 `;
 export const ProductPhotoWrap = styled.div`
@@ -37,11 +39,8 @@ export const ProductPhotoWrap = styled.div`
       margin-right: 30px;
     `} 
   ${media.medium`
-      width: 250px;
-    `}
-  ${media.small`
-      width: 220px;
-    `}    
+      width: 260px;
+    `} 
 `;
 export const ProductPhoto = styled.div`
   width: 350px;
@@ -53,16 +52,12 @@ export const ProductPhoto = styled.div`
     heigth: 300px;
  `} 
   ${media.medium`
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
   `}
-  ${media.small`
-    width: 220px;
-    height: 220px;
-  `}
-
-  & img {
-    height: 350px;
+`;
+export const PdtMainImg = styled(Image)`
+  height: 350px;
     display: inline;
     vertical-align: top;
     ${media.large`
@@ -71,16 +66,10 @@ export const ProductPhoto = styled.div`
     `}
     ${media.medium`
       padding-left:0px;
-      width: 250px;
-      height: 250px;
+      width: 260px;
+      height: 260px;
     `}
-    ${media.small`
-      width: 220px;
-      height: 220px;
-    `}
-  }
-`;
-
+`
 export const ProductDetailWrap = styled.div`
   width: 650px;
   ${media.medium`

@@ -13,6 +13,7 @@ import {
   ContentWrap,
   DetailInfo,
   FormSpan,
+  PdtMainImg,
   ProductBasic,
   ProductDetailWrap,
   ProductInfo,
@@ -69,7 +70,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
           <ProductInfoWrap>
             <ProductPhotoWrap>
               <ProductPhoto>
-                <img src={product[id]?.imageUrl} alt="product photo" />
+                <PdtMainImg src={product[id]?.imageUrl} alt="product photo" width={350} height={350}/>
               </ProductPhoto>
             </ProductPhotoWrap>
             <ProductDetailWrap>
@@ -78,9 +79,9 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
                   <Image
                     src='/img/icons/salebanner.png'
                     alt="정기세일"
-                    width={"440"}
-                    height={"65"}
-                    priority={true}
+                    width={440}
+                    height={65}
+                    loading='eager'
                   />
                 </Bnr>
                 <ProductBasic>
