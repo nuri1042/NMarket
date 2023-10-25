@@ -54,7 +54,7 @@ export const ProductPhoto = styled.div`
   `}
 `;
 export const PdtMainImg = styled(Image)`
-  height: 350px;
+    height: 350px;
     display: inline;
     vertical-align: top;
 

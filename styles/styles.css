@@ -89,12 +89,7 @@ body {
 }
 
 .footer {
-  /* width: 940px; */
-  /* margin: 0 auto; */
-  /* padding-left: 200px; */
   font-size: 13px;
-  /* position: relative; */
-  background: #f8f8f8;
   height: 300px;
   min-width: 800px;
 }

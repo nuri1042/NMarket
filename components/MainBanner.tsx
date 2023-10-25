@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import Image from "next/image";
 import { useState } from "react";
+import { media } from '../styles/theme';
 import { BannerImages } from "../database/bannerImage";
 
 interface ImagesType {
@@ -21,6 +22,21 @@ const MainBanner = () => {
     }
   `;
 
+  const ImageBanner = styled(Image)`
+    ${media.xlarge`
+      width: 1400px;
+      height: 375px;
+    `}
+    ${media.large`
+      width: 1200px;
+      height: 300px;
+    `}
+    ${media.medium`
+      width: 850px;
+      height: 266px;
+    `}
+`
+
   const SampleArrow = (props: any) => {
     const { className, style } = props;
     return <div className={className} style={{ ...style, display: "none" }} />;
@@ -28,14 +44,14 @@ const MainBanner = () => {
 
   const settings: Settings = {
     dots: true,
-    speed: 500,
+    speed: 700,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
-    lazyLoad: 'anticipated',
+    lazyLoad: 'progressive',
     prevArrow: <SampleArrow />,
     nextArrow: <SampleArrow />,
 
@@ -51,7 +67,7 @@ const MainBanner = () => {
           {images.map((item) => {
             return (
               <div>
-                <Image
+                <ImageBanner
                   src={`/${item.src}`}
                   width={"1920px"}
                   height={"600px"}
@@ -67,3 +83,5 @@ const MainBanner = () => {
 };
 
 export default MainBanner;
+
+

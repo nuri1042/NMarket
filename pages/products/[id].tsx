@@ -82,6 +82,8 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
                     alt="정기세일"
                     width={440}
                     height={65}
+                    layout="responsive"
+                    priority
                   />
                 </Bnr>
                 <ProductBasic>
