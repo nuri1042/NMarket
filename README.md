@@ -26,7 +26,7 @@ https://nmarket.netlify.app
 
 - NextAuth의 옵션 지정 객체에서 소셜 로그인이 가능하도록 구현하였습니다.
 
-- https://github.com/nuri1042/NMarket/blob/8807ba26ab5f7d86deb34a37ab820c64835e8a59/pages/api/auth/%5B...nextauth%5D.tsx#L14-L39
+https://github.com/nuri1042/NMarket/blob/8807ba26ab5f7d86deb34a37ab820c64835e8a59/pages/api/auth/%5B...nextauth%5D.tsx#L14-L39
 
 ### 마이페이지
 <img width="500" alt="image" src="https://github.com/nuri1042/NMarket/assets/19181088/0eaf37fa-e578-45a6-9274-3e4220b29fe4">
@@ -43,6 +43,8 @@ https://github.com/nuri1042/NMarket/blob/8807ba26ab5f7d86deb34a37ab820c64835e8a5
 - Reducer를 통해 상태를 업데이트하는 로직을 관리하여 관심사를 분리하였습니다.
 
 https://github.com/nuri1042/NMarket/blob/8807ba26ab5f7d86deb34a37ab820c64835e8a59/redux/reducers/product.tsx#L11-L112
+
+
 
 
 
