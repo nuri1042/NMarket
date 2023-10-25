@@ -27,7 +27,7 @@ export const Items = styled.div`
   justify-content: space-between;
   margin: 0 auto;
 
-  ${media.medium`
+  ${media.large`
     justify-content: space-evenly;
   `}
 `;
@@ -58,7 +58,10 @@ export const Thumbnail = styled.div`
   width: 260px;
   height: 260px;
   }
-
+  ${media.large`
+    width: 240px;
+    height: 240px;
+  `}
   ${media.medium`
     width: 330px;
     height: 330px;
@@ -72,7 +75,10 @@ export const ThumbImg = styled(Image)`
   &:hover{
     scale(1.5);
   }
-
+  ${media.large`
+    width: 240px;
+    height: 240px;
+  `}
   ${media.medium`
     width: 350px;
     height: 350px;

@@ -43,7 +43,13 @@ export const PdtListContainer = styled.div`
   flex-wrap: wrap;
   justify-content: flex-start;
 
-  ${media.medium`
+  ${media.xlarge`
+    justify-content: center;
+  `}
+  ${media.large`
+    justify-content: space-evenly;
+  `}
+    ${media.medium`
     justify-content: space-around;
   `}
 `;
@@ -55,13 +61,10 @@ export const PdtList = styled.div`
   cursor: pointer;
   margin: 0 50px 10px 0;
 
-  ${media.medium`
+  ${media.large`
     margin-right: 10px;
   `}
 
-  ${media.small`
-    margin-right: 10px;
-  `}
 `;
 export const PdtListImg = styled.div`
   float: left;

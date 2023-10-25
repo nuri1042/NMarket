@@ -23,7 +23,7 @@ export const MypageMain = styled.div`
   padding: 0 70px 0 70px;
 
   ${media.medium`
-  padding: 0 ;
+  padding: 0;
  `}
 
   & h2 {
