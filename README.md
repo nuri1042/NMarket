@@ -6,15 +6,38 @@ Next.js 기반의 E-Commerce 플랫폼 프로젝트입니다.
 ## 배포 링크
 https://nmarket.netlify.app
 
-- NextJS의 페이지 구조, 컴포넌트의 분리, 코드 리팩토링, 웹 성능개선에 대해 고민하고 학습할 수 있었습니다.
-- Next.js
-
-
 ## 🛠 적용 기술 및 라이브러리
 - Programming Languages : Javascript, Typescript
-- Frontend Development : Next.js
-- 상태관리 : React-Redux, Redux, axios
-- Style : Styled-Components, Ant Design
+- Frontend Development : Next.js, React
+- 상태관리 : React-Redux, Redux
+- Style : Styled-Components
+
+## 프로젝트 구조
+```
+📦pages
+ ┣ 📂api
+ ┃ ┗ 📂auth
+ ┃ ┃ ┗ 📜[...nextauth].tsx
+ ┣ 📂products
+ ┃ ┗ 📜[id].tsx
+ ┣ 📜Cart.tsx
+ ┣ 📜Login.tsx
+ ┣ 📜Mypage.tsx
+ ┣ 📜_app.tsx
+ ┣ 📜_document.tsx
+ ┣ 📜index.tsx
+ ┗ 📜verifyRequest.tsx
+
+📦components
+ ┣ 📜AppLayout.tsx
+ ┣ 📜CartItemList.tsx
+ ┣ 📜CartNavMenu.tsx
+ ┣ 📜CartTotalInfo.tsx
+ ┣ 📜CheckUserSession.tsx
+ ┣ 📜FavorList.tsx
+ ┣ 📜ItemList.tsx
+ ┗ 📜MainBanner.tsx
+```
 
 ## 주요 기능
 <img width="500" alt="image" src="https://github.com/nuri1042/NMarket/assets/19181088/0ea61159-87dd-44dd-b58c-5dd5e099cc25">
