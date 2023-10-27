@@ -71,7 +71,7 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
           <ProductInfoWrap>
             <ProductPhotoWrap>
               <ProductPhoto>
-                <PdtMainImg src={product[id]?.imageUrl} alt="product photo" width={350} height={350} priority/>
+                <PdtMainImg src={product[id]?.imageUrl} alt="product photo" width={260} height={260} priority/>
               </ProductPhoto>
             </ProductPhotoWrap>
             <ProductDetailWrap>

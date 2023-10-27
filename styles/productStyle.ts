@@ -16,61 +16,34 @@ export const ProductInfoWrap = styled.div`
   display: flex;
   justify-content: center;
 
-    ${media.medium`
+  ${media.medium`
       min-height: 630px;
-    `}
+  `}
 `;
 export const ProductPhotoWrap = styled.div`
-  width: 30%;
-  margin-top: 5px;
+  margin: 5px 40px;
    ${media.xlarge`
-      width: 300px;
-      margin-right: 30px;
-    `} 
-   ${media.large`
-      width: 300px;
-      margin-right: 30px;
-    `} 
-  ${media.medium`
-      width: 260px;
+      margin: 5px 0;
     `} 
 `;
 export const ProductPhoto = styled.div`
-  width: 350px;
-  height: 350px;
+  width: 260px;
+  height: 260px;
   padding: 5px 5px 50px 5px;
   margin: 0 auto;
-   ${media.xlarge`
-      width: 300px;
+  ${media.xlarge`
       margin-right: 30px;
-    `} 
+  `} 
  ${media.large`
-    width: 300px;
     heigth: 300px;
  `} 
   ${media.medium`
-    width: 260px;
     height: 260px;
   `}
 `;
 export const PdtMainImg = styled(Image)`
-    height: 350px;
     display: inline;
     vertical-align: top;
-
-    ${media.xlarge`
-      width: 300px;
-      margin-right: 30px;
-    `} 
-    ${media.large`
-      width: 300px;
-      height: 300px;
-    `}
-    ${media.medium`
-      padding-left:0px;
-      width: 260px;
-      height: 260px;
-    `}
 `
 export const ProductDetailWrap = styled.div`
   // width: 650px;
