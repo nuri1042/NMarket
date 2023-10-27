@@ -38,24 +38,7 @@ export default NextAuth({
     }),
   ],
   callbacks: {
-    // jwt 콜백은 JWT가 생성되거나(signIn 성공), 업데이트(useSession 등 클라이언트에서 session에 접근했을 때)시에 실행
-    async jwt({ token, account }) {
-      // account 내 access_token 참조 가능
-      // if (account) {
-      //   token.accessToken = account.access_token; // token 객체에 다시 담아서
-      // }
-      return token; // 반환하면 session 콜백으로 전달됨
-    },
-    /*
-     * Session Callback
-     * ClientSide에서 NextAuth에 세션을 체크할때마다 실행
-     * 반환된 값은 useSession을 통해 ClientSide에서 사용할 수 있음
-     * JWT 토큰의 정보를 Session에 유지 시킨다.
-     */
-    async session({ session, token }) {
-      // session.accessToken = token.accessToken; // 전달받은 token 객체에서 토큰 값을 다시 session 객체에 담고
-      return session; // 반환하면 client에서 접근 가능
-    },
+    
   },
   pages: {
     verifyRequest: "/verifyRequest",

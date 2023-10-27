@@ -87,23 +87,21 @@ export const Profile = styled.div`
 `;
 export const Figure = styled.div`
   position: relative;
-  margin-top: 15px;
 `;
 export const ProfileContainer = styled.div`
   width: 100px;
-  height: 120px;
   margin: 0 auto;
-  border-radius: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-top: 13px;
 
   & img {
     object-fit: cover;
-    width: 100%;
-    height: 100%;
-    padding-top: 13px;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
   }
 
   & button {

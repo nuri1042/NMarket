@@ -13,13 +13,10 @@ import { useDispatch } from "react-redux";
 import { reset } from "../redux/actions/product";
 
 const Mypage = () => {
-  const { data: session, status } = useSession(); // useSession : user 가 로그인 되어있는지 알려주는 NextAuth Hook
-  // useSession 은 Client Side(React) 에서 작동하는 Hook이다.
-  // useSession 의 data 는 session/undefined/null 3가지가 있고
-  // 로그인 한 user 객체가 session.user에 저장됨
-
+  const { data: session } = useSession(); 
   const dispatch = useDispatch();
 
+  console.log(session)
   const handleSignOut = () => {
     signOut({ callbackUrl: "/" }).then(() => {
       window.history.replaceState(window.history.state, "", "/");
@@ -43,10 +40,16 @@ const Mypage = () => {
                     <p>Hello, {session.user.name}</p>
                     <Figure>
                       <ProfileContainer>
+                        {session.user.image? (
                         <img
-                          src="	https://fiximage.10x10.co.kr/web2015/common/img_profile_25.png"
+                          src={session.user.image}
                           alt="프로필이미지"
-                        />
+                        />)
+                      :(<img
+                          src="https://fiximage.10x10.co.kr/web2015/common/img_profile_25.png"
+                          alt="프로필이미지"
+                        />)}
+                        
                         <button onClick={handleSignOut}>로그아웃</button>
                       </ProfileContainer>
                     </Figure>

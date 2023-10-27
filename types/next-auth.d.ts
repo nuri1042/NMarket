@@ -7,6 +7,7 @@ declare module "next-auth" {
     // pages/Mypage.tsx 에서 session.user.name 에 개체가 undefined라는 오류 발생해서 타입 정의해줌
     user: {
       name: string;
+      image: string;
     };
   }
 }
