@@ -28,8 +28,8 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
                   <ItemsUl key={product.id}>
                     <ItemsLi>
                       <Link
-                        as={`/products/${product.id}`}
-                        href="/products/[id]"
+                        as={`/products/product/${product.id}`}
+                        href="/products/product/[id]"
                       >
                         <a>
                           <Thumbnail>

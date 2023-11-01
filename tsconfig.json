@@ -118,6 +118,6 @@
     "components/CartItem.js",
     "pages/Login.js",
     "redux/reducers/user.js"
-  ],
+, "pages/products/categories"  ],
   "exclude": ["node_modules"]
 }

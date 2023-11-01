@@ -2,9 +2,8 @@ import { useCallback, FunctionComponent } from "react";
 import { useRouter } from "next/dist/client/router";
 import { Form } from "antd";
 import { useDispatch } from "react-redux";
-import { addItem, addFavor } from "../../redux/actions/product";
+import { addItem, addFavor } from "../../../redux/actions/product";
 import { useSession } from "next-auth/react";
-import Image from "next/future/image";
 import {
   AddToCartBtn,
   AddToFavorBtn,
@@ -24,12 +23,13 @@ import {
   SaleInfo,
   SalePoint,
   ShipInfo,
-} from "../../styles/productStyle";
-import { IProductProps } from "../../interfaces/productProps";
+} from "../../../styles/productStyle";
+import { IProductProps } from "../../../interfaces/productProps";
 
 export interface IParams {
   params: {
     id: string;
+    name: string;
   };
 }
 // props 매개변수에 직접적으로 typing해줘도 되지만 generic으로 함수형 컴포넌트의 props type을 지정 가능
@@ -71,14 +71,20 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
           <ProductInfoWrap>
             <ProductPhotoWrap>
               <ProductPhoto>
-                <PdtMainImg src={product[id]?.imageUrl} alt="product photo" width={260} height={260} priority/>
+                <PdtMainImg
+                  src={product[id]?.imageUrl}
+                  alt="product photo"
+                  width={260}
+                  height={260}
+                  priority
+                />
               </ProductPhoto>
             </ProductPhotoWrap>
             <ProductDetailWrap>
               <ProductInfo>
                 <Bnr>
                   <BnrImg
-                    src='/img/icons/salebanner.png'
+                    src="/img/icons/salebanner.png"
                     alt="정기세일"
                     width={440}
                     height={65}
@@ -152,10 +158,6 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
   );
 };
 export async function getStaticProps({ params }: IParams) {
-  // getStaticPaths로부터 각 path의 params값을 받아 id를 통해 데이터 불러옴
-  // params 는 `id`를 포함
-  // 만약 route가 /products/1이면 params.id는 1이다
-
   const id = params.id!;
   const res = await fetch(`${process.env.BASE_URL_API}/products/${id}`);
   const product: IProductProps[] = await res.json();

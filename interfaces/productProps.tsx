@@ -8,4 +8,9 @@ export interface IProductProps {
   originPrice: number;
   changedPrice: number;
   imageUrl: string;
+  category: Category;
+}
+export interface Category {
+  name: string;
+  detail: string;
 }
