@@ -33,25 +33,25 @@ export const Items = styled.div`
 `;
 export const ItemsUl = styled.ul`
   margin: 0 -20px;
+  margin-bottom: 55px;
 `;
 
 export const ItemsLi = styled.li`
   width: 260px;
-  height: 300px;
-  margin-bottom: 50px;
+  // height: 300px;
   list-style: none;
-
-  &:hover {
-    box-shadow: 0 7px 7px 3px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3 ease-in-out;
-    border-radius: 7px;
-  }
 
   ${media.medium`
     width: 330px;
     height: 330px;
     margin-bottom: 130px;
   `}
+
+  &:hover {
+    box-shadow: 0 7px 7px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3 ease-in-out;
+    border-radius: 7px;
+  }
 `;
 export const Thumbnail = styled.div`
   position: relative;
@@ -84,11 +84,23 @@ export const ThumbImg = styled(Image)`
     height: 350px;
   `}
 `;
+export const Desc = styled.div`
+  width: 260px;
+
+  ${media.large`
+    width: 240px;
+  `}
+  ${media.medium`
+    width: 310px;
+  `}
+`;
 export const DescName = styled.p`
   heigth: 35px;
   padding: 16px 0 8px 8px;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.29;
+  font-weight: 500;
+  line-height: 1.5rem;
 
   ${media.medium`
     font-size: 24px;

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import {
+  Desc,
   DescName,
   InnerCont,
   Itemlist,
@@ -40,9 +41,9 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
                               loading="lazy"
                             />
                           </Thumbnail>
-                          <div className="desc">
+                          <Desc>
                             <DescName>{product.description}</DescName>
-                          </div>
+                          </Desc>
                         </a>
                       </Link>
                     </ItemsLi>
