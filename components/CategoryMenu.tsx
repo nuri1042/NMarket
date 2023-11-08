@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Category, IProductProps } from "../interfaces/productProps";
 import { DetailsLi } from "../styles/categoryStyle";
 
-const CategoryMenu = ({ product }: { product: IProductProps[] }) => {
+const CategoryMenu = () => {
   return (
     <>
       <div className="category-dropdown">

@@ -26,7 +26,7 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
               </Link>
               <div className="category">
                 <div>카테고리</div>
-                <CategoryMenu product={pageProps.product} />
+                <CategoryMenu />
               </div>
             </div>
             <div className="head-service">

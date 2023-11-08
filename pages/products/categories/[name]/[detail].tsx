@@ -10,9 +10,7 @@ const Details: FunctionComponent<{ product: IProductProps[] }> = ({
   return (
     <>
       <CategoryNavLayout product={product} />
-      <div>
-        <ItemList product={product} />
-      </div>
+      <ItemList product={product} />
     </>
   );
 };
@@ -22,10 +20,7 @@ export async function getStaticPaths() {
   const products: IProductProps[] = await res.json();
 
   const paths = products.map((product) => ({
-    params: {
-      name: product.category.name,
-      detail: product.category.detail,
-    },
+    params: { name: product.category.name, detail: product.category.detail },
   }));
 
   return { paths, fallback: false };

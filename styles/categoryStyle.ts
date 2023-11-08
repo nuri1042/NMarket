@@ -4,10 +4,7 @@ export const ContentWrap = styled.div`
   width: 100%;
   border-bottom: 1px solid #c8c9ca;
   padding: 2rem 3rem;
-
-  & section {
-    padding-bottom: ;
-  }
+  margin-bottom: 4rem;
 `;
 export const ContentHeader = styled.div`
   font-weight: 600;
@@ -51,7 +48,7 @@ export const Nav = styled.nav`
     display: flex;
     gap: 1.35rem;
   }
-`
+`;
 export const DetailsLi = styled.li`
   margin-bottom: 1.5rem;
   & a {

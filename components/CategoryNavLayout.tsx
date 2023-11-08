@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IProductProps } from "../interfaces/productProps";
 import {
   ContentHeader,
@@ -7,17 +8,19 @@ import {
   Nav,
 } from "../styles/categoryStyle";
 
-const CategoryNavLayout = ({product}: {product: IProductProps[]}) => {
-    const categoryDetails = [
-      ...new Set(product.map((data) => data.category.detail)),
-    ];
+const CategoryNavLayout = ({ product }: { product: IProductProps[] }) => {
+  const categoryDetails = [
+    ...new Set(product.map((data) => data.category.detail)),
+  ];
+  console.log(product);
+  console.log(categoryDetails);
   return (
     <>
       <ContentWrap>
         <section>
           <ContentHeader>
             <ContentHeaderTitle>
-              <div>{product[0].category.name}</div>
+              <div>{product[0]?.category.name}</div>
               <p>{product.length}개 제품</p>
             </ContentHeaderTitle>
             <ContentSortDiv>
@@ -33,9 +36,23 @@ const CategoryNavLayout = ({product}: {product: IProductProps[]}) => {
         </section>
         <Nav>
           <ul style={{ display: "flex", gap: "1.35rem" }}>
-            <li>전체</li>
+            <Link
+              href="/products/categories/${product[0].category.name}"
+              as={`/products/categories/${product[0].category.name}`}
+            >
+              <a>
+                <li>전체</li>
+              </a>
+            </Link>
             {categoryDetails.map((detail) => (
-              <li>{detail}</li>
+              <Link
+                href="/products/categories/${product[0].category.name}/${product[0].category.detail}"
+                as={`/products/categories/${product[0].category.name}/${product[0].category.detail}`}
+              >
+                <a>
+                  <li>{detail}</li>
+                </a>
+              </Link>
             ))}
           </ul>
         </Nav>

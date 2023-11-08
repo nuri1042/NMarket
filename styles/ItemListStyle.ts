@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 import { media } from "./theme";
 
-export const ItemlistContainer = styled.div`
+export const ItemlistTitle = styled.div`
   padding: 83px 0 30px 0;
   width: 890px;
   margin: 0 auto;
@@ -12,39 +12,40 @@ export const ItemlistContainer = styled.div`
     text-align: center;
   }
 `;
-export const Itemlist = styled.div`
-  display: flex;
-`;
+
 export const InnerCont = styled.div`
   padding-bottom: 40px;
-  width: 100%;
+  max-width: 890px;
   margin: 0 auto;
 `;
 export const Items = styled.div`
   width: 860px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0 auto;
 
   ${media.large`
+    width: 760px;
     justify-content: space-evenly;
+  `}
+  ${media.medium`
+    // justify-content: space-around
   `}
 `;
 export const ItemsUl = styled.ul`
-  margin: 0 -20px;
+  // margin: 0 -20px;
   margin-bottom: 55px;
 `;
 
 export const ItemsLi = styled.li`
-  width: 260px;
-  // height: 300px;
+  // width: 260px;
   list-style: none;
 
   ${media.medium`
-    width: 330px;
-    height: 330px;
-    margin-bottom: 130px;
+    // width: 330px;
+    // height: 330px;
+    // margin-bottom: 100px;
   `}
 
   &:hover {
@@ -57,14 +58,15 @@ export const Thumbnail = styled.div`
   position: relative;
   width: 260px;
   height: 260px;
-  }
+  margin: 0 auto;
+
   ${media.large`
-    width: 240px;
-    height: 240px;
+    width: 260px;
+    height: 260px;
   `}
   ${media.medium`
-    width: 330px;
-    height: 330px;
+    width: 300px;
+    height: 300px;
   `}
 `;
 export const ThumbImg = styled(Image)`

@@ -4,21 +4,17 @@ import CategoryNavLayout from "../../../../components/CategoryNavLayout";
 import ItemList from "../../../../components/ItemList";
 import { IProductProps } from "../../../../interfaces/productProps";
 
-const CategoryDetailPage: FunctionComponent<{ product: IProductProps[] }> = ({
+const DetailsAll: FunctionComponent<{ product: IProductProps[] }> = ({
   product,
 }) => {
+  console.log(`page all`, product);
   return (
     <>
-      <div className="container">
-        <CategoryNavLayout product={product} />
-        <div>
-          <ItemList product={product} />
-        </div>
-      </div>
+      <CategoryNavLayout product={product} />
+      <ItemList product={product} />
     </>
   );
 };
-export default CategoryDetailPage;
 
 export async function getStaticPaths() {
   const res = await fetch(`${process.env.BASE_URL_API}/products`);
@@ -41,3 +37,5 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
 
   return { props: { product } };
 }
+
+export default DetailsAll;
