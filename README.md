@@ -9,7 +9,7 @@ https://nmarket.netlify.app
 ## 🛠 적용 기술 및 라이브러리
 - Programming Languages : Javascript, Typescript
 - Frontend Development : Next.js, React
-- 상태관리 : React-Redux, Redux
+- 상태관리 : Redux, Redux-persist
 - Style : Styled-Components
 
 ## 프로젝트 구조
@@ -19,7 +19,12 @@ https://nmarket.netlify.app
  ┃ ┗ 📂auth
  ┃ ┃ ┗ 📜[...nextauth].tsx
  ┣ 📂products
- ┃ ┗ 📜[id].tsx
+ ┃ ┣ 📂categories
+ ┃ ┃ ┗ 📂[name]
+ ┃ ┃ ┃ ┣ 📜[detail].tsx
+ ┃ ┃ ┃ ┗ 📜index.tsx
+ ┃ ┗ 📂product
+ ┃ ┃ ┗ 📜[id].tsx
  ┣ 📜Cart.tsx
  ┣ 📜Login.tsx
  ┣ 📜Mypage.tsx
@@ -33,6 +38,8 @@ https://nmarket.netlify.app
  ┣ 📜CartItemList.tsx
  ┣ 📜CartNavMenu.tsx
  ┣ 📜CartTotalInfo.tsx
+ ┣ 📜CategoryMenu.tsx
+ ┣ 📜CategoryNavLayout.tsx
  ┣ 📜CheckUserSession.tsx
  ┣ 📜FavorList.tsx
  ┣ 📜ItemList.tsx
