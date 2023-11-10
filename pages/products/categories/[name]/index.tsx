@@ -7,10 +7,19 @@ import { IProductProps } from "../../../../interfaces/productProps";
 const DetailsAll: FunctionComponent<{ product: IProductProps[] }> = ({
   product,
 }) => {
-  console.log(`page all`, product);
+  const categoryTitle = [
+    ...new Set(product.map((data) => data.category.detail.desc)),
+  ];
+  const categoryUrl = [
+    ...new Set(product.map((data) => data.category.detail.src)),
+  ];
   return (
     <>
-      <CategoryNavLayout product={product} />
+      <CategoryNavLayout
+        product={product}
+        categoryTitle={categoryTitle}
+        categoryUrl={categoryUrl}
+      />
       <ItemList product={product} />
     </>
   );
@@ -21,7 +30,7 @@ export async function getStaticPaths() {
   const products: IProductProps[] = await res.json();
 
   const paths = products.map((product) => ({
-    params: { name: product.category.name },
+    params: { name: product.category.name.src },
   }));
 
   return { paths, fallback: false };
@@ -32,7 +41,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   const products: IProductProps[] = await res.json();
 
   const product = products.filter(
-    (product) => product.category.name === params.name
+    (product) => product.category.name.src === params.name
   );
 
   return { props: { product } };

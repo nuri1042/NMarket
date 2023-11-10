@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 import { IProductProps } from "../interfaces/productProps";
 import {
   ContentHeader,
@@ -8,19 +9,22 @@ import {
   Nav,
 } from "../styles/categoryStyle";
 
-const CategoryNavLayout = ({ product }: { product: IProductProps[] }) => {
-  const categoryDetails = [
-    ...new Set(product.map((data) => data.category.detail)),
-  ];
-  console.log(product);
-  console.log(categoryDetails);
+const CategoryNavLayout = ({
+  product,
+  categoryTitle,
+  categoryUrl,
+}: {
+  product: IProductProps[];
+  categoryTitle: string[];
+  categoryUrl: string[];
+}) => {
   return (
     <>
       <ContentWrap>
         <section>
           <ContentHeader>
             <ContentHeaderTitle>
-              <div>{product[0]?.category.name}</div>
+              <div>{product[0]?.category.name.desc}</div>
               <p>{product.length}개 제품</p>
             </ContentHeaderTitle>
             <ContentSortDiv>
@@ -37,17 +41,17 @@ const CategoryNavLayout = ({ product }: { product: IProductProps[] }) => {
         <Nav>
           <ul style={{ display: "flex", gap: "1.35rem" }}>
             <Link
-              href="/products/categories/${product[0].category.name}"
-              as={`/products/categories/${product[0].category.name}`}
+              href={`/products/categories/${product[0].category.name.src}`}
+              as={`/products/categories/${product[0].category.name.src}`}
             >
               <a>
                 <li>전체</li>
               </a>
             </Link>
-            {categoryDetails.map((detail) => (
+            {categoryTitle.map((detail, i) => (
               <Link
-                href="/products/categories/${product[0].category.name}/${product[0].category.detail}"
-                as={`/products/categories/${product[0].category.name}/${product[0].category.detail}`}
+                href={`/products/categories/${product[0].category.name.src}/${categoryUrl[i]}`}
+                as={`/products/categories/${product[0].category.name.src}/${categoryUrl[i]}`}
               >
                 <a>
                   <li>{detail}</li>
@@ -61,4 +65,4 @@ const CategoryNavLayout = ({ product }: { product: IProductProps[] }) => {
   );
 };
 
-export default CategoryNavLayout;
+export default React.memo(CategoryNavLayout);

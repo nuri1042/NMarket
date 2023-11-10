@@ -34,8 +34,8 @@ const FavorList = () => {
                 favorList.map((favorList) => (
                   <PdtList key={favorList.id}>
                     <Link
-                      as={`/products/${favorList.id}`}
-                      href="/products/[id]"
+                      as={`/products/product//${favorList.id}`}
+                      href="/products/product/[id]"
                     >
                       <PdtListImg>
                         <a>

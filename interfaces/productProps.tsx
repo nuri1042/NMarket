@@ -11,6 +11,12 @@ export interface IProductProps {
   category: Category;
 }
 export interface Category {
-  name: string;
-  detail: string;
+  name: {
+    src: string;
+    desc: string;
+  };
+  detail: {
+    src: string;
+    desc: string;
+  };
 }

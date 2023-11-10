@@ -20,17 +20,21 @@ export const InnerCont = styled.div`
 `;
 export const Items = styled.div`
   width: 860px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 260px 260px 260px;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
 
   ${media.large`
     width: 760px;
-    justify-content: space-evenly;
+    column-gap: 5px;
+    // justify-content: space-evenly;
   `}
   ${media.medium`
     // justify-content: space-around
+    grid-template-columns: 300px 300px;
+
   `}
 `;
 export const ItemsUl = styled.ul`
@@ -41,6 +45,7 @@ export const ItemsUl = styled.ul`
 export const ItemsLi = styled.li`
   // width: 260px;
   list-style: none;
+  // align-content:
 
   ${media.medium`
     // width: 330px;
@@ -61,8 +66,8 @@ export const Thumbnail = styled.div`
   margin: 0 auto;
 
   ${media.large`
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
   `}
   ${media.medium`
     width: 300px;
@@ -93,7 +98,7 @@ export const Desc = styled.div`
     width: 240px;
   `}
   ${media.medium`
-    width: 310px;
+    width: 290px;
   `}
 `;
 export const DescName = styled.p`

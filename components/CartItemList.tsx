@@ -58,7 +58,10 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
             <ItemInfoBox>
               <ItemInfo>
                 <ProductThumb>
-                  <Link as={`/products/${itemList.id}`} href="/products/[id]">
+                  <Link
+                    as={`/products/product/${itemList.id}`}
+                    href="/products/product/[id]"
+                  >
                     <a>
                       <div>
                         <img
@@ -72,7 +75,10 @@ const CartItem = ({ itemList }: { itemList: IProductProps }) => {
                 </ProductThumb>
                 <ProductInfo>
                   <p className="name" style={{ lineHeight: 1.4 }}>
-                    <Link as={`/products/${itemList.id}`} href="/products/[id]">
+                    <Link
+                      as={`/products/product/${itemList.id}`}
+                      href="/products/product/[id]"
+                    >
                       <a>{itemList.name}</a>
                     </Link>
                   </p>
