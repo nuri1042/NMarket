@@ -26,8 +26,9 @@ https://nmarket.netlify.app
 
 ### 2. 개발
 
-- Mock server를 이용한 API(Mock Data) 호출 시뮬레이션
+- Mock server를 이용한 API 호출 시뮬레이션과 기능 구현
 - UI 코드와 mock 서버의 통합
+
 
 ### 3. 배포
 
