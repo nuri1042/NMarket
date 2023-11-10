@@ -16,11 +16,22 @@ https://nmarket.netlify.app
 - Server : Postman Mock Server
 - Style : Styled-Components
   
-
-## API 설계
+## 개발 프로세스
+### 1. 요구사항 명세
+ 
+#### API 설계
 - 인터페이스를 구성하고 그에 맞는 API 스펙을 설계
-- 설계한 API가 실제 동작하지 않는 점을 염두에 두고, 해당 API의 데이터를 이용해 개발하고자 Postman Mock Server를 활용
+- 설계한 API가 실제 동작하지 않는 점을 염두에 두고, 해당 Mock Data를 이용해 개발하고자 Postman Mock Server를 활용
 <img width="659" alt="image" src="https://github.com/nuri1042/NMarket/assets/19181088/f2eacf59-018d-4fea-84eb-cf903aad6186">
+
+### 2. 개발
+
+- Mock server를 이용한 API(Mock Data) 호출 시뮬레이션
+- UI 코드와 mock 서버의 통합
+
+### 3. 배포
+
+
 
 
 ## 프로젝트 구조
