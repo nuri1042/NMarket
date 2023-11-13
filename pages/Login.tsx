@@ -66,10 +66,10 @@ const Login = () => {
         <ContentWrap>
           <LoginFormBox>
             <FormDetail>
-            <h3>회원 로그인</h3>
-            <p className="tip">로그인 후에 이용해주세요.</p>
-            <Form style={{ marginTop: "28px", color: "#999" }}>
-              <Form.Item>
+              <h3>회원 로그인</h3>
+              <p className="tip">로그인 후에 이용해주세요.</p>
+              <Form style={{ marginTop: "28px", color: "#999" }}>
+                {/* <Form.Item>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <FormLabel>Email Address</FormLabel>
                   <FormInput
@@ -80,23 +80,23 @@ const Login = () => {
                 <EmailBtn onClick={handleSubmit} type="submit">
                   로그인
                 </EmailBtn>
-              </Form.Item>
+              </Form.Item> */}
 
-              {providers.map(({ id, name, bgColor, fontColor }) => (
-                <Form.Item style={{ marginTop: "10px" }} key={id}>
-                  <SocialLoginBtn
-                    type="submit"
-                    style={{
-                      background: bgColor,
-                      color: fontColor,
-                    }}
-                    onClick={handleOAuthSignIn(id)}
-                  >
-                    {name} 로그인
-                  </SocialLoginBtn>
-                </Form.Item>
-              ))}
-            </Form>
+                {providers.map(({ id, name, bgColor, fontColor }) => (
+                  <Form.Item style={{ marginTop: "10px" }} key={id}>
+                    <SocialLoginBtn
+                      type="submit"
+                      style={{
+                        background: bgColor,
+                        color: fontColor,
+                      }}
+                      onClick={handleOAuthSignIn(id)}
+                    >
+                      {name} 로그인
+                    </SocialLoginBtn>
+                  </Form.Item>
+                ))}
+              </Form>
             </FormDetail>
           </LoginFormBox>
         </ContentWrap>
