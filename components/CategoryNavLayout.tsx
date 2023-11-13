@@ -27,7 +27,7 @@ const CategoryNavLayout = ({
               <div>{product[0]?.category.name.desc}</div>
               <p>{product.length}개 제품</p>
             </ContentHeaderTitle>
-            <ContentSortDiv>
+            {/* <ContentSortDiv>
               <select>
                 <option disabled>정렬 기준</option>
                 <option value="popularity">인기순</option>
@@ -35,7 +35,7 @@ const CategoryNavLayout = ({
                 <option value="priceAsc">가격 낮은 순</option>
               </select>
               <div>필터</div>
-            </ContentSortDiv>
+            </ContentSortDiv> */}
           </ContentHeader>
         </section>
         <Nav>
