@@ -31,7 +31,6 @@ export const Items = styled.div`
     column-gap: 5px;
   `}
   ${media.medium`
-    width: 690px;
     grid-template-columns: 300px 300px;
     gap: 3px;
 
