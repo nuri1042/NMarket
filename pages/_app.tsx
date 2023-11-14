@@ -13,9 +13,16 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => {
   return (
     // SessionProvider로 Component 를 감싸 nextjs에서 useSession Hook을 통해 session 정보에 접근할 수 있게 함
     <>
+      <Head>
+        <meta />
+      </Head>
       <SessionProvider session={pageProps.session}>
         <Head>
-          <meta charSet="utf-8" />
+          <meta
+            charSet="utf-8"
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+          />
           <title>NMarket</title>
         </Head>
         <div id="header">

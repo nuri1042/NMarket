@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styled from "styled-components";
 import Image from "next/image";
 import { useState } from "react";
-import { media } from '../styles/theme';
+import { media } from "../styles/theme";
 import { BannerImages } from "../database/bannerImage";
 
 interface ImagesType {
@@ -35,7 +35,7 @@ const MainBanner = () => {
       width: 850px;
       height: 266px;
     `}
-`
+  `;
 
   const SampleArrow = (props: any) => {
     const { className, style } = props;
@@ -51,7 +51,7 @@ const MainBanner = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
-    lazyLoad: 'progressive',
+    lazyLoad: "progressive",
     prevArrow: <SampleArrow />,
     nextArrow: <SampleArrow />,
 
@@ -72,6 +72,7 @@ const MainBanner = () => {
                   width={"1920px"}
                   height={"600px"}
                   layout={"responsive"}
+                  alt="banner"
                 />
               </div>
             );
@@ -83,5 +84,3 @@ const MainBanner = () => {
 };
 
 export default MainBanner;
-
-

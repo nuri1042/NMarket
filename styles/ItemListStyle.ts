@@ -29,29 +29,20 @@ export const Items = styled.div`
   ${media.large`
     width: 760px;
     column-gap: 5px;
-    // justify-content: space-evenly;
   `}
   ${media.medium`
-    // justify-content: space-around
+    width: 690px;
     grid-template-columns: 300px 300px;
+    gap: 3px;
 
   `}
 `;
 export const ItemsUl = styled.ul`
-  // margin: 0 -20px;
   margin-bottom: 55px;
 `;
 
 export const ItemsLi = styled.li`
-  // width: 260px;
   list-style: none;
-  // align-content:
-
-  ${media.medium`
-    // width: 330px;
-    // height: 330px;
-    // margin-bottom: 100px;
-  `}
 
   &:hover {
     box-shadow: 0 7px 7px 3px rgba(0, 0, 0, 0.1);

@@ -36,7 +36,7 @@ export const ArticleWish = styled.div`
 
 export const PdtListContainer = styled.div`
   padding-bottom: 20px;
-  padding-left: 23px;
+  // padding-left: 23px;
   overflow: hidden;
   margin-top: 26px;
   display: flex;
@@ -64,7 +64,6 @@ export const PdtList = styled.div`
   ${media.large`
     margin-right: 10px;
   `}
-
 `;
 export const PdtListImg = styled.div`
   float: left;
