@@ -77,6 +77,8 @@ const Products: FunctionComponent<{ product: IProductProps[] }> = ({
                   width={260}
                   height={260}
                   priority
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcVg8AAfEBN0joyNIAAAAASUVORK5CYII="
                 />
               </ProductPhoto>
             </ProductPhotoWrap>
