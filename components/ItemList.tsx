@@ -33,6 +33,8 @@ const ItemList = ({ product }: { product: IProductProps[] }) => {
                             alt="product image"
                             layout="fill"
                             loading="lazy"
+                            placeholder="blur"
+                            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mPcVg8AAfEBN0joyNIAAAAASUVORK5CYII="
                           />
                         </Thumbnail>
                         <Desc>

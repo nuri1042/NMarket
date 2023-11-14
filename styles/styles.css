@@ -84,7 +84,7 @@ body {
   height: 52px;
   position: relative;
   left: 15px;
-  background-image: url("https://blanchet-u.com/web/upload/NNEditor/20220817/f6eb6eba19e107cf5eef11e127b4d4a5.png");
+  background-image: url(/img/icons/logo.png);
   background-position: 50% 50%;
   background-size: 100%;
 }
