@@ -55,9 +55,9 @@ body {
   font-weight: 500;
   padding: 10px 0;
 }
-/* .category:hover .category-dropdown {
+.category:hover .category-dropdown {
   display: block;
-} */
+}
 .category > div {
   padding: 1rem 1rem;
 }
@@ -182,11 +182,11 @@ h3 {
   margin-bottom: 3rem;
 }
 
-@media (hover: hover) {
+/* @media (hover: hover) {
   .category:hover .category-dropdown {
     display: block;
   }
-}
+} */
 @media screen and (max-width: 1600px) {
   #banner {
     width: 1600px;

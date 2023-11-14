@@ -58,6 +58,3 @@ export const DetailsLi = styled.li`
     }
   }
 `;
-export const CategoryTitle = styled.li`
-  
-`
