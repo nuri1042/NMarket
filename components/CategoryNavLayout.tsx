@@ -4,7 +4,6 @@ import { IProductProps } from "../interfaces/productProps";
 import {
   ContentHeader,
   ContentHeaderTitle,
-  ContentSortDiv,
   ContentWrap,
   Nav,
 } from "../styles/categoryStyle";
