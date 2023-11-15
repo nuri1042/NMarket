@@ -5,7 +5,6 @@ export const ContentWrap = styled.div`
   border-bottom: 1px solid #c8c9ca;
   padding: 2rem 3rem;
   margin-bottom: 4rem;
-  border: 1px solid black;
 `;
 export const ContentHeader = styled.div`
   font-weight: 600;

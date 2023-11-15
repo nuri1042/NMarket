@@ -17,7 +17,6 @@ export const InnerCont = styled.div`
   padding-bottom: 40px;
   max-width: 890px;
   margin: 0 auto;
-  border: 1px solid black;
 `;
 export const Items = styled.div`
   width: 860px;
@@ -26,16 +25,15 @@ export const Items = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
-  border: 1px solid black;
+  min-height: 850px;
 
   ${media.large`
-    width: 760px;
+    width: 750px;
+    grid-template-columns: 240px 240px 240px;
     column-gap: 5px;
   `}
   ${media.medium`
     grid-template-columns: 300px 300px;
-    gap: 3px;
-
   `}
 `;
 export const ItemsUl = styled.ul`
