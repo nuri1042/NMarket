@@ -10,7 +10,7 @@ export const PageTitle = styled.div`
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 54px 20px 30px;
+  padding: 2rem 3rem;
 
   & h1 {
     margin: 0;
@@ -30,8 +30,7 @@ export const CartProductBox = styled.div`
   border-bottom: 0;
 
   & h2 {
-    margin: 0 20px 20px;
-    padding: 0;
+    padding: 1rem 3rem;
     line-height: 1.3;
 
     & strong {

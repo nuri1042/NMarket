@@ -17,6 +17,7 @@ export const InnerCont = styled.div`
   padding-bottom: 40px;
   max-width: 890px;
   margin: 0 auto;
+  border: 1px solid black;
 `;
 export const Items = styled.div`
   width: 860px;
@@ -25,6 +26,7 @@ export const Items = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
+  border: 1px solid black;
 
   ${media.large`
     width: 760px;
@@ -44,7 +46,7 @@ export const ItemsLi = styled.li`
   list-style: none;
 
   &:hover {
-    box-shadow: 0 7px 7px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 7px 7px 3px #d4d4d8;
     transition: box-shadow 0.3 ease-in-out;
     border-radius: 7px;
   }
